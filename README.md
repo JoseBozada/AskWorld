@@ -31,65 +31,269 @@
   - [Página de Inicio](#página-de-inicio)
 - [BIBLIOGRAFÍA](#bibliografía)
 
-# AskWorld
+# TÍTULO DE PROYECTO
 ## Antecedentes
-Este proyecto muestra todos los pasos a seguir para recolectar, organizar, tratar y construir un portal Web empezando desde cero, para montar una página web como si fuera un “foro” para comentar diversos temas y valorar sobre ellos.
-He optado por un diseño más gráfico que de texto ya que por experiencia personal un foro normal llega a ser tedioso si hay demasiadas páginas junto al texto (como la combinación de colores negros con letra blanca que acaba cansando la vista), por eso prefiero organizarlo por imágenes, facilitando la búsqueda del tema y ver los comentarios más cómodamente.
-Se han utilizado distintos lenguajes de programación, como pueden ser PHP y JavaScript para su desarrollo, y para su diseño se ha hecho uso de estilos CSS y de librerías como Boostrap que nos facilita la creación de headers, diseño responsive, o cualquier recurso que necesitemos.
+Breve descripción del proyecto.
+
+Este proyecto muestra todos los pasos a seguir para recolectar, organizar, tratar y construir un
+portal Web empezando desde cero, para ...
+
+Se han utilizado distintos lenguajes de programación, como pueden ser PHP y JavaScript para
+su desarrollo, y para su diseño se ha hecho uso de Photoshop y de estilos CSS...
 
 # REQUISITOS
 
 Se describen de forma concisa los requisitos funcionales de vuestra aplicación.
 ## Requisitos funcionales
 
-Se enumeran todos lo requisitos funcionales de vuestra aplicación.
-
-Además de los requisitos de vuestra aplicación hay que añadir los siguientes:
-
 - Diseño responsive
 - Control de errores en formularios que deben incluir como mínimo un registro de usuario
+  - Usuario
+  - Contraseña
+  - Nombre
+  - Apellido1
+  - Apellido2
+  - Email
+  - Imagen
   - DNI
   - Teléfono
-  - Mail
   - Fecha de nacimiento
-  - Teléfono 
   - Dirección
   - Provincia (elegible desde un desplegable)
   - Población (se rellenará según los datos de la provincia seleccionada.)
+  - Rol
 - Acceso restringido a usuarios no registrados  
+- Que solo los usuarios registrados puedan comentar y valorar positivamente o negativamente sobre el tema. 
+- Los usuarios sin registrar tendrán acceso al contenido pero no podrán comentar ni valorar.
+- Solo los administradores pueden añadir los temas a tratar (foto, descripción, categoría, etc).
+- Añadir filtros para poder ordenar por categoría.
+- Cada usuario tendrá su perfil para modificar sus datos (nombre, apellidos, correo...).
+- En la noticia aparecerá la foto, descripción, comentarios y valoración.
+- Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios.
+- Para acceder al contenido tendrán que clickear en una tarjeta y les mostrará la foto, descripción, valoración y comentarios.
 
 # ANÁLISIS Y DISEÑO WEB
 
 Breve descripción del mapa web. Se debe incluir la imagen del mapa web de vuestro proyecto.
 
 Debe contener todo el itinerario de vuestra web. Todas las páginas y el hilo de navegación
-## Prototipo web y boceto de la estructura
+## Prototipo web
 
-![image](https://user-images.githubusercontent.com/55547053/142043249-dfc0c308-094c-4080-b0f0-dc701b0a2145.png)
+![image](https://user-images.githubusercontent.com/55547053/142044247-638e71bd-072c-4215-98ed-eb964149f0c9.png)
+
+![image](https://user-images.githubusercontent.com/55547053/142044260-42c16990-e4e1-41b6-ad70-9908c2e10912.png)
+
+![image](https://user-images.githubusercontent.com/55547053/142044274-6bd09da6-b770-4d4d-80b5-160f63c742f1.png)
+
+![image](https://user-images.githubusercontent.com/55547053/142044279-38f813b5-bb33-4699-92d9-ae43cd31ef4e.png)
 
 
-Mookup del proyecto. Deben coincidir el número de bocetos con el número de pantallas que hayais mostrado en el mapa web
+## Boceto de la estructura
+
+![image](https://user-images.githubusercontent.com/55547053/142044301-fcf4721d-a557-4b38-8e20-94e2d7c43e93.png)
+
 ## Guía de estilos
 
-Debemos señalar los colores corporativos y el diseño del logo. Justificando su uso.
+Voy a usar un logo creado por mí para darle un toque personal.
+
+Utilizaré colores como el blanco y azul para hacer las tarjetas, categorías, etc y negro para la letra, ya que combinan bien y no dañan a la vista.
+
 ## Planificación de tareas
 
-Con un diagrama de Gantt, planificamos el desarrollo del proyecto. Pautando qué vamos hacer y cuándo lo vamos a finalizar.
+Voy a dedicarle 12h a programar el funcionamiento de la página a la semana.
+
+Voy a dedicarle 12h a diseñar la página a la semana.
 
 ## Base de datos
 ### Diseño Entidad Relación de la BBDD
 
-Realizamos el Esquema Entidad Relación de la BBDD de nuestra aplicación.
+![image](https://user-images.githubusercontent.com/55547053/142044934-2395df99-49d6-48cc-b34f-17a9dabea33b.png)
 
-Se debe mostrar el diseño relacional. No lo que os muestra la aplicación MySQL Workbench o el gestor que usais. Quiero los diagrmas E-R con cajas para las entidades y rombos para las relaciones. Se deben tener en cuenta las cardinalidades.
 ### Modelo relacional BBDD
 
-Se muestra el diseño de la BBDD según el GUI que esteís usando. Deben aparecer todas las entidades en la 3FN, los campos de las tablas y las cardinalidades. 
+![image](https://user-images.githubusercontent.com/55547053/142044574-c3bf059a-8775-4118-9c42-dc02f68edac6.png) 
+
 ### Script de creación BBDD
 
-Scrip de creación de las BBDD, sin los datos. Cada una de las tablas con sus claves referenciadas. 
+-- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
+--
+-- Host: localhost    Database: askworld
+-- ------------------------------------------------------
+-- Server version	8.0.22
 
-El lector debe comprender lo que está leyendo, no se pone el script sin más, hay que explicarlo.
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `categoria`
+--
+
+DROP TABLE IF EXISTS `categoria`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `categoria` (
+  `idCategoria` int NOT NULL AUTO_INCREMENT,
+  `NombreCategoria` varchar(45) NOT NULL,
+  PRIMARY KEY (`idCategoria`),
+  UNIQUE KEY `idCategoría_UNIQUE` (`idCategoria`),
+  UNIQUE KEY `NombreCategoria_UNIQUE` (`NombreCategoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categoria`
+--
+
+LOCK TABLES `categoria` WRITE;
+/*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
+/*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comentarios`
+--
+
+DROP TABLE IF EXISTS `comentarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `comentarios` (
+  `idComentarios` int NOT NULL AUTO_INCREMENT,
+  `IdUsuarios` int NOT NULL,
+  `IdPost` int NOT NULL,
+  `Comentario` text NOT NULL,
+  `Fecha` datetime NOT NULL,
+  PRIMARY KEY (`idComentarios`),
+  UNIQUE KEY `idComentarios_UNIQUE` (`idComentarios`),
+  UNIQUE KEY `IdPost_UNIQUE` (`IdPost`),
+  KEY `IdUsuarios_idx` (`IdUsuarios`),
+  CONSTRAINT `Esta comentando el post` FOREIGN KEY (`IdPost`) REFERENCES `post` (`idPost`),
+  CONSTRAINT `IdUsuarios` FOREIGN KEY (`IdUsuarios`) REFERENCES `usuarios` (`idUsuarios`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comentarios`
+--
+
+LOCK TABLES `comentarios` WRITE;
+/*!40000 ALTER TABLE `comentarios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comentarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `likes`
+--
+
+DROP TABLE IF EXISTS `likes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `likes` (
+  `idPost` int NOT NULL,
+  `idUsuarios` int NOT NULL,
+  `Accion` varchar(20) DEFAULT NULL,
+  UNIQUE KEY `idPost_UNIQUE` (`idPost`),
+  UNIQUE KEY `idUsuarios_UNIQUE` (`idUsuarios`),
+  CONSTRAINT `El usuario ` FOREIGN KEY (`idUsuarios`) REFERENCES `usuarios` (`idUsuarios`),
+  CONSTRAINT `Le gusta el post` FOREIGN KEY (`idPost`) REFERENCES `post` (`idPost`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `likes`
+--
+
+LOCK TABLES `likes` WRITE;
+/*!40000 ALTER TABLE `likes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `likes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `post`
+--
+
+DROP TABLE IF EXISTS `post`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `post` (
+  `idPost` int NOT NULL AUTO_INCREMENT,
+  `NombrePost` varchar(45) NOT NULL,
+  `DescripciónPost` longtext NOT NULL,
+  `ImagenPost` varchar(45) NOT NULL,
+  `CategoriaPost` int NOT NULL,
+  PRIMARY KEY (`idPost`),
+  UNIQUE KEY `idPost_UNIQUE` (`idPost`),
+  UNIQUE KEY `NombrePost_UNIQUE` (`NombrePost`),
+  UNIQUE KEY `CategoriaPost_UNIQUE` (`CategoriaPost`),
+  CONSTRAINT `Pertenece a la categoria` FOREIGN KEY (`CategoriaPost`) REFERENCES `categoria` (`idCategoria`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `post`
+--
+
+LOCK TABLES `post` WRITE;
+/*!40000 ALTER TABLE `post` DISABLE KEYS */;
+/*!40000 ALTER TABLE `post` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuarios` (
+  `idUsuarios` int NOT NULL AUTO_INCREMENT,
+  `Usuario` varchar(20) NOT NULL,
+  `Contraseña` varchar(45) NOT NULL,
+  `Nombre` varchar(45) NOT NULL,
+  `Apellido1` varchar(45) NOT NULL,
+  `Apellido2` varchar(45) NOT NULL,
+  `Email` varchar(45) NOT NULL,
+  `Imagen` varchar(45) NOT NULL,
+  `Rol` varchar(45) NOT NULL,
+  `FechaNacimiento` date DEFAULT NULL,
+  `Direccion` varchar(255) DEFAULT NULL,
+  `Telefono` int DEFAULT NULL,
+  `Provincia` varchar(45) DEFAULT NULL,
+  `Poblacion` varchar(45) DEFAULT NULL,
+  `DNI` int unsigned DEFAULT NULL,
+  PRIMARY KEY (`idUsuarios`),
+  UNIQUE KEY `idUsuarios_UNIQUE` (`idUsuarios`),
+  UNIQUE KEY `Usuario_UNIQUE` (`Usuario`),
+  UNIQUE KEY `Usuarioscol_UNIQUE` (`Email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-11-16 17:21:08
 
 ### Consultas 
 
@@ -98,6 +302,7 @@ Se incluyen y describen todas las consultas que se emplean en el desarrollo del 
 ## Validación de formularios
 
 Se incluyen todos los formularios que se emplean en la WEB y se especifican qué tipo de validación se va ha realizar.
+
 ## Proceso de carga
 
 Descripción del proceso de carga de vuestra aplicación. Por ejemplo:
@@ -220,6 +425,24 @@ Descripción de todas las herramientas que se han usado para el desarrollo del p
 > Breve descripción de las características y plugins que hemos usado 
 > 
 
+> ## XAMPP
+> 
+> Descripción de XAMPP
+> 
+> ### Características
+> 
+> Breve descripción de las características y plugins que hemos usado 
+> 
+
+> ## MySQL Worbench
+> 
+> Descripción de MySQL Worbench
+> 
+> ### Características
+> 
+> Breve descripción de las características y plugins que hemos usado 
+> 
+
 # LENGUAJES
 
 Descripción de los lenguajes y frameworks utilizados para el desarrollo del proyecto. Por ejemplo:
@@ -231,7 +454,31 @@ Descripción de los lenguajes y frameworks utilizados para el desarrollo del pro
 > ### Características
 > 
 > Breve descripción de sus características  
+
+> ## PHP
 > 
+> Descripción de qué es PHP
+> 
+> ### Características
+> 
+> Breve descripción de sus características  
+
+> ## JavaScript
+> 
+> Descripción de qué es JavaScript
+> 
+> ### Características
+> 
+> Breve descripción de sus características  
+> 
+
+> ## CSS
+> 
+> Descripción de qué es CSS
+> 
+> ### Características
+> 
+> Breve descripción de sus características
 
 # PRODUCTO
 
@@ -244,7 +491,7 @@ Se muestran diferentes pantallas que constituyen el desarrollo final de la aplic
 Y lo vamos realizando con todas las pantallas.
 # BIBLIOGRAFÍA
 
-Incluye la bibliografía y webgrafía que hayas empleado para el desarrollo de tu proyecto.
-
-
-
+- Comentarios: https://www.youtube.com/watch?v=EHca8OI8ez0
+- Sistema de valoración: https://www.youtube.com/watch?v=0bqm-2wLKW4
+- Añadir iconos: https://fontawesome.com/ 
+- Tablas avanzadas: https://datatables.net/
