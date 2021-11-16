@@ -69,6 +69,9 @@ Breve descripción del mapa web. Se debe incluir la imagen del mapa web de vuest
 Debe contener todo el itinerario de vuestra web. Todas las páginas y el hilo de navegación
 ## Prototipo web y boceto de la estructura
 
+![image](https://user-images.githubusercontent.com/55547053/142043249-dfc0c308-094c-4080-b0f0-dc701b0a2145.png)
+
+
 Mookup del proyecto. Deben coincidir el número de bocetos con el número de pantallas que hayais mostrado en el mapa web
 ## Guía de estilos
 
