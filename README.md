@@ -33,13 +33,11 @@
 
 # TÍTULO DE PROYECTO
 ## Antecedentes
-Breve descripción del proyecto.
 
-Este proyecto muestra todos los pasos a seguir para recolectar, organizar, tratar y construir un
-portal Web empezando desde cero, para ...
+Este proyecto muestra todos los pasos a seguir para recolectar, organizar, tratar y construir un portal Web empezando desde cero, para montar una página web como si fuera un “foro” para comentar diversos temas y valorar sobre ellos.
+He optado por un diseño más gráfico que de texto ya que por experiencia personal un foro normal llega a ser tedioso si hay demasiadas páginas junto al texto (como la combinación de colores negros con letra blanca que acaba cansando la vista), por eso prefiero organizarlo por imágenes, facilitando la búsqueda del tema y ver los comentarios más cómodamente.
 
-Se han utilizado distintos lenguajes de programación, como pueden ser PHP y JavaScript para
-su desarrollo, y para su diseño se ha hecho uso de Photoshop y de estilos CSS...
+Se han utilizado distintos lenguajes de programación, como pueden ser PHP y JavaScript para su desarrollo, y para su diseño se ha hecho uso de estilos CSS y de librerías como Boostrap que nos facilita la creación de headers, diseño responsive, o cualquier recurso que necesitemos.
 
 # REQUISITOS
 
