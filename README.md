@@ -341,15 +341,17 @@ En base al apartado [Prototipo web y boceto de la estructura](#prototipo-web-y-b
 
 > El sitio web consta de cinco partes fundamentales. Esta estructura es común en todas las páginas que forman el sitio web.
 > 
-> **Cabecera**: Contiene el logo de la empresa, que está formado por las siglas “ostargi” cruzadas por una “O” mayúscula. Además, en la parte superior de la cabecera, está el menú de selección de idioma.
+> **Cabecera**: Contiene el logo de la empresa, que es "AskWorld".
 > 
-> **Panel horizontal**: Esta ubicado justo debajo de la cabecera. Contiene los enlaces a las páginas: inicio, como llegar, contactar
+> **Panel horizontal**: Esta ubicado justo debajo de la cabecera. Contiene los enlaces a las páginas: inicio, iniciar sesión, registrarme
 
 ### Estructura gráfica de la interface
 
 Mostramos la estructura gráfica de nuestro diseño. Por ejemplo.
 
-![EstructuraInterface](Imagenes/EstructuraInterface.png)
+![image](https://user-images.githubusercontent.com/55547053/142046444-7a0bea72-12d2-4d3a-81e5-fdfc439d679b.png)
+
+![image](https://user-images.githubusercontent.com/55547053/142046487-d6516e3f-c766-4ecc-9766-c3afa292cc6c.png)
 
 # IMPLEMENTACIÓN
 
