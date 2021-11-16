@@ -341,9 +341,8 @@ En base al apartado [Prototipo web y boceto de la estructura](#prototipo-web-y-b
 
 > El sitio web consta de cinco partes fundamentales. Esta estructura es común en todas las páginas que forman el sitio web.
 > 
-> **Cabecera**: Contiene el logo de la empresa, que es "AskWorld".
+> **Cabecera**: Contiene el logo de la empresa, que es "AskWorld". También contiene los enlaces a las páginas: inicio, iniciar sesión, registrarme.
 > 
-> **Panel horizontal**: Esta ubicado justo debajo de la cabecera. Contiene los enlaces a las páginas: inicio, iniciar sesión, registrarme
 
 ### Estructura gráfica de la interface
 
