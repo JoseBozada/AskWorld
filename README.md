@@ -75,6 +75,7 @@ Se describen de forma concisa los requisitos funcionales de vuestra aplicación.
 Breve descripción del mapa web. Se debe incluir la imagen del mapa web de vuestro proyecto.
 
 Debe contener todo el itinerario de vuestra web. Todas las páginas y el hilo de navegación
+
 ## Prototipo web
 
 ![image](https://user-images.githubusercontent.com/55547053/142044247-638e71bd-072c-4215-98ed-eb964149f0c9.png)
@@ -98,9 +99,7 @@ Utilizaré colores como el blanco y azul para hacer las tarjetas, categorías, e
 
 ## Planificación de tareas
 
-Voy a dedicarle 12h a programar el funcionamiento de la página a la semana.
-
-Voy a dedicarle 12h a diseñar la página a la semana.
+![Tareas](https://user-images.githubusercontent.com/55547053/148778142-d85ddaa2-7c41-47f0-a081-49c35a2c8727.jpg)
 
 ## Base de datos
 ### Diseño Entidad Relación de la BBDD
