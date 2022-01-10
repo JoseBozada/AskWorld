@@ -3,7 +3,14 @@
 - [REQUISITOS](#requisitos)
   - [Requisitos funcionales](#requisitos-funcionales)
 - [ANÁLISIS Y DISEÑO WEB](#análisis-y-diseño-web)
-  - [Prototipo web y boceto de la estructura](#prototipo-web)
+  - [Prototipo web y boceto de la estructura](#prototipo-web-y-boceto-de-la-estructura)
+    - [Zona de Administrador](#zona-de-administrador)
+      - [Login](#login-de-administrador)
+      - [Inicio](#página-inicio-de-administrador)
+      - [Tablas](#página-tablas-de-administrador)
+      - [Acciones](#página-acciones-de-administrador)
+      - [Mi cuenta](#página-mi-cuenta-de-administrador)
+    - [Página Web y Zona de Usuario](#zona-de-web-y-zona-de-usuario)
   - [Guía de estilos](#guía-de-estilos)
   - [Planificación de tareas](#planificación-de-tareas)
   - [Base de datos](#base-de-datos)
@@ -76,16 +83,27 @@ Breve descripción del mapa web. Se debe incluir la imagen del mapa web de vuest
 
 Debe contener todo el itinerario de vuestra web. Todas las páginas y el hilo de navegación
 
-## Prototipo web
+## Prototipo web y boceto de la estructura
 
-![image](https://user-images.githubusercontent.com/55547053/142044247-638e71bd-072c-4215-98ed-eb964149f0c9.png)
+### Zona de administrador
 
-![image](https://user-images.githubusercontent.com/55547053/142044260-42c16990-e4e1-41b6-ad70-9908c2e10912.png)
+#### Login de administrador
 
-![image](https://user-images.githubusercontent.com/55547053/142044274-6bd09da6-b770-4d4d-80b5-160f63c742f1.png)
+![1](https://user-images.githubusercontent.com/55547053/148784128-3870e474-a8f2-4ab0-bd52-06f768d5bf1a.jpg)
 
-![image](https://user-images.githubusercontent.com/55547053/142044279-38f813b5-bb33-4699-92d9-ae43cd31ef4e.png)
+#### Página inicio de administrador
 
+![22](https://user-images.githubusercontent.com/55547053/148785564-9a0f246a-0cdf-4ac9-918e-e6359da98cbc.jpg)
+
+#### Página tablas de administrador
+
+![33](https://user-images.githubusercontent.com/55547053/148789231-c08eb9f3-bb4f-4f75-bd45-5a30196e6fb7.jpg)
+
+#### Página acciones de administrador
+
+#### Página mi cuenta de administrador
+
+### Zona de web y Zona de usuario
 
 ## Boceto de la estructura
 
