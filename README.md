@@ -3,7 +3,7 @@
 - [REQUISITOS](#requisitos)
   - [Requisitos funcionales](#requisitos-funcionales)
 - [ANÁLISIS Y DISEÑO WEB](#análisis-y-diseño-web)
-  - [Prototipo web y boceto de la estructura](#prototipo-web-y-boceto-de-la-estructura)
+  - [Prototipo web y boceto de la estructura](#prototipo-web)
   - [Guía de estilos](#guía-de-estilos)
   - [Planificación de tareas](#planificación-de-tareas)
   - [Base de datos](#base-de-datos)
