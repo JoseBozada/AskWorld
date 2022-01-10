@@ -99,7 +99,7 @@ Utilizaré colores como el blanco y azul para hacer las tarjetas, categorías, e
 
 ## Planificación de tareas
 
-![Tareas](https://user-images.githubusercontent.com/55547053/148778142-d85ddaa2-7c41-47f0-a081-49c35a2c8727.jpg)
+![Tareas](https://user-images.githubusercontent.com/55547053/148778575-50caf9f6-0fcc-4c9e-b9ab-cacbd021dec9.jpg)
 
 ## Base de datos
 ### Diseño Entidad Relación de la BBDD
