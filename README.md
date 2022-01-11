@@ -79,9 +79,16 @@ Se describen de forma concisa los requisitos funcionales de vuestra aplicación.
 
 # ANÁLISIS Y DISEÑO WEB
 
-Breve descripción del mapa web. Se debe incluir la imagen del mapa web de vuestro proyecto.
+Existen dos secciones de la página:
+- Zona Administrador: Solo podrán acceder los usuarios Administradores de la página, tienen control de todo (publicaciones, comentarios y usuarios), pueden crear sus propias publicaciones así como borrar los datos y roles de todos los usuarios.
 
-Debe contener todo el itinerario de vuestra web. Todas las páginas y el hilo de navegación
+- Mapa web:
+
+
+
+- Página web y Zona Usuario: Se permite a los usuarios no registrado acceder a los detalles de las publicaciones, pero si no se registran o inician sesión no tendrán acceso a sus publicaciones, comentarios ni su cuenta.
+
+- Mapa web:
 
 ## Prototipo web y boceto de la estructura
 
@@ -101,13 +108,14 @@ Debe contener todo el itinerario de vuestra web. Todas las páginas y el hilo de
 
 #### Página acciones de administrador
 
+![4](https://user-images.githubusercontent.com/55547053/148967962-b320850d-35a1-4cc7-a796-7c82aa2075b4.jpg)
+
 #### Página mi cuenta de administrador
+
+![5](https://user-images.githubusercontent.com/55547053/148968217-2d5a97e3-81d5-4f26-856b-e5c51e66a7f1.jpg)
 
 ### Zona de web y Zona de usuario
 
-## Boceto de la estructura
-
-![image](https://user-images.githubusercontent.com/55547053/142044301-fcf4721d-a557-4b38-8e20-94e2d7c43e93.png)
 
 ## Guía de estilos
 
