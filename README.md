@@ -5,12 +5,16 @@
 - [ANÁLISIS Y DISEÑO WEB](#análisis-y-diseño-web)
   - [Prototipo web y boceto de la estructura](#prototipo-web-y-boceto-de-la-estructura)
     - [Zona de Administrador](#zona-de-administrador)
-      - [Login](#login-de-administrador)
+      - [Login](#página-login-de-administrador)
+      - [Recuperar contraseña](#página-recuperar-contraseña-de-administrador)
       - [Inicio](#página-inicio-de-administrador)
       - [Tablas](#página-tablas-de-administrador)
       - [Acciones](#página-acciones-de-administrador)
       - [Mi cuenta](#página-mi-cuenta-de-administrador)
-    - [Página Web y Zona de Usuario](#zona-de-web-y-zona-de-usuario)
+    - [Página Web y Zona de Usuario](#zona-web-y-zona-de-usuario)
+      - [Registro](#página-registro-de-usuarios)
+      - [Login](#página-login-de-usuarios)
+      - [Recuperar contraseña](#página-recuperar-contraseña-de-usuario)
   - [Guía de estilos](#guía-de-estilos)
   - [Planificación de tareas](#planificación-de-tareas)
   - [Base de datos](#base-de-datos)
@@ -94,9 +98,13 @@ Existen dos secciones de la página:
 
 ### Zona de administrador
 
-#### Login de administrador
+#### Página Login de administrador
 
 ![1](https://user-images.githubusercontent.com/55547053/148784128-3870e474-a8f2-4ab0-bd52-06f768d5bf1a.jpg)
+
+#### Página recuperar contraseña de administrador
+
+![66](https://user-images.githubusercontent.com/55547053/149157028-cf463566-147d-4df4-b5fa-f02ef8d67e54.jpg)
 
 #### Página inicio de administrador
 
@@ -114,8 +122,17 @@ Existen dos secciones de la página:
 
 ![5](https://user-images.githubusercontent.com/55547053/148968217-2d5a97e3-81d5-4f26-856b-e5c51e66a7f1.jpg)
 
-### Zona de web y Zona de usuario
+### Zona web y Zona de usuario
 
+#### Página Registro de usuarios
+
+![6](https://user-images.githubusercontent.com/55547053/149156064-105cf728-d9ad-4d8e-87ce-1ffa6949110d.jpg)
+
+#### Página Login de usuarios
+
+![2](https://user-images.githubusercontent.com/55547053/149156112-90472e01-493b-4575-a71f-8e12f2b922d0.jpg)
+
+#### Página Recuperar contraseña de usuarios
 
 ## Guía de estilos
 
