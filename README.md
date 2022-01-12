@@ -7,6 +7,7 @@
     - [Zona de Administrador](#zona-de-administrador)
       - [Login](#página-login-de-administrador)
       - [Recuperar contraseña](#página-recuperar-contraseña-de-administrador)
+      - [Actualizar contraseña](#página-actualizar-contraseña-de-administrador)
       - [Inicio](#página-inicio-de-administrador)
       - [Tablas](#página-tablas-de-administrador)
       - [Acciones](#página-acciones-de-administrador)
@@ -14,8 +15,12 @@
     - [Página Web y Zona de Usuario](#zona-web-y-zona-de-usuario)
       - [Registro](#página-registro-de-usuarios)
       - [Login](#página-login-de-usuarios)
-      - [Recuperar contraseña](#página-recuperar-contraseña-de-usuario)
+      - [Recuperar contraseña](#página-recuperar-contraseña-de-usuarios)
+      - [Actualizar contraseña](#página-actualizar-contraseña-de-usuarios)
   - [Guía de estilos](#guía-de-estilos)
+    - [Logo](#logo)
+    - [Colores del logo](#colores-corporativos-del-logo)
+    - [Justificación del logo](#justificación-de-diseño-del-logo)
   - [Planificación de tareas](#planificación-de-tareas)
   - [Base de datos](#base-de-datos)
     - [Diseño Entidad Relación de la BBDD](#diseño-entidad-relación-de-la-bbdd)
@@ -106,6 +111,10 @@ Existen dos secciones de la página:
 
 ![66](https://user-images.githubusercontent.com/55547053/149157028-cf463566-147d-4df4-b5fa-f02ef8d67e54.jpg)
 
+#### Página actualizar contraseña de administrador
+
+![7](https://user-images.githubusercontent.com/55547053/149178147-3bbc8378-fd68-40c5-b4c7-4c7d7f2f42d7.jpg)
+
 #### Página inicio de administrador
 
 ![22](https://user-images.githubusercontent.com/55547053/148785564-9a0f246a-0cdf-4ac9-918e-e6359da98cbc.jpg)
@@ -134,11 +143,25 @@ Existen dos secciones de la página:
 
 #### Página Recuperar contraseña de usuarios
 
+![88](https://user-images.githubusercontent.com/55547053/149180287-db433506-8293-49fc-89e4-2261b05ae0ef.jpg)
+
+#### Página Actualizar contraseña de usuarios
+
+![99](https://user-images.githubusercontent.com/55547053/149180320-39eb60ad-0f62-4d68-a5ee-8abdcac43619.jpg)
+
 ## Guía de estilos
 
-Voy a usar un logo creado por mí para darle un toque personal.
+### Logo
 
-Utilizaré colores como el blanco y azul para hacer las tarjetas, categorías, etc y negro para la letra, ya que combinan bien y no dañan a la vista.
+![Logo](https://user-images.githubusercontent.com/55547053/149179394-2f6148f0-9975-490e-ad4d-571615a2d3de.png)
+
+### Colores corporativos del logo
+
+La palabra "Ask" se ha usado el rojo para destacarla y el azul junto al verde en la Tierra para simbolizarla como la misma formando así "AskWorld" 
+
+### Justificación de diseño del logo
+
+La Tierra simboliza la globalidad de las personas que pueden usar la página, es decir, que cualquier persona desde cualquier parte del mundo podrán consultar sus dudas o participar en ellas.
 
 ## Planificación de tareas
 
