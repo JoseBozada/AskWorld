@@ -13,10 +13,15 @@
       - [Acciones](#página-acciones-de-administrador)
       - [Mi cuenta](#página-mi-cuenta-de-administrador)
     - [Página Web y Zona de Usuario](#zona-web-y-zona-de-usuario)
+      - [Inicio](#página-inicio-de-página-web)
+      - [Detalles](#página-detalles-de-página-web)
       - [Registro](#página-registro-de-usuarios)
       - [Login](#página-login-de-usuarios)
       - [Recuperar contraseña](#página-recuperar-contraseña-de-usuarios)
       - [Actualizar contraseña](#página-actualizar-contraseña-de-usuarios)
+      - [Contenido](#página-contenido-de-usuarios)
+      - [Acciones](#página-acciones-de-usuarios)
+      - [Mi cuenta](#página-mi-cuenta-de-usuarios)
   - [Guía de estilos](#guía-de-estilos)
     - [Logo](#logo)
     - [Colores del logo](#colores-corporativos-del-logo)
@@ -103,7 +108,7 @@ Existen dos secciones de la página:
 
 ### Zona de administrador
 
-#### Página Login de administrador
+#### Página login de administrador
 
 ![1](https://user-images.githubusercontent.com/55547053/148784128-3870e474-a8f2-4ab0-bd52-06f768d5bf1a.jpg)
 
@@ -133,21 +138,41 @@ Existen dos secciones de la página:
 
 ### Zona web y Zona de usuario
 
-#### Página Registro de usuarios
+#### Página inicio de página web
+
+![1](https://user-images.githubusercontent.com/55547053/149360500-6b31a531-927e-4428-9c0b-42431481f382.jpg)
+
+#### Página detalles de página web
+
+![3](https://user-images.githubusercontent.com/55547053/149360636-6ded9196-29d7-4ef1-aea8-2b5f071527e6.jpg)
+
+#### Página registro de usuarios
 
 ![6](https://user-images.githubusercontent.com/55547053/149156064-105cf728-d9ad-4d8e-87ce-1ffa6949110d.jpg)
 
-#### Página Login de usuarios
+#### Página login de usuarios
 
 ![2](https://user-images.githubusercontent.com/55547053/149156112-90472e01-493b-4575-a71f-8e12f2b922d0.jpg)
 
-#### Página Recuperar contraseña de usuarios
+#### Página recuperar contraseña de usuarios
 
 ![88](https://user-images.githubusercontent.com/55547053/149180287-db433506-8293-49fc-89e4-2261b05ae0ef.jpg)
 
-#### Página Actualizar contraseña de usuarios
+#### Página actualizar contraseña de usuarios
 
 ![99](https://user-images.githubusercontent.com/55547053/149180320-39eb60ad-0f62-4d68-a5ee-8abdcac43619.jpg)
+
+#### Página contenido de usuarios
+
+![5](https://user-images.githubusercontent.com/55547053/149360970-83c6f28b-ffbd-412b-bc47-574692c75e8d.jpg)
+
+#### Página acciones de usuarios
+
+![7](https://user-images.githubusercontent.com/55547053/149360851-723ac81c-ada6-46d1-beb0-2f84bebb547b.jpg)
+
+#### Página mi cuenta de usuarios
+
+![4](https://user-images.githubusercontent.com/55547053/149360681-fa596fc1-37b7-4630-ae60-2918aa4f49d3.jpg)
 
 ## Guía de estilos
 
