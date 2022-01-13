@@ -165,7 +165,7 @@ La Tierra simboliza la globalidad de las personas que pueden usar la página, es
 
 ## Planificación de tareas
 
-![Tareas](https://user-images.githubusercontent.com/55547053/148778575-50caf9f6-0fcc-4c9e-b9ab-cacbd021dec9.jpg)
+![Tareas](https://user-images.githubusercontent.com/55547053/149335962-de16e85d-d82a-4f9f-9b4d-904e3cd23e96.jpg)
 
 ## Base de datos
 ### Diseño Entidad Relación de la BBDD
