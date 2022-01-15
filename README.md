@@ -98,11 +98,13 @@ Existen dos secciones de la página:
 
 - Mapa web:
 
-
+![Mapa web admin](https://user-images.githubusercontent.com/55547053/149623156-7be0fab2-0ab2-4de7-85e4-bf0932a029a0.jpg)
 
 - Página web y Zona Usuario: Se permite a los usuarios no registrado acceder a los detalles de las publicaciones, pero si no se registran o inician sesión no tendrán acceso a sus publicaciones, comentarios ni su cuenta.
 
 - Mapa web:
+
+![Mapa web](https://user-images.githubusercontent.com/55547053/149623159-1e86d25d-8fee-47d5-ad4e-21542da4957f.jpg)
 
 ## Prototipo web y boceto de la estructura
 
