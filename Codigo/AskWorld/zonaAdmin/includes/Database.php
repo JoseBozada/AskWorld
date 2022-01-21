@@ -1,5 +1,5 @@
 <?php
 
-$conexion = mysqli_connect("localhost", "root", "root", "askworld");
+	$conexion = mysqli_connect("localhost", "root", "root", "askworld");
 
 ?>

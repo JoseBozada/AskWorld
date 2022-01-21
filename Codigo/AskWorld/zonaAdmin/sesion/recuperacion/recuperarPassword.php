@@ -1,13 +1,13 @@
 <?php
 
-//Lo primero debemos incluir el fichero donde esta el conector a la base de datos
-require '../../includes/Database.php';
+	//Incluimos el conector a la Base de datos e iniciamos la sesión
+	include '../../includes/Database.php';
 
-//Incluimos el fichero donde están las funciones
-require '../../includes/DAO/DAO_Admin.php';
+	//Incluimos el fichero donde están las funciones
+	include '../../includes/DAO/DAO_Admin.php';
 
-//Incluimos el fichero para mandar correos
-include '../../librerias/PHPMailer/PHPMailerAutoload.php';
+	//Incluimos el fichero para mandar correos
+	include '../../librerias/PHPMailer/PHPMailerAutoload.php';
 
 ?>
 
@@ -86,7 +86,7 @@ if(isset($_POST['submit'])){
 
 	//Email y contraseña de nuestro correo (el que manda el correo)
 	$mail->Username ='AskWorld2022@gmail.com';
-	$mail->Password = 'AskWorld@213 ';
+	$mail->Password = 'AskWorld@213';
 
 	//Agregar destinatario
 	$mail->AddAddress($_POST['email']);
@@ -104,7 +104,7 @@ if(isset($_POST['submit'])){
 		echo'<script type="text/javascript">
 			alert("Fallo al enviar el correo, inténtalo de nuevo.");
 			</script>';
-			echo "<script>window.open('recuperarContraseña.php','_self')</script>"; 
+			echo "<script>window.open('recuperarPassword.php','_self')</script>"; 
 	}
 }
 ?>

@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- DataTables CSS -->
-    <link rel="stylesheet" type="text/css" href="../../librerias/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../../librerias/datatable/dataTables.bootstrap5.min.css">
     
 </head>
 <body>
@@ -28,22 +28,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../index.php"> Inicio</a>
+                        <a class="nav-link" href="../../index.php"><span class="fas fa-home" style="color: white"></span> Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../administrar/usuarios/usuarios.php"> Usuarios</a>
+                        <a class="nav-link" href="../../administrar/usuarios/usuarios.php"><span class="fas fa-users" style="color: yellow"></span> Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../administrar/publicaciones/publicaciones.php"> Publicaciones</a>
+                        <a class="nav-link" href="../../administrar/publicaciones/publicaciones.php"><span class="fas fa-file" style="color: yellow"></span> Publicaciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../administrar/comentarios/comentarios.php"> Comentarios</a>
+                        <a class="nav-link" href="../../administrar/comentarios/comentarios.php"><span class="fas fa-comments" style="color: yellow"></span> Comentarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../administrar/categorias/categorias.php"> Categorías</a>
+                        <a class="nav-link" href="../../administrar/categorias/categorias.php"><span class="fas fa-folder" style="color: yellow"></span> Categorías</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../sesion/perfil.php"> Mi Cuenta</a>
+                        <a class="nav-link" href="../../sesion/usuario/perfil.php"><span class="fas fa-address-card" style="color: white"></span> Mi Cuenta</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../../sesion/salir.php" style="color: red"><span class="fas fa-power-off"></span> Salir</a>
