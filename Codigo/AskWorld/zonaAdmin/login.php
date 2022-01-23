@@ -1,16 +1,62 @@
-<!doctype html>
+<?php 
+//Código para acceder al contenido de administrador (evitamos intrusos).
+$codigo = "4e7afebcfbae000b22c7c85e5560f89a2a0280b4";
+
+?>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+	<meta charset="UTF-8">
 	<title>Zona de Administrador</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <br>
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Contenido Bloqueado.</h4>
+            <p class="text-center">Introduzca la contraseña para mostrar el contenido.</p>
+            <form method="POST">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">
+                                <span><i class="fa fa-lock"></i></span>
+                            </span>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="*********" required>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" name="codigo" class="btn btn-primary btn-block"> Mandar Código</button>
+					<button class="btn btn-primary btn-block"> <a style="color: white; text-decoration:none;" href="../index.php">Página Principal</a></button>
+                </div>   
+            </form>
+        </article>
+    </div>
+</body>
+</html>
+
+<?php
+if(isset($_POST['codigo'])){
+
+//Recogemos la contraseña introducida en el formulario
+$password = sha1($_POST["password"]);
+
+//Si la contraseña no coincide con el código echaremos al intruso. Si es correcto se mostrará el login del admin
+if ($password != $codigo) { 
+	echo "<script>alert('Código incorrecto, echando de la página.')</script>";
+	echo "<script>window.open('../index.php','_self')</script>";
+	}else{
+?>
 	<div class="text-center">
 		<div class="card-body">
 			<img src="img/Administrador.jpg" width="375" height="225" style="border-radius: 20px;">
@@ -67,6 +113,7 @@
 
 	<!-- Bootstrap Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-</body>
-</html>
+<?php 
+	}
+} 
+?>
