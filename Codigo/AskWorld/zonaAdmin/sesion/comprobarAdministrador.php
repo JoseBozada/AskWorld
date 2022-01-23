@@ -5,7 +5,7 @@
 	//Incluimos el fichero donde están las funciones
 	include '../includes/DAO/DAO_Admin.php';
 
-	//Recogemos las variables del formulario
+	//Recogemos los datos introducidos en el formulario
 	$usuario = $_POST["usuario"];
 	$password = sha1($_POST["password"]);
 
@@ -18,7 +18,7 @@
 		echo "<script>alert('Iniciando sesión')</script>";
 		echo "<script>window.open('../index.php','_self')</script>";
 	} else {
-		echo "<script>alert('Error al iniciar sesión')</script>"; 
+		echo "<script>alert('Error al iniciar sesión, datos incorrectos.')</script>"; 
 		echo "<script>window.open('../login.php','_self')</script>";
 	}
 ?>
