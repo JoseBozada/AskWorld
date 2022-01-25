@@ -24,13 +24,11 @@
 						//Contador
 						$i=0;
 
-					    //Guardamos la consulta en una variable
     					$consulta = mostrarCategorias($conexion);
     					
 						//Recorreremos la tabla de las categorias y mostraremos sus datos
 	                    while($mostrar = mysqli_fetch_array($consulta)) {
 
-	                    //Guardamos el ID de la categoría en una variable
 	                    $id_categoria = $mostrar['idCategoria'];
 
 						//Aumentamos el contador
