@@ -60,7 +60,7 @@
 		<div class="text-center">
 			<img src="<?php echo $Imagen; ?>"  class="avatar rounded-circle img-thumbnail" alt="avatar" width="100" height="80">
 			<h6>Imagen de perfil</h6>
-			<input type="file" id="img" name="img" value="<?php echo $Imagen; ?>" required>
+			<input type="file" id="img" name="img">
 		</div>
 		<div class="container">
 			<br>    
@@ -268,15 +268,15 @@
 				<div align="center" class="col-12">
 					<br>
 					<button class="btn btn-lg btn-success" name="actualizar" type="submit"><i class="fas fa-user-edit"></i> Actualizar Datos</button>
-				</form>
 				<button class="btn btn-lg btn-danger">
 					<i class="fas fa-trash-alt"></i> 
 					<a style="color: white; text-decoration:none;" onClick="return confirm('¿Estas seguro de que quieres eliminar tu cuenta?');" href="eliminarCuenta.php?id=<?php echo $idAdmin; ?>">Eliminar Cuenta</a> 
 				</button>
 			</div>
+			<!-- Termina Actualizar y eliminar -->
 		</div>	
 	</div>
-	<!-- Termina Actualizar y eliminar -->
+</form>
 	<br>
 
 <?php include "../../includes/footer.php"; ?>
@@ -306,23 +306,44 @@ if(isset($_POST['actualizar'])){
     $provincia = $_POST['provincia'];
 
     $poblacion = $_POST['poblacion'];
-    
-	//Imagen
-    $nombreImg = $_FILES['img']['name'];
-    $ruta      = $_FILES['img']['tmp_name'];
-    $destino   = "../../img/admin/" . $nombreImg;
-        
-    if(move_uploaded_file($ruta, $destino)){
-		$consulta = ActualizarAdmin($conexion, $usuario, $nombre, $apellido1, $apellido2, $email, $destino, $fecha, $direccion, $telefono, $provincia, $poblacion, $idAdmin);
-            
-		if($consulta==0) {
-			echo "<script>alert('La cuenta no se ha podido actualizar.')</script>";
-			echo "<script>window.open('perfil.php','_self')</script>"; 
-		} else {
+
+	//Si el usuario elige una foto nueva se borrará la anterior, en caso contrario se mantendrá la original.
+	if ($_FILES["img"]["name"] != '') {
+		
+		if(is_uploaded_file($_FILES["img"]["tmp_name"])) {
+			
+			$ruta= "../../img/admin/".$_FILES["img"]["name"];
+			
+			move_uploaded_file($_FILES["img"]["tmp_name"], $ruta);
+			
+			echo "<script>alert('Actualizando la cuenta...')</script>";
+			
+			unlink($Imagen);
+			
+			$consulta = ActualizarAdmin($conexion, $usuario, $nombre, $apellido1, $apellido2, $email, $ruta, $fecha, $direccion, $telefono, $provincia, $poblacion, $idAdmin);
+			
 			echo "<script>alert('La cuenta se ha actualizado correctamente.')</script>";
-			echo "<script>window.open('../../index.php','_self')</script>"; 
+
+			echo "<script>window.open('perfil.php','_self')</script>";
+
+		} else {
+			
+			echo "<script>alert('No se puede actualizar tu cuenta.')</script>";
+			
+			echo "<script>window.open('perfil.php','_self')</script>";
 		}
+	
+	}else{
+		
+		echo "<script>alert('Actualizando la cuenta...')</script>";
+		
+		$consulta = ActualizarAdmin($conexion, $usuario, $nombre, $apellido1, $apellido2, $email, $Imagen, $fecha, $direccion, $telefono, $provincia, $poblacion, $idAdmin);
+		
+		echo "<script>alert('La cuenta se ha actualizado correctamente.')</script>";
+
+		echo "<script>window.open('perfil.php','_self')</script>";
 	}
+        
 }
    
 ?>
