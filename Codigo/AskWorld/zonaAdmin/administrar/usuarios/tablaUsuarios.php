@@ -13,6 +13,7 @@
 			<table class="table table-hover table-striped table-bordered table-sm" id="TablaUsuarios">
 				<thead>
 					<tr style="text-align: center; border: black 1px solid; background: orange">
+						<td>#</td>	
 						<td>Usuario</td>
 						<td>Nombre</td>
 						<td>Apellido1</td>
@@ -31,24 +32,32 @@
 				</thead>
 				<tbody>
 					<?php
-					    //Guardamos la consulta en una variable
+					    
+						//Contador
+						$i=0;
+
     					$consulta = mostrarUsuarios($conexion);
 						
 						//Recorreremos la tabla de los usuarios y mostraremos sus datos
 	                    while($mostrar = mysqli_fetch_array($consulta)) {
 
-	                    //Guardamos el ID de la publicación en una variable
+	                    //Guardamos los datos que necesitamos
 	                    $id_usuario = $mostrar['idUsuario'];
-	                    $imagen = $mostrar['Imagen'];	
+	                    
+						$imagen = $mostrar['Imagen'];	
+
+						//Aumentamos el contador
+						$i++;
 
                 	?>
 					<tr style="text-align: center;">
+						<td><strong><?php echo $i ?></strong></td>
 						<td><strong><?php echo $mostrar['Usuario']; ?></strong></td>
 						<td><strong><?php echo $mostrar['Nombre']; ?></strong></td>
 						<td><strong><?php echo $mostrar['Apellido1']; ?></strong></td>
 						<td><strong><?php echo $mostrar['Apellido2']; ?></strong></td>
 						<td><strong><?php echo $mostrar['Email']; ?></strong></td>
-						<td> <img src="../../../img/usuarios/<?php echo $imagen; ?>" width="100" height="80"></td>
+						<td> <img src="<?php echo $imagen; ?>" width="100" height="80"></td>
 						<td><strong><?php echo $mostrar['FechaNacimiento']; ?></strong></td>
 						<td><strong><?php echo $mostrar['Direccion']; ?></strong></td>
 						<td><strong><?php echo $mostrar['Telefono']; ?></strong></td>
@@ -61,7 +70,7 @@
                             </a>
                         </td>
                         <td style="text-align: center;"> 
-                            <a class="btn btn-danger btn-sm" onClick="return confirm('¿Estas seguro de que quieres eliminar este Usuario?');" href="eliminarPublicacion.php?id=<?php echo $id_usuario; ?>">
+                            <a class="btn btn-danger btn-sm" onClick="return confirm('¿Estas seguro de que quieres eliminar este Usuario?');" href="eliminarUsuario.php?id=<?php echo $id_usuario; ?>">
                                 <span class="fas fa-trash-alt"></span>
                             </a> 
                         </td>

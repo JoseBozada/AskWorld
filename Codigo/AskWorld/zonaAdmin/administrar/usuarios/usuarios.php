@@ -19,11 +19,7 @@
         <hr>
         <div class="row">
             <div class="col-sm-4">
-                <span class="btn btn-primary">
-                    <span class="fas fa-plus-circle"> 
-                        <a href="insertarUsuario.php" style="color: white; text-decoration:none;">Insertar nuevo Usuario</a>
-                    </span>
-                </span>
+                <a href="insertarUsuario.php" style="color: white; text-decoration:none;" class="btn btn-primary"><i class="fas fa-plus-circle"></i> INSERTAR USUARIO</a>
             </div>
         </div>
         <br>
