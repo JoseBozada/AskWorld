@@ -1,10 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-?>
-
-<?php
     //Incluimos el conector a la Base de datos e iniciamos la sesión
     include "../../includes/Database.php";
     session_start();
