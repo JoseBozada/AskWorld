@@ -19,11 +19,7 @@
         <hr>
         <div class="row">
             <div class="col-sm-4">
-                <span class="btn btn-primary">
-                    <span class="fas fa-plus-circle"> 
-                        <a href="insertarComentario.php" style="color: white; text-decoration:none;">Insertar nuevo comentario</a>
-                    </span>
-                </span>
+                <a href="insertarComentario.php" style="color: white; text-decoration:none;" class="btn btn-primary"><i class="fas fa-plus-circle"></i> INSERTAR COMENTARIO</a>
             </div>
         </div>
         <br>

@@ -29,8 +29,7 @@
 
                         //Contador
 						$i=0;
-
-					    //Guardamos la consulta en una variable
+                        
     					$consulta = mostrarComentarios($conexion);
 
 						//Recorreremos la tabla de los comentarios y mostraremos sus datos
