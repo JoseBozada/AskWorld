@@ -51,6 +51,9 @@
                         <a class="nav-link" href="administrar/comentarios/comentarios.php"><span class="fas fa-comments" style="color: yellow"></span> Comentarios</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="administrar/valoraciones/valoraciones.php"><span class="fas fa-star" style="color: yellow"></span> Valoraciones</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="administrar/categorias/categorias.php"><span class="fas fa-folder" style="color: yellow"></span> Categorías</a>
                     </li>
                     <li class="nav-item">
