@@ -12,8 +12,8 @@
         return $resultado;
     }
 
-    function mostrarPublicacionesOrdenadas($conexion, $start, $per){
-        $consulta = "SELECT * FROM publicaciones ORDER BY 1 DESC LIMIT $start_from,$per_page";
+    function mostrarPublicacionesPorUsuario($conexion, $idUsuario){
+        $consulta = "SELECT * FROM publicaciones WHERE idUsuario = '$idUsuario'";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }

@@ -11,6 +11,12 @@
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
+    
+    function buscarCategoriaRepetida($conexion, $nombreCategoria){
+        $consulta = "SELECT * FROM categoria WHERE (`NombreCategoria` = '$nombreCategoria')";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
 
     function insertarCategoria($conexion, $nombreCategoria){
         $consulta = "INSERT INTO categoria (`NombreCategoria`) VALUES ('$nombreCategoria')";

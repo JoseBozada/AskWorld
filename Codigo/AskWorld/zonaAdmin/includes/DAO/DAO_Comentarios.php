@@ -12,8 +12,14 @@
         return $resultado;
     }
 
+    function mostrarComentariosPorPublicacion($conexion, $idPublicacion){
+        $consulta = "SELECT * FROM comentarios WHERE (`idPublicacion` = '$idPublicacion')";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+
     function insertarComentario($conexion, $idUsuario, $idPublicacion, $comentario){
-        $consulta = "INSERT INTO `comentarios` (`idUsuario`, `idPublicacion`, `Comentario`, `Fecha`) VALUES ('$idUsuario', '$idPublicacion', '$comentario', 'now()')";
+        $consulta = "INSERT INTO `comentarios` (`idUsuario`, `idPublicacion`, `Comentario`) VALUES ('$idUsuario', '$idPublicacion', '$comentario')";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }

@@ -12,6 +12,30 @@
         return $resultado;
     }
 
+    function buscarUsuarioRepetido($conexion, $usuario){
+        $consulta = "SELECT * FROM usuarios WHERE (`Usuario` = '$usuario')";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+
+    function buscarEmailRepetido($conexion, $email){
+        $consulta = "SELECT * FROM usuarios WHERE (`Email` = '$email')";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+
+    function buscarTelefonoRepetido($conexion, $telefono){
+        $consulta = "SELECT * FROM usuarios WHERE (`Telefono` = '$telefono')";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+
+    function buscarDniRepetido($conexion, $dni){
+        $consulta = "SELECT * FROM usuarios WHERE (`DNI` = '$dni')";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+
     function insertarUsuario($conexion, $usuario, $password, $nombre, $apellido1, $apellido2, $email, $imagen, $fecha, $direccion, $telefono, $provincia, $poblacion, $dni, $token){
         $consulta = "INSERT INTO `usuarios` (`Usuario`, `Contrasena`, `Nombre`, `Apellido1`, `Apellido2`, `Email`, `Imagen`, `FechaNacimiento`, `Direccion`, `Telefono`, `Provincia`, `Poblacion`, `DNI`, `Token`, `Rol`) VALUES ('$usuario', '$password', '$nombre', '$apellido1', '$apellido2', '$email', '$imagen', '$fecha', '$direccion', '$telefono', '$provincia', '$poblacion', '$dni', '$token', 'Usuario')";
         $resultado = mysqli_query($conexion, $consulta);
