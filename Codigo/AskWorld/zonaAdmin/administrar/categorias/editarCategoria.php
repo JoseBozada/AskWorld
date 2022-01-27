@@ -67,23 +67,23 @@ if(isset($_POST['actualizar'])){
     //Guardamos el nombre recibido en el formulario
     $nombreCategoria = $_POST['nombreCategoria'];
 
-    //Llamamos a la función para actualizar la categoría
-    $consulta = actualizarCategoria($conexion, $nombreCategoria, $idCategoria);
+    //Comprobamos si el nombre de la categoría existe, si existe no lo podrá modificar.
+    $comprueba = buscarCategoriaRepetida($conexion, $nombreCategoria);
 
-    if($consulta){
+    if(mysqli_num_rows($comprueba) == 1){
+        
+        echo "<script>alert('La categoría no se puede actualizar porque el nombre de la categoría ya existe.')</script>";
+        
+        echo "<script>window.open('categorias.php','_self')</script>";
+
+    } else {
+        
+        $consulta = actualizarCategoria($conexion, $nombreCategoria, $idCategoria);
 
         echo "<script>alert('La categoría se ha actualizado correctamente.')</script>";
 
-        echo "<script>window.open('categorias.php','_self')</script>"; 
-        
-    }else{
-
-        echo "<script>alert('La categoría no se ha podido actualizar.')</script>";
-        
-        echo "<script>window.open('categorias.php','_self')</script>"; 
-
+        echo "<script>window.open('categorias.php','_self')</script>";
     }
-    
 }
 
 ?>

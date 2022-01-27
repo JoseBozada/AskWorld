@@ -52,23 +52,22 @@ if(isset($_POST['insertar'])){
     //Guardamos el nombre recibido en el formulario
     $nombreCategoria = $_POST['nombreCategoria'];
 
-    //Insertamos la categoría
-    $consulta = insertarCategoria($conexion, $nombreCategoria);
+    //Comprobamos si el nombre de la categoría existe, si existe no lo insertará.
+    $comprueba = buscarCategoriaRepetida($conexion, $nombreCategoria);
 
-    if($consulta){
+    if(mysqli_num_rows($comprueba) == 1){
+        
+        echo "<script>alert('Tu categoría no se ha podido insertar porque ya existe.')</script>";
+        
+        echo "<script>window.open('categorias.php','_self')</script>";
+
+    } else {
+        
+        $consulta = insertarCategoria($conexion, $nombreCategoria);
 
         echo "<script>alert('Tu categoría se ha insertado correctamente.')</script>";
 
-        echo "<script>window.open('categorias.php','_self')</script>"; 
-        
-    }else{
-
-        echo "<script>alert('Tu categoría no se ha podido insertar porque ya existe.')</script>";
-        
-        echo "<script>window.open('categorias.php','_self')</script>"; 
-
+        echo "<script>window.open('categorias.php','_self')</script>";
     }
-    
 }
-
 ?>

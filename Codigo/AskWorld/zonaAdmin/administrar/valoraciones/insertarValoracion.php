@@ -90,21 +90,22 @@ if(isset($_POST['insertar'])){
 
     $idAdmin = $_SESSION['idUsuario'];
 
-    //Insertamos la valoración
-    $consulta = insertarValoracion($conexion, $publicacion, $idAdmin, $valoracion);
+    //Comprobamos si el usuario ya ha valorado una publicación, si lo hizo no se insertará una nueva.
+    $comprueba = buscarValoracionUsuario($conexion, $publicacion, $idAdmin);
 
-    if($consulta){
+    if(mysqli_num_rows($comprueba) == 1){
+        
+        echo "<script>alert('No se puede insertar tu valoración porque ya valoraste esta publicación.')</script>";
+        
+        echo "<script>window.open('valoraciones.php','_self')</script>";
+
+    } else {
+        
+        $consulta = insertarValoracion($conexion, $publicacion, $idAdmin, $valoracion);
 
         echo "<script>alert('Tu valoración se ha insertado correctamente.')</script>";
 
         echo "<script>window.open('valoraciones.php','_self')</script>"; 
-        
-    }else{
-
-        echo "<script>alert('Tu valoración no se ha podido insertar.')</script>";
-        
-        echo "<script>window.open('valoraciones.php','_self')</script>"; 
-
     }
     
 }

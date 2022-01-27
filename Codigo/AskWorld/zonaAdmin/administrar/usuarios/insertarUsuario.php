@@ -288,22 +288,77 @@ if(isset($_POST['insertar'])){
 	//Generamos un token aleatorio
     $token = bin2hex(random_bytes(15));
 
-	//Si consigue guardar la imagen, realizará la inserción
-    if(move_uploaded_file($ruta, $destino)){
-        
-		$consulta = insertarUsuario($conexion, $usuario, $password, $nombre, $apellido1, $apellido2, $email, $destino, $fecha, $direccion, $telefono, $provincia, $poblacion, $dni, $token);
-            
-        if ($consulta) {
-            echo "<script>alert('El usuario se ha insertado correctamente.')</script>";
+	//Comprobamos si el nombre de usuario existe, si existe no lo insertará y se detendrá el registro.
+	$compruebaUsuario = buscarUsuarioRepetido($conexion, $usuario);
 
-            echo "<script>window.open('usuarios.php','_self')</script>"; 
-        } else {
-            echo "<script>alert('El usuario no se ha podido insertar.')</script>";
+	if(mysqli_num_rows($compruebaUsuario) == 1){
+        
+        echo "<script>alert('El usuario no se ha podido insertar porque el nombre de usuario ya existe.')</script>";
+        
+        echo "<script>window.open('usuarios.php','_self')</script>";
+
+		exit();
+
+    }
+
+	//Comprobamos si el correo existe, si existe no lo insertará y se detendrá el registro.
+	$compruebaEmail = buscarEmailRepetido($conexion, $email);
+
+	if(mysqli_num_rows($compruebaEmail) == 1){
+        
+        echo "<script>alert('El usuario no se ha podido insertar porque el correo ya existe.')</script>";
+        
+        echo "<script>window.open('usuarios.php','_self')</script>";
+
+		exit();
+
+    }
+
+	//Comprobamos si el teléfono existe, si existe no lo insertará y se detendrá el registro.
+	$compruebaTelefono = buscarTelefonoRepetido($conexion, $telefono);
+
+	if(mysqli_num_rows($compruebaTelefono) == 1){
+        
+        echo "<script>alert('El usuario no se ha podido insertar porque el teléfono ya existe.')</script>";
+        
+        echo "<script>window.open('usuarios.php','_self')</script>";
+
+		exit();
+
+    }
+
+	//Comprobamos si el correo existe, si existe no lo insertará y se detendrá el registro.
+	$compruebaDni = buscarDniRepetido($conexion, $dni);
+
+	if(mysqli_num_rows($compruebaDni) == 1){
+        
+        echo "<script>alert('El usuario no se ha podido insertar porque el Dni ya existe.')</script>";
+        
+        echo "<script>window.open('usuarios.php','_self')</script>";
+
+		exit();
+
+    }
+
+	//Si se inserta usuario, moveremos la imagen a la carpeta correspondiente
+	$consulta = insertarUsuario($conexion, $usuario, $password, $nombre, $apellido1, $apellido2, $email, $destino, $fecha, $direccion, $telefono, $provincia, $poblacion, $dni, $token);
+
+  	if ($consulta) {
+        
+		echo "<script>alert('Insertando usuario...')</script>";
+
+		move_uploaded_file($ruta, $destino); //Movemos la imagen a la carpeta
+
+		echo "<script>alert('El usuario se ha insertado correctamente.')</script>";
+
+        echo "<script>window.open('usuarios.php','_self')</script>";
+		 
+    } else {
+        
+		echo "<script>alert('El usuario no se ha podido insertar.')</script>";
             
-            echo "<script>window.open('usuarios.php','_self')</script>"; 
-        }
+        echo "<script>window.open('usuarios.php','_self')</script>"; 
     }
 }
 
-   
 ?>

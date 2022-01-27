@@ -2,8 +2,9 @@
 	//Incluimos el conector a la Base de datos 
     include "../../includes/Database.php";
 
-    //Incluimos el fichero donde están las funciones
+    //Incluimos los ficheros donde están las funciones
     require "../../includes/DAO/DAO_Categorias.php";
+    require "../../includes/DAO/DAO_Publicaciones.php";
 
     //Recogemos el ID recibido por URL
     $idURL = $_GET["id"];
@@ -13,7 +14,7 @@
 
 	if($consulta){
 
-		echo "<script>alert('La categoría ha sido eliminada correctamente.')</script>";
+        echo "<script>alert('La categoría ha sido eliminada correctamente.')</script>";
 
 		echo "<script>window.open('categorias.php','_self')</script>";
 

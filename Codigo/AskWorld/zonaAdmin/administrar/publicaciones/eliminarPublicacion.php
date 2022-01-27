@@ -24,7 +24,7 @@
 
         echo "<script>alert('Eliminando su publicación...')</script>";
 
-        unlink($rutaEliminar);
+        unlink($rutaEliminar); //Eliminamos la imagen
 
 		echo "<script>alert('La publicación ha sido eliminado correctamente.')</script>";
 

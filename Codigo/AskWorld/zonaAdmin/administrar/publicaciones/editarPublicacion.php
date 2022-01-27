@@ -214,7 +214,7 @@ if(isset($_POST['actualizar'])){
 			
 			echo "<script>alert('Actualizando la publicación...')</script>";
 			
-			unlink($imagenPublicacion);
+			unlink($imagenPublicacion); //Borramos la imagen anterior
 			
 			$consulta = actualizarPublicacion($conexion, $categoria, $nombrePublicacion, $descripcionPublicacion, $fecha, $ruta, $idPublicacion);
 			

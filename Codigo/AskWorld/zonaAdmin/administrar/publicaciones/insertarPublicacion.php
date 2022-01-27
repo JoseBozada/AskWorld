@@ -153,22 +153,25 @@ if(isset($_POST['insertar'])){
     $nombreImg = $_FILES['img']['name'];
     $ruta      = $_FILES['img']['tmp_name'];
     $destino   = "../../../img/publicaciones/" . $nombreImg;
-        
-    //Si guarda la imagen realizaremos la inserción
-    if(move_uploaded_file($ruta, $destino)){
-        
-        $consulta = insertarPublicacion($conexion, $categoria, $idAdmin, $nombrePublicacion, $descripcionPublicacion, $fecha, $destino);
-            
-        if($consulta) {
-            echo "<script>alert('Tu publicación se ha insertado correctamente.')</script>";
 
-            echo "<script>window.open('publicaciones.php','_self')</script>"; 
-        } else {
-            echo "<script>alert('Tu publicación no se ha podido insertar.')</script>";
+    //Si se inserta la publicación, moveremos la imagen a la carpeta correspondiente
+    $consulta = insertarPublicacion($conexion, $categoria, $idAdmin, $nombrePublicacion, $descripcionPublicacion, $fecha, $destino);
+
+    if($consulta){
+
+        echo "<script>alert('Insertando publicación...')</script>";
+
+        move_uploaded_file($ruta, $destino); //Movemos la imagen a la carpeta
+
+        echo "<script>alert('Tu publicación se ha insertado correctamente.')</script>";
+
+        echo "<script>window.open('publicaciones.php','_self')</script>";
         
-            echo "<script>window.open('publicaciones.php','_self')</script>"; 
-        }
+    } else {
+
+        echo "<script>alert('Tu publicación no se ha podido insertar.')</script>";
+        
+        echo "<script>window.open('publicaciones.php','_self')</script>";
     }
 }
-
 ?>   
