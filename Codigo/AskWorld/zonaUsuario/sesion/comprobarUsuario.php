@@ -20,6 +20,6 @@
 		echo "<script>window.open('../../index.php?categoria=0','_self')</script>";
 	} else {
 		echo "<script>alert('Error al iniciar sesión, datos incorrectos.')</script>"; 
-		echo "<script>window.open('../../login.php','_self')</script>";
+		echo "<script>window.open('../sesion/login.php','_self')</script>";
 	}
 ?>
