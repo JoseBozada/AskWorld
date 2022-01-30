@@ -13,15 +13,15 @@
 
 <?php
 
-	//Guardamos el id del Usuario logeado
-	$idUsuario = $_SESSION['idUsuario'];
+    	//Guardamos el id del Usuario logeado
+    	$idUsuario = $_SESSION['idUsuario'];
         
-	//Mostramos los datos del Usuario por su ID y guardamos los que necesitamos
-    $get_usuario = mostrarUsuariosPorID($conexion, $idUsuario);
+    	//Mostramos los datos del Usuario por su ID y guardamos los que necesitamos
+    	$get_usuario = mostrarUsuariosPorID($conexion, $idUsuario);
         
-    $row_edit = mysqli_fetch_assoc($get_usuario);
+    	$row_edit = mysqli_fetch_assoc($get_usuario);
 
-    $Usuario = $row_edit['Usuario'];
+    	$Usuario = $row_edit['Usuario'];
 
 	$Contraseña = $row_edit['Contrasena'];
 
@@ -338,8 +338,7 @@ if(isset($_POST['actualizar'])){
 		echo "<script>alert('La cuenta se ha actualizado correctamente.')</script>";
 
 		echo "<script>window.open('perfil.php','_self')</script>";
-	}
-        
+	} 
 }
    
 ?>
