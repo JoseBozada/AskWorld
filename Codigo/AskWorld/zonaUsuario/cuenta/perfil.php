@@ -51,7 +51,12 @@
 
 ?>
 
-<br>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Mi Cuenta</h1>
+        <hr>
+    </div>
+</div>
 <form id="formularioPerfil" enctype="multipart/form-data" method="post">
 	<div class="col-sm-12">
 		<div class="text-center">
