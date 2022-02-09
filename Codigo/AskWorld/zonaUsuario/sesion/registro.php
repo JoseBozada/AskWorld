@@ -346,7 +346,7 @@ if(isset($_POST['registrar'])){
 
         echo "<script>alert('Error al registrar tu usuario.')</script>";
 
-        echo "<script>window.open('index.php?categoria=0','_self')</script>"; 
+        echo "<script>window.open('../../index.php?categoria=0','_self')</script>"; 
     }
 }
 
