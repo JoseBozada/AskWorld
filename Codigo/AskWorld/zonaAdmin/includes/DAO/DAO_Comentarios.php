@@ -18,6 +18,12 @@
         return $resultado;
     }
 
+    function mostrarComentariosPorUsuario($conexion, $idUsuario){
+        $consulta = "SELECT * FROM comentarios WHERE idUsuario = '$idUsuario'";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+
     function insertarComentario($conexion, $idUsuario, $idPublicacion, $comentario){
         $consulta = "INSERT INTO `comentarios` (`idUsuario`, `idPublicacion`, `Comentario`) VALUES ('$idUsuario', '$idPublicacion', '$comentario')";
         $resultado = mysqli_query($conexion, $consulta);
