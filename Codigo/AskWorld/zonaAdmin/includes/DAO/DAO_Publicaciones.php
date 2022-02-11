@@ -6,6 +6,12 @@
         return $resultado;
     }
 
+    function mostrarUltimasPublicaciones($conexion){
+        $consulta = "SELECT * FROM publicaciones ORDER BY idPublicacion DESC LIMIT 5";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+
     function mostrarPublicacionesPorID($conexion, $idPublicacion){
         $consulta = "SELECT * FROM publicaciones WHERE idPublicacion = '$idPublicacion'";
         $resultado = mysqli_query($conexion, $consulta);
@@ -14,6 +20,12 @@
 
     function mostrarPublicacionesPorUsuario($conexion, $idUsuario){
         $consulta = "SELECT * FROM publicaciones WHERE idUsuario = '$idUsuario'";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+
+    function mostrarPublicacionesPorCategoria($conexion, $idCategoria){
+        $consulta = "SELECT * FROM publicaciones WHERE idCategoria = '$idCategoria'";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
