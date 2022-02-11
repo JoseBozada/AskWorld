@@ -12,8 +12,20 @@
         return $resultado;
     }
 
+    function mostrarValoracionesPorUsuario($conexion, $idUsuario){
+        $consulta = "SELECT * FROM valoracion WHERE idUsuario = '$idUsuario'";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+
     function buscarValoracionUsuario($conexion, $idPublicacion, $idUsuario){
         $consulta = "SELECT * FROM valoracion WHERE (`idPublicacion` = '$idPublicacion') AND (`idUsuario` = '$idUsuario')";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+
+    function promedioValoracion($conexion, $idPublicacion){
+        $consulta = "SELECT round(AVG(valoracion),1) FROM `valoracion` WHERE idPublicacion = '$idPublicacion'";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
