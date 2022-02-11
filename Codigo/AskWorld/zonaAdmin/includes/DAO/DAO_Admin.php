@@ -25,7 +25,7 @@
     }
 
     function ActualizarPasswordAdmin($conexion, $password, $token){
-        $consulta = "UPDATE `usuarios` SET `Contrasena` = '$password' WHERE `Token` = '$token'";
+        $consulta = "UPDATE `usuarios` SET `Contrasena` = '$password' WHERE `Token` = '$token' AND `Rol` = 'Admin'";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
