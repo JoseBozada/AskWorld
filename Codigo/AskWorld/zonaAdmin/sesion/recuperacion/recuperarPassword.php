@@ -1,5 +1,4 @@
 <?php
-
 	//Incluimos el conector a la Base de datos
 	include '../../includes/Database.php';
 
@@ -8,7 +7,6 @@
 
 	//Incluimos el fichero para mandar correos
 	include '../../librerias/PHPMailer/PHPMailerAutoload.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +18,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -30,8 +27,7 @@
 		<article class="card-body mx-auto" style="max-width: 400px;">
 			<h4 class="card-title mt-3 text-center">Recuperar tu contraseña</h4>
 			<p class="text-center">Introduce tu correo.</p>
-
-			<form method="POST">
+			<form method="POST" class="needs-validation">
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<div class="input-group">
@@ -41,6 +37,7 @@
 								</svg>
 							</span>
 							<input type="email" name="email" id="email" class="form-control" placeholder="Correo Electrónico" required>
+							<div class="invalid-feedback">El correo no es válido.</div>
 						</div>
 					</div>	
 				</div>
@@ -50,10 +47,11 @@
 				</div>
 				<br>
 				<p class="text-center">¿Ya tienes una cuenta? <a href="../../login.php">Inicia sesión.</a></p>
-				
 			</form>
 		</article>
-	</div>     
+	</div> 
+
+	<script src="../../../js/validacionRecuperarPassword.js"></script>
 </body>
 </html>
 
@@ -95,15 +93,11 @@ if(isset($_POST['submit'])){
 
 	//Avisar si fue enviado o no y dirigir al login
 	if ($mail->Send()) {
-		echo'<script type="text/javascript">
-			alert("Correo enviado correctamente");
-			</script>';
-			echo "<script>window.open('../../login.php','_self')</script>"; 
+		echo "<script>alert('Correo enviado correctamente.')</script>"; 
+		echo "<script>window.open('../../login.php','_self')</script>"; 
 	} else {
-		echo'<script type="text/javascript">
-			alert("Fallo al enviar el correo, inténtalo de nuevo.");
-			</script>';
-			echo "<script>window.open('recuperarPassword.php','_self')</script>"; 
+		echo "<script>alert('Fallo al enviar el correo, inténtalo de nuevo.')</script>";
+		echo "<script>window.open('recuperarPassword.php','_self')</script>"; 
 	}
 }
-?>
+?> 
