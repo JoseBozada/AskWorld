@@ -1,16 +1,15 @@
 <?php
-    //Incluimos el conector a la Base de datos e iniciamos la sesión
-    include "../../includes/Database.php";
-    session_start();
+    	//Incluimos el conector a la Base de datos e iniciamos la sesión
+    	include "../../includes/Database.php";
+    	session_start();
 
 	//Incluimos el fichero donde están las funciones
 	include "../../includes/DAO/DAO_Admin.php";
     
-    //Esto impedirá que se acceda sin iniciar sesión y si el usuario logueado no tiene el rol de Admin volverá al login
-    if (!($_SESSION['Rol'] == 'Admin')){
-        
-        echo "<script>window.open('../login.php','_self')</script>";
-        
+	//Esto impedirá que se acceda sin iniciar sesión y si el usuario logueado no tiene el rol de Admin volverá al login
+	if (!($_SESSION['Rol'] == 'Admin')){
+		
+		echo "<script>window.open('../../login.php','_self')</script>";
     }else{
 ?>
 
@@ -22,11 +21,11 @@
 	$idAdmin = $_SESSION['idUsuario'];
         
 	//Mostramos los datos del admin por su ID y guardamos los que necesitamos
-    $get_admin = mostrarAdminPorID($conexion, $idAdmin);
+    	$get_admin = mostrarAdminPorID($conexion, $idAdmin);
         
-    $row_edit = mysqli_fetch_assoc($get_admin);
+    	$row_edit = mysqli_fetch_assoc($get_admin);
 
-    $Usuario = $row_edit['Usuario'];
+    	$Usuario = $row_edit['Usuario'];
 
 	$Contraseña = $row_edit['Contrasena'];
 
@@ -39,6 +38,8 @@
 	$Correo = $row_edit['Email'];
 
 	$Imagen = $row_edit['Imagen'];
+
+	$imagenPerfil = str_replace("../", "", $Imagen);
 
 	$Fecha = $row_edit['FechaNacimiento'];
 
@@ -55,10 +56,10 @@
 ?>
 
 <br>
-<form id="formularioPerfil" enctype="multipart/form-data" method="post">
+<form id="formularioPerfil" enctype="multipart/form-data" method="post" class="needs-validation">
 	<div class="col-sm-12">
 		<div class="text-center">
-			<img src="<?php echo $Imagen; ?>"  class="avatar rounded-circle img-thumbnail" alt="avatar" width="100" height="80">
+			<img src="../../../<?php echo $imagenPerfil; ?>"  class="avatar rounded-circle img-thumbnail" alt="avatar"style="max-width: 100px; max-height: 100px;">
 			<h6>Imagen de perfil</h6>
 			<input type="file" id="img" name="img">
 		</div>
@@ -66,7 +67,7 @@
 			<br>    
 			<div class="row">  
 				<!-- Usuario -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Usuario</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -75,12 +76,13 @@
 							</svg>
 						</span>
 						<input type="text" name="usuario" id="usuario" class="form-control" value="<?php echo $Usuario; ?>" autofocus>
+						<div class="invalid-feedback">El usuario tiene una longitud mínima de 6 caracteres y máximo de 20 caracteres, no se permiten acentos, espacios ni caracteres especiales.</div>
 					</div>
 				</div>
 				<!-- Termina Usuario -->
 
 				<!-- Nombre -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Nombre</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -89,6 +91,7 @@
 							</svg>
 						</span>
 						<input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $Nombre; ?>">
+						<div class="invalid-feedback">El nombre tiene una longitud mínima de 3 caracteres y máximo de 20 caracteres.</div>
 					</div>
 				</div>
 			</div>
@@ -98,7 +101,7 @@
 
 			<!-- Contraseña -->
 			<div class="row">
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Contraseña</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -112,7 +115,7 @@
 				<!-- Termina Contraseña -->
 
 				<!-- Apellido -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Apellido</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -121,6 +124,7 @@
 							</svg>
 						</span>
 						<input type="text" name="apellido" id="apellido" class="form-control" value="<?php echo $Apellido; ?>">
+						<div class="invalid-feedback">Los apellidos tienen una longitud mínima de 4 caracteres y máxima de 20 caracteres.</div>
 					</div>
 				</div>
 			</div>
@@ -130,7 +134,7 @@
 
 			<!-- Dirección -->
 			<div class="row">
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Dirección</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -140,12 +144,13 @@
 							</svg>
 						</span>
 						<input type="text" name="direccion" id="direccion" class="form-control" value="<?php echo $Direccion; ?>">
+						<div class="invalid-feedback">La dirección no es válida.</div>
 					</div>
 				</div>
 				<!-- Termina Dirección -->
 
 				<!-- Apellido 2 -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Apellido 2</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -154,6 +159,7 @@
 							</svg>
 						</span>
 						<input type="text" name="apellido2" id="apellido2" class="form-control" value="<?php echo $Apellido2; ?>">
+						<div class="invalid-feedback">Los apellidos tienen una longitud mínima de 4 caracteres y máxima de 20 caracteres.</div>
 					</div>
 				</div>
 			</div>
@@ -163,7 +169,7 @@
 
 			<!-- Correo -->
 			<div class="row">
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Correo</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -172,12 +178,13 @@
 							</svg>
 						</span>
 						<input type="email" name="correo" id="correo" class="form-control" value="<?php echo $Correo; ?>">
+						<div class="invalid-feedback">El correo no es válido.</div>
 					</div>
 				</div>
 				<!-- Termina Correo -->
 
 				<!-- Fecha -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Fecha</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -185,7 +192,7 @@
 								<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
 							</svg>
 						</span>
-						<input type="date" name="fecha" id="fecha" class="form-control" value="<?php echo $Fecha; ?>">
+						<input type="date" name="fecha" id="fecha" class="form-control" min="1922-01-01" max="2009-12-31" value="<?php echo $Fecha; ?>">
 					</div>
 				</div>
 			</div>
@@ -195,7 +202,7 @@
 
 			<!-- Provincia -->
 			<div class="row">
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Provincia</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -214,7 +221,7 @@
 				<!-- Termina Provincia -->
 
 				<!-- Población -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Población</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -234,7 +241,7 @@
 
 			<!-- Teléfono -->
 			<div class="row">
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Teléfono</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -243,12 +250,13 @@
 							</svg>
 						</span>
 						<input type="number" name="telefono" id="telefono" class="form-control" value="<?php echo $Telefono; ?>">
+						<div class="invalid-feedback">El teléfono no es válido.</div>
 					</div>
 				</div>
 				<!-- Termina Teléfono -->
 
 				<!-- DNI -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> DNI</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -263,21 +271,22 @@
 			</div>
 			<!-- Termina DNI -->
 
+			<br>
+
 			<!-- Actualizar y eliminar -->
 			<div class="form-group">
 				<div align="center" class="col-12">
-					<br>
 					<button class="btn btn-lg btn-success" name="actualizar" type="submit"><i class="fas fa-user-edit"></i> Actualizar Datos</button>
-				<button class="btn btn-lg btn-danger">
-					<i class="fas fa-trash-alt"></i> 
-					<a style="color: white; text-decoration:none;" onClick="return confirm('¿Estas seguro de que quieres eliminar tu cuenta?');" href="eliminarCuenta.php?id=<?php echo $idAdmin; ?>">Eliminar Cuenta</a> 
-				</button>
+					<a style="color: white; text-decoration:none;" class="btn btn-lg btn-danger" onClick="return confirm('¿Estas seguro de que quieres eliminar tu cuenta?');" href="eliminarCuenta.php?id=<?php echo $idAdmin; ?>"><i class="fas fa-trash-alt"></i> Eliminar Cuenta</a>
+				</div> 
 			</div>
 			<!-- Termina Actualizar y eliminar -->
 		</div>	
 	</div>
 </form>
-	<br>
+<br>
+
+  <script src="../../../js/validacionCuenta.js"></script>
 
 <?php include "../../includes/footer.php"; ?>
 
@@ -312,7 +321,7 @@ if(isset($_POST['actualizar'])){
 		
 		if(is_uploaded_file($_FILES["img"]["tmp_name"])) {
 			
-			$ruta= "../../img/admin/".$_FILES["img"]["name"];
+			$ruta= "../../../img/usuarios/".$_FILES["img"]["name"];
 			
 			move_uploaded_file($_FILES["img"]["tmp_name"], $ruta);
 			
@@ -343,7 +352,5 @@ if(isset($_POST['actualizar'])){
 
 		echo "<script>window.open('perfil.php','_self')</script>";
 	}
-        
 }
-   
 ?>
