@@ -13,11 +13,11 @@
 	<title>Actualizar Contraseña</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<!-- Bootstrap CSS -->
+    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    	<!-- Font Awesome -->
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <br>
@@ -25,7 +25,7 @@
         <article class="card-body mx-auto" style="max-width: 400px;">
             <h4 class="card-title mt-3 text-center">Nueva contraseña.</h4>
             <p class="text-center">Introduce tu nueva contraseña.</p>
-            <form method="POST">
+            <form method="POST" class="needs-validation">
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <div class="input-group">
@@ -33,6 +33,7 @@
                                 <span><i class="fa fa-lock"></i></span>
                             </span>
                             <input type="password" name="password" id="password" class="form-control" placeholder="Nueva Contraseña" required>
+                            <div class="invalid-feedback">Tiene una longitud mínima de 5 caracteres, no se permite espacios y debe contener una mayúscula, un número y un carácter especial (@,$,€,¿,?,¡,*,#,&).</div>
                         </div>
                     </div>
                 </div>
@@ -54,6 +55,9 @@
             </form>
         </article>
     </div>
+
+    <script src="../../../js/validacionActualizarPassword.js"></script>
+
 </body>
 </html>
 
