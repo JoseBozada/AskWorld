@@ -37,13 +37,13 @@
 					<tr style="text-align: center;">
 						<td><strong><?php echo $i; ?></strong></td>
 						<td><strong><?php echo $mostrar['NombreCategoria'] ?></strong></td>
-						<td style="text-align: center;">
+						<td>
 							<a class="btn btn-warning btn-sm" href="editarCategoria.php?id=<?php echo $id_categoria; ?>">
 								<span class="fas fa-edit"></span>
 							</a>
 						</td>
-						<td style="text-align: center;"> 
-							<a class="btn btn-danger btn-sm" onClick="return confirm('¿Estas seguro de que quieres eliminar esta Categoría?');" href="eliminarCategoria.php?id=<?php echo $id_categoria; ?>">
+						<td> 
+							<a class="btn btn-danger btn-sm" onClick="return confirm('¿Estas seguro de que quieres eliminar esta categoría?');" href="eliminarCategoria.php?id=<?php echo $id_categoria; ?>">
 								<span class="fas fa-trash-alt"></span>
 							</a> 
 						</td>
