@@ -9,19 +9,26 @@
     //Recogemos el ID recibido por URL
     $idURL= $_GET["id"];
 
-    //Buscamos la imagen del Usuario
+    //Buscamos las imágenes de sus publicaciones y procedemos a eliminarlas.
+    $get_publicaciones = mostrarPublicacionesPorUsuario($conexion, $idURL);
+
+    while($row_publicaciones = mysqli_fetch_assoc($get_publicaciones)) {
+
+        $imagenPublicacion = $row_publicaciones['ImagenPublicacion'];
+
+        unlink($imagenPublicacion);
+    }
+
+    //Imagen Usuario: Primero borramos la ruta que tiene guardada y después añadimos la ruta que necesitamos.
     $get_usuario = mostrarUsuariosPorID($conexion, $idURL);
         
     $row_del = mysqli_fetch_assoc($get_usuario);
-
+    
     $imagenUsuario = $row_del['Imagen'];
 
-    //Buscamos las imágenes de sus publicaciones
-    $get_publicaciones = mostrarPublicacionesPorUsuario($conexion, $idURL);
-        
-    $row_publicaciones = mysqli_fetch_assoc($get_publicaciones);
+    $eliminarRuta = str_replace("../", "", $imagenUsuario);
 
-    $imagenPublicacion = $row_publicaciones['ImagenPublicacion'];
+    $imagenRuta = "../../../" . $eliminarRuta;
     
     //Procedemos a eliminar al usuario de la base de datos
     $consulta = eliminarUsuario($conexion, $idURL);
@@ -30,9 +37,7 @@
 
         echo "<script>alert('Eliminando usuario...')</script>";
 
-        unlink($imagenUsuario);  //Eliminamos la imagen del usuario
-
-        unlink($imagenPublicacion); //Eliminamos las imágenes de sus publicaciones
+        unlink($imagenRuta);  //Eliminamos la imagen del usuario
 
         echo "<script>alert('El usuario ha sido eliminado correctamente.')</script>";
 
@@ -44,5 +49,4 @@
             
         echo "<script>window.open('usuarios.php','_self')</script>";
     }
-
 ?>
