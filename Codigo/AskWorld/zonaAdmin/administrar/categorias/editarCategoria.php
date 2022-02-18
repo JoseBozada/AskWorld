@@ -22,12 +22,12 @@
 	$idURL = $_GET['id'];
         
 	//Mostramos los datos de la categoría por su ID
-    $get_categoria = mostrarCategoriasPorID($conexion, $idURL);
+    	$get_categoria = mostrarCategoriasPorID($conexion, $idURL);
         
-    $row_edit = mysqli_fetch_assoc($get_categoria);
+    	$row_edit = mysqli_fetch_assoc($get_categoria);
      
 	//Guardamos los datos que necesitamos
-    $nombreCategoria = $row_edit['NombreCategoria'];
+    	$nombreCategoria = $row_edit['NombreCategoria'];
 
 ?>
 
@@ -37,8 +37,8 @@
         Editar Categoría
     </div>
     <div class="card-body">
-        <img src="../../img/EditarCategoria.png" width="150" height="150" style="border-radius: 20px;">
-        <form id="editarCategoria" method="post">
+        <img src="../../../img/EditarCategoria.png" width="150" height="150" style="border-radius: 20px;">
+        <form id="editarCategoria" method="post" class="needs-validation">
             <h5 align="left"></i> Nombre de la categoría</h5>
             <div class="input-group">
                 <span class="input-group-text" id="basic-addon1">
@@ -46,7 +46,8 @@
                         <path d="M12.258 3h-8.51l-.083 2.46h.479c.26-1.544.758-1.783 2.693-1.845l.424-.013v7.827c0 .663-.144.82-1.3.923v.52h4.082v-.52c-1.162-.103-1.306-.26-1.306-.923V3.602l.431.013c1.934.062 2.434.301 2.693 1.846h.479L12.258 3z"/>
                     </svg>
                 </span>
-                <input type="text" name="nombreCategoria" id="nombreCategoria" class="form-control" value="<?php echo $nombreCategoria ?>">
+                <input type="text" name="nombreCategoria" id="nombreCategoria" class="form-control" value="<?php echo $nombreCategoria ?>" required>
+                <div class="invalid-feedback">El nombre tiene una longitud mínima de 4 caracteres y máximo de 20 caracteres. No se permiten caracteres especiales.</div>
             </div>  
             <br>
             <input name="actualizar" value="Actualizar Categoría" type="submit" class="btn btn-warning form-control" style="border: black 2px solid">
@@ -56,6 +57,8 @@
         <a href="categorias.php">Ir a las categorías</a>
     </div>
 </div>
+
+  <script src="../../../js/validacionCategorias.js"></script>
 
 <?php include "../../includes/footer.php"; ?>
 
@@ -78,7 +81,7 @@ if(isset($_POST['actualizar'])){
 
     } else {
         
-        $consulta = actualizarCategoria($conexion, $nombreCategoria, $idCategoria);
+        $consulta = actualizarCategoria($conexion, $nombreCategoria, $idURL);
 
         echo "<script>alert('La categoría se ha actualizado correctamente.')</script>";
 
