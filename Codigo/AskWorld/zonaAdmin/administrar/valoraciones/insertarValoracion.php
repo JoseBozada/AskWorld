@@ -23,7 +23,7 @@
         Insertar Valoración
     </div>
     <div class="card-body">
-        <img src="../../img/Valoracion.png" width="150" height="150" style="border-radius: 20px;">
+        <img src="../../../img/Valoracion.png" width="150" height="150" style="border-radius: 20px;">
         <form id="insertarPublicacion" enctype="multipart/form-data" method="post"> 
             <h5 align="left"></i> Publicación</h5>
             <div class="input-group">
@@ -90,13 +90,15 @@ if(isset($_POST['insertar'])){
 
     $idAdmin = $_SESSION['idUsuario'];
 
-    //Comprobamos si el usuario ya ha valorado una publicación, si lo hizo no se insertará una nueva.
+    //Comprobamos si el admin ya ha valorado una publicación, si lo hizo se actualizará.
     $comprueba = buscarValoracionUsuario($conexion, $publicacion, $idAdmin);
 
     if(mysqli_num_rows($comprueba) == 1){
         
-        echo "<script>alert('No se puede insertar tu valoración porque ya valoraste esta publicación.')</script>";
+        $consulta = actualizarValoracionPublicacion($conexion, $valoracion, $publicacion, $idAdmin);
         
+        echo "<script>alert('Se ha actualizado tu valoración.')</script>";
+
         echo "<script>window.open('valoraciones.php','_self')</script>";
 
     } else {
