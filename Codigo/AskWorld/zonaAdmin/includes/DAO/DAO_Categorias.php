@@ -25,7 +25,7 @@
     }
 
     function actualizarCategoria($conexion, $nombreCategoria, $idCategoria){
-        $consulta = "UPDATE categoria SET NombreCategoria = '$nombreCategoria' WHERE (`idCategoria` = '$idCategoria')";
+        $consulta = "UPDATE `categoria` SET `NombreCategoria` = '$nombreCategoria' WHERE (`idCategoria` = '$idCategoria')";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
