@@ -24,31 +24,31 @@
 	$idURL = $_GET['id'];
         
 	//Mostramos y guardamos los datos del comentario por su ID
-    $get_comentario = mostrarComentariosPorID($conexion, $idURL);
+    	$get_comentario = mostrarComentariosPorID($conexion, $idURL);
         
-    $row_edit = mysqli_fetch_assoc($get_comentario);
+	$row_edit = mysqli_fetch_assoc($get_comentario);
 
-    $idComentario = $row_edit['idComentario'];
+	$idComentario = $row_edit['idComentario'];
 
-    $idUsuario = $row_edit['idUsuario'];
+	$idUsuario = $row_edit['idUsuario'];
 
-    $idPublicacion = $row_edit['idPublicacion'];
-        
-    $comentario = $row_edit['Comentario'];
+	$idPublicacion = $row_edit['idPublicacion'];
 
-    //Buscamos al usuario que hizo el comentario
-    $get_usuario = mostrarUsuariosPorID($conexion, $idUsuario);
-        
-    $row_usuario = mysqli_fetch_assoc($get_usuario);
-    
-    $usuario = $row_usuario['Usuario'];
+	$comentario = $row_edit['Comentario'];
 
-    //Buscamos la publicación donde se hizo el comentario
-    $get_publicacion = mostrarPublicacionesPorID($conexion, $idPublicacion);
-        
-    $row_publicacion = mysqli_fetch_assoc($get_publicacion);
-    
-    $publicacion = $row_publicacion['NombrePublicacion'];
+	//Buscamos al usuario que hizo el comentario
+	$get_usuario = mostrarUsuariosPorID($conexion, $idUsuario);
+
+	$row_usuario = mysqli_fetch_assoc($get_usuario);
+
+	$usuario = $row_usuario['Usuario'];
+
+	//Buscamos la publicación donde se hizo el comentario
+	$get_publicacion = mostrarPublicacionesPorID($conexion, $idPublicacion);
+
+	$row_publicacion = mysqli_fetch_assoc($get_publicacion);
+	
+	$publicacion = $row_publicacion['NombrePublicacion'];
 
 ?>
 
@@ -58,8 +58,8 @@
         Editar Comentario
     </div>
     <div class="card-body">
-        <img src="../../img/EditarComentario.png" width="150" height="150" style="border-radius: 20px;">
-        <form id="editarComentario" method="post">
+        <img src="../../../img/EditarComentario.png" width="150" height="150" style="border-radius: 20px;">
+        <form id="editarComentario" method="post" class="needs-validation">
             <h5 align="left"></i> Comentario</h5>
             <div class="input-group">
                 <span class="input-group-text" id="basic-addon1">
@@ -67,7 +67,8 @@
                         <path d="M12.258 3h-8.51l-.083 2.46h.479c.26-1.544.758-1.783 2.693-1.845l.424-.013v7.827c0 .663-.144.82-1.3.923v.52h4.082v-.52c-1.162-.103-1.306-.26-1.306-.923V3.602l.431.013c1.934.062 2.434.301 2.693 1.846h.479L12.258 3z"/>
                     </svg>
                 </span>
-                <input type="text" name="comentario" id="comentario" class="form-control" value="<?php echo $comentario ?>">
+                <textarea name="comentario" id="comentario" class="form-control" rows="3"><?php echo $comentario ?></textarea>
+                <div class="invalid-feedback">El comentario tiene una longitud mínima de 4 caracteres y máximo de 500 caracteres. No se permiten enlaces, saltos de línea ni caracteres especiales.</div>
             </div>  
             <br>
             <h5 align="left"></i> Usuario</h5>
@@ -99,7 +100,12 @@
     </div>
 </div>
 
+
+<script src="../../../js/validacionComentarios.js"></script>
+
 <?php include "../../includes/footer.php"; ?>
+
+<br>
 
 <?php } ?>
 
