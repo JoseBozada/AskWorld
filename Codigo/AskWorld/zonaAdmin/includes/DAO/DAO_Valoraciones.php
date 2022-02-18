@@ -1,5 +1,4 @@
 <?php
-
     function mostrarValoraciones($conexion){
         $consulta = "SELECT * FROM valoracion";
         $resultado = mysqli_query($conexion, $consulta);
@@ -42,11 +41,15 @@
         return $resultado;
     }
 
+    function actualizarValoracionPublicacion($conexion, $valoracion, $idPublicacion, $idUsuario){
+        $consulta = "UPDATE valoracion SET valoracion = '$valoracion' WHERE (`idPublicacion` = '$idPublicacion') AND idUsuario = '$idUsuario'";
+        $resultado = mysqli_query($conexion, $consulta);
+        return $resultado;
+    }
+
     function eliminarValoracion($conexion, $idValoracion){
         $consulta = "DELETE FROM valoracion WHERE (`idValoracion` = '$idValoracion')";
         $resultado = mysqli_query($conexion, $consulta);
         return $resultado;
     }
-
-
 ?>
