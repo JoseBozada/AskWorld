@@ -23,8 +23,8 @@
         Insertar Comentario
     </div>
     <div class="card-body">
-        <img src="../../img/Comentario.png" width="150" height="150" style="border-radius: 20px;">
-        <form id="insertarComentario" method="post">
+        <img src="../../../img/Comentario.png" width="150" height="150" style="border-radius: 20px;">
+        <form id="insertarComentario" method="post" class="needs-validation">
             <h5 align="left"></i> Comentario nuevo</h5>
             <div class="input-group">
                 <span class="input-group-text" id="basic-addon1">
@@ -33,7 +33,8 @@
                     <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
                 </svg>
                 </span>
-                <input type="text" name="comentario" id="comentario" class="form-control" placeholder="En mi opinión..." autofocus required>
+                <textarea name="comentario" id="comentario" class="form-control" autofocus placeholder="En mi opinión..." autofocus required></textarea>
+                <div class="invalid-feedback">El comentario tiene una longitud mínima de 4 caracteres y máximo de 500 caracteres. No se permiten enlaces, saltos de línea ni caracteres especiales.</div>
             </div>  
             <br>
 
@@ -70,6 +71,8 @@
         <a href="comentarios.php">Ir a los comentarios</a>
     </div>
 </div>
+
+<script src="../../../js/validacionComentarios.js"></script>
 
 <?php include "../../includes/footer.php"; ?>
 
