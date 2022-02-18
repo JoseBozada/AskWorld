@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                <img src="img/logo.png" height="50">
+                <img src="../img/logo.png" height="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -73,7 +73,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <h1 align="center">¡Bienvenido a la zona de Administrador!</h1>
-                <div align="center"><img src="img/AdministradorInicio.jpg" width="50%" style="border-radius: 20px;" ></div>
+                <div align="center"><img src="../img/AdministradorInicio.jpg" width="50%" style="border-radius: 20px;" ></div>
             </div>
         </div>
     </div>
