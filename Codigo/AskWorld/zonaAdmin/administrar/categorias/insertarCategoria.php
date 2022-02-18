@@ -22,8 +22,8 @@
         Insertar Categoría
     </div>
     <div class="card-body">
-        <img src="../../img/Categoria.png" width="150" height="150" style="border-radius: 20px;">
-        <form id="insertarCategoria" method="post">
+        <img src="../../../img/Categoria.png" width="150" height="150" style="border-radius: 20px;">
+        <form id="insertarCategoria" method="post" class="needs-validation">
             <h5 align="left"></i> Nombre de la categoría</h5>
             <div class="input-group">
                 <span class="input-group-text" id="basic-addon1">
@@ -32,6 +32,7 @@
                     </svg>
                 </span>
                 <input type="text" name="nombreCategoria" id="nombreCategoria" class="form-control" placeholder="Televisión" autofocus required>
+                <div class="invalid-feedback">El nombre tiene una longitud mínima de 4 caracteres y máximo de 20 caracteres. No se permiten caracteres especiales.</div>
             </div>  
             <br>
             <input name="insertar" value="Insertar Categoría" type="submit" class="btn btn-warning form-control" style="border: black 2px solid">
@@ -41,6 +42,8 @@
         <a href="categorias.php">Ir a las categorías</a>
     </div>
 </div>
+
+  <script src="../../../js/validacionCategorias.js"></script>
 
 <?php include "../../includes/footer.php"; ?>
 
