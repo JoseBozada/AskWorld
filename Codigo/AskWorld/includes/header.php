@@ -1,15 +1,15 @@
 <?php
 
 	//Incluimos el conector a la Base de datos e iniciamos la sesión
-    include "zonaAdmin/includes/Database.php";
-    session_start();
+    	include "zonaAdmin/includes/Database.php";
+    	session_start();
     
-    //Incluimos los ficheros donde están las funciones
-    include "zonaAdmin/includes/DAO/DAO_Publicaciones.php";
-    include "zonaAdmin/includes/DAO/DAO_Categorias.php";
-    include "zonaAdmin/includes/DAO/DAO_Usuarios.php";
-    include "zonaAdmin/includes/DAO/DAO_Valoraciones.php";
-    include "zonaAdmin/includes/DAO/DAO_Comentarios.php";
+	//Incluimos los ficheros donde están las funciones
+	include "zonaAdmin/includes/DAO/DAO_Publicaciones.php";
+	include "zonaAdmin/includes/DAO/DAO_Categorias.php";
+	include "zonaAdmin/includes/DAO/DAO_Usuarios.php";
+	include "zonaAdmin/includes/DAO/DAO_Valoraciones.php";
+	include "zonaAdmin/includes/DAO/DAO_Comentarios.php";
 
 ?>
 
