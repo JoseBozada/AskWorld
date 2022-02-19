@@ -1,13 +1,32 @@
 <?php include "../includes/header.php" ?>
 
-<br>
-
-<h3 class="text-center">Formulario de Registro</h3>
+<!-- Breadcrumb -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <strong>Está en: </strong>
+                        <a href="index.php?categoria=0">
+                            <span> Inicio</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span> Registrarme</span>        
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Termina Breadcrumb -->
 
 <div class="container text-center">
-    <img src="../../zonaAdmin/img/Registro.png" width="150" height="150" style="border-radius: 20px;">
-    <form id="insertarUsuario" enctype="multipart/form-data" method="post">
-        <div class="row">  
+    <img src="../../img/Registro.png" width="150" height="150" style="border-radius: 20px;">
+    <form id="formularioRegistro" method="post" enctype="multipart/form-data" class="needs-validation">
+        <div class="row">
             <!-- Usuario -->
             <div class="col">
                 <div align="left"><h5> Usuario</h5></div>
@@ -18,6 +37,7 @@
                         </svg>
                     </span>
                     <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario" autofocus required>
+                    <div class="invalid-feedback">El usuario tiene una longitud mínima de 6 caracteres y máximo de 20 caracteres, no se permiten acentos, espacios ni caracteres especiales.</div>
                 </div>
             </div>
             <!-- Termina Usuario -->
@@ -25,13 +45,14 @@
             <!-- Nombre -->
             <div class="col">
                 <div align="left"><h5> Nombre</h5></div>
-                <div class="input-group">
+                <div class="input-group input-wrapper">
                     <span class="input-group-text" id="basic-addon1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fonts" viewBox="0 0 16 16">
                             <path d="M12.258 3h-8.51l-.083 2.46h.479c.26-1.544.758-1.783 2.693-1.845l.424-.013v7.827c0 .663-.144.82-1.3.923v.52h4.082v-.52c-1.162-.103-1.306-.26-1.306-.923V3.602l.431.013c1.934.062 2.434.301 2.693 1.846h.479L12.258 3z"/>
                         </svg>
                     </span>
                     <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required>
+                    <div class="invalid-feedback">El nombre tiene una longitud mínima de 3 caracteres y máximo de 20 caracteres.</div>
                 </div>
             </div>
         </div>
@@ -50,6 +71,7 @@
                         </svg>
                     </span>
                     <input type="password" name="password" id="password" class="form-control" placeholder="********" required>
+                    <div class="invalid-feedback">Tiene una longitud mínima de 5 caracteres, no se permite espacios y debe contener una mayúscula, un número y un carácter especial (@,$,€,¿,?,¡,*,#,&).</div>
                 </div>
             </div>
             <!-- Termina Contraseña -->
@@ -64,6 +86,7 @@
                         </svg>
                     </span>
                     <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido" required>
+                    <div class="invalid-feedback">Los apellidos tienen una longitud mínima de 4 caracteres y máxima de 20 caracteres.</div>
                 </div>
             </div>
         </div>
@@ -83,6 +106,7 @@
                         </svg>
                     </span>
                     <input type="text" name="direccion" id="direccion" class="form-control" placeholder="Dirección" required>
+                    <div class="invalid-feedback">La dirección no es válida.</div>
                 </div>
             </div>
             <!-- Termina Dirección -->
@@ -97,6 +121,7 @@
                         </svg>
                     </span>
                     <input type="text" name="apellido2" id="apellido2" class="form-control" placeholder="Apellido 2" required>
+                    <div class="invalid-feedback">Los apellidos tienen una longitud mínima de 4 caracteres y máxima de 20 caracteres.</div>
                 </div>
             </div>
         </div>
@@ -115,6 +140,7 @@
                         </svg>
                     </span>
                     <input type="email" name="correo" id="correo" class="form-control" placeholder="correo@gmail.com" required>
+                    <div class="invalid-feedback">El correo no es válido.</div>
                 </div>
             </div>
             <!-- Termina Correo -->
@@ -128,7 +154,7 @@
                             <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
                         </svg>
                     </span>
-                    <input type="date" name="fecha" id="fecha" class="form-control" required>
+                    <input type="date" name="fecha" id="fecha" class="form-control" min="1922-01-01" max="2009-12-31" required>
                 </div>
             </div>
         </div>
@@ -146,7 +172,7 @@
                             <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
                         </svg>
                     </span>
-                    <select name="provincia" id="provincia" class="form-select" >
+                    <select name="provincia" id="provincia" class="form-select" required>
                         <option value="">Seleccione una provincia</option>
                         <option value="Melilla">Melilla</option>
                         <option value="Ceuta">Ceuta</option>
@@ -167,7 +193,7 @@
                             <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
                         </svg>
                     </span>
-                    <input type="text" name="poblacion" id="poblacion" class="form-control" placeholder="Población" required>
+                    <input type="text" name="poblacion" id="poblacion" class="form-control" placeholder="Población" readonly required>
                 </div>
             </div>
         </div>
@@ -186,6 +212,7 @@
                         </svg>
                     </span>
                     <input type="number" name="telefono" id="telefono" class="form-control" placeholder="123456789" required>
+                    <div class="invalid-feedback">El teléfono no es válido.</div>
                 </div>
             </div>
             <!-- Termina Teléfono -->
@@ -201,6 +228,7 @@
                         </svg>
                     </span>
                     <input type="text" name="dni" id="dni" class="form-control" placeholder="12345678A" required>
+                    <div class="invalid-feedback">El DNI no es válido.</div>
                 </div>
             </div>
         </div>
@@ -226,14 +254,13 @@
     </form>
 
     <hr>
-
-    <div class="btn btn-info form-control" style="border: black 2px solid">
-        <a class="text-dark" style="text-decoration:none;" href="login.php"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
-    </div>
+        <a class="btn btn-info form-control text-dark" href="login.php" style="border: black 2px solid"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
     <br>
 </div>
 
 <br>
+
+  <script src="../../js/validacionRegistro.js"></script>
 
 <?php include "../includes/footer.php" ?>
 
