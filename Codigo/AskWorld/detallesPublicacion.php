@@ -23,59 +23,58 @@
 	$imagen = str_replace("../", "", $imagenPublicacion);
 
 	//Consulta de usuarios: Necesitamos el nombre para mostrarlo.
-    $id_Usuario =  $row_publicacion['idUsuario'];
+    	$id_Usuario =  $row_publicacion['idUsuario'];
+	
+    	$get_usuarios = mostrarUsuariosPorID($conexion, $id_Usuario);
 
-    $get_usuarios = mostrarUsuariosPorID($conexion, $id_Usuario);
+    	$row_usuarios = mysqli_fetch_assoc($get_usuarios);
 
-    $row_usuarios = mysqli_fetch_assoc($get_usuarios);
+    	$nombreUsuario = $row_usuarios['Usuario'];
 
-    $nombreUsuario = $row_usuarios['Usuario'];
+	//Consulta de categorías: Necesitamos el nombre para mostrarlo.
+	$id_categoria =  $row_publicacion['idCategoria'];
 
-    //Consulta de categorías: Necesitamos el nombre para mostrarlo.
-    $id_categoria =  $row_publicacion['idCategoria'];
+	$get_categorias = mostrarCategoriasPorID($conexion, $id_categoria);
 
-    $get_categorias = mostrarCategoriasPorID($conexion, $id_categoria);
-
-    $row_categorias = mysqli_fetch_assoc($get_categorias);
-
-    $nombreCategoria = $row_categorias['NombreCategoria'];
-
+	$row_categorias = mysqli_fetch_assoc($get_categorias);
+	
+	$nombreCategoria = $row_categorias['NombreCategoria'];
+	
 	//Si la publicacion coincide con el ID mostrará el contenido, sino nos devolverá al index.
 	if($_GET['publicacion']=="$idPublicacion"){
 
 ?>
-
 	<!-- Breadcrumb -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <br>
-                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-				  <ol class="breadcrumb">
-				    <li class="breadcrumb-item">
-				    	<strong>Está en: </strong>
-				    	<a href="index.php?categoria=0">
-				    		<span> Inicio</span>
-				    	</a>
-				    </li>
-				    <?php
+	<div class="container">
+        	<div class="row">
+            		<div class="col-sm-12">
+                	<br>
+                		<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+					<ol class="breadcrumb">
+				    		<li class="breadcrumb-item">
+				    			<strong>Está en: </strong>
+				    			<a href="index.php?categoria=0">
+				    				<span> Inicio</span>
+				    			</a>
+				    		</li>
+				    	<?php
 						echo " 
 					   		<li class='breadcrumb-item'>
 							    <a style='text-decoration: none' href='index.php?categoria=$id_categoria'>
 							    	<span>$nombreCategoria</span>
 							    </a>
-					    	</li>
-					    ";
-				    ?>
+					    		</li>
+					    	";
+				    	?>
 				    <li class="breadcrumb-item active" aria-current="page">
 				    	<?php echo $nombrePublicacion ?>		
 				    </li>
 				  </ol>
 				</nav>
-            </div>
-        </div>
-    </div>
-    <!-- Termina Breadcrumb -->
+            		</div>
+        	</div>
+    	</div>
+    	<!-- Termina Breadcrumb -->
 
 	<div class="container">
 		<p class="fs-4 lh-base text-center bg-warning text-uppercase" style="border: 2.5px solid black"><?php echo $nombrePublicacion ?></p>
@@ -105,14 +104,12 @@
 			?>
 			<div class="col-md-9">
 				<p class="bg-warning fs-4 text-center text-uppercase" style="border: 2.5px solid black">Comentar</p>
-				<form name="formularioComentar" method="post">
+				<form name="formularioComentar" method="post" class="needs-validation">
 					<div align="center">
-						<div class="form-floating">
-							<textarea class="form-control" name="comentario" id="comentario" required></textarea>
-							<label for="floatingTextarea">Deja tu comentario aquí.</label>
-						</div>
+						<textarea class="form-control" name="comentario" id="comentario" rows="4" required></textarea>
 						<br>
 						<input name="comentar" value="Enviar comentario" type="submit" class="btn btn-success form-control" style="border: black 2px solid">
+						<div class="invalid-feedback">El comentario tiene una longitud mínima de 4 caracteres y máximo de 500 caracteres. No se permiten enlaces, saltos de línea ni caracteres especiales.</div>
 					</div>
 				</form>
 			</div>
@@ -127,7 +124,6 @@
 						<div class="form-group">
 							<div class="col-12">
 								<br>
-								
 								<a style="color: white; text-decoration:none;" href="login.php" class="btn btn-lg btn-success"><i class="fas fa-sign-in-alt"></i>  Iniciar Sesión</a>
 
 								<a style="color: white; text-decoration:none;" href="registro.php" class="btn btn-lg btn-danger"><i class="fas fa-user-plus"></i> Registrarme</a>  
@@ -194,7 +190,6 @@
 						echo '<strong>Tu valoración es: </strong>' . $valoracion . ' <i class="fas fa-star" style="color: yellow;"></i>';
 					?>
 				</p>
-				
 			</div>
 			<?php
 				}else {
@@ -232,13 +227,13 @@
 							$comentario = $row_comentarios['Comentario'];
 
 							//Consulta de usuarios: Necesitamos el nombre y la imagen para mostrarlo.
-	                        $idUsuario = $row_comentarios['idUsuario'];
+	                        			$idUsuario = $row_comentarios['idUsuario'];
 
-	                        $get_usuarios = mostrarUsuariosPorID($conexion, $idUsuario);
+							$get_usuarios = mostrarUsuariosPorID($conexion, $idUsuario);
 
-	                        $row_usuarios = mysqli_fetch_assoc($get_usuarios);
+							$row_usuarios = mysqli_fetch_assoc($get_usuarios);
 
-	                        $nombreUsuario = $row_usuarios['Usuario'];
+							$nombreUsuario = $row_usuarios['Usuario'];
 
 							$ImagenUsuario = $row_usuarios['Imagen'];
 
@@ -264,6 +259,8 @@
 
 	<br>
 
+	<script src="js/validacionComentarios.js"></script>
+
 	<?php include "includes/footer.php" ?>
 
 </body>
@@ -279,25 +276,25 @@ if(isset($_POST['rate'])){
 	$idUsuario = $_SESSION['idUsuario'];
 
 	//Comprobamos si el usuario ya ha valorado la publicación, si lo hizo se actualizará.
-    $comprueba = buscarValoracionUsuario($conexion, $idURL, $idUsuario);
+    	$comprueba = buscarValoracionUsuario($conexion, $idURL, $idUsuario);
 
-    if(mysqli_num_rows($comprueba) == 1){
+	if(mysqli_num_rows($comprueba) == 1){
         
-        $consulta = actualizarValoracion($conexion, $rating, $idValoracion);
+		$consulta = actualizarValoracion($conexion, $rating, $idValoracion);
+
+		echo "<script>alert('Se ha actualizado tu valoración.')</script>";
+
+		echo "<script>window.open('detallesPublicacion.php?publicacion=$idURL','_self')</script>";
+
+    	} else {
         
-        echo "<script>alert('Se ha actualizado tu valoración.')</script>";
+		$consulta = insertarValoracion($conexion, $idURL, $idUsuario, $rating);
 
-        echo "<script>window.open('detallesPublicacion.php?publicacion=$idURL','_self')</script>";
+		echo "<script>alert('Tu valoración se ha insertado correctamente.')</script>";
 
-    } else {
-        
-        $consulta = insertarValoracion($conexion, $idURL, $idUsuario, $rating);
+		echo "<script>window.open('detallesPublicacion.php?publicacion=$idURL','_self')</script>";
 
-        echo "<script>alert('Tu valoración se ha insertado correctamente.')</script>";
-
-        echo "<script>window.open('detallesPublicacion.php?publicacion=$idURL','_self')</script>";
-
-    }
+    	}
 }
 
 //Si alguien le da al botón de comentar
