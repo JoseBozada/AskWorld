@@ -1,0 +1,32 @@
+/* Estilos valoración*/
+input[type=radio] {
+  display: none;
+}
+input[type=radio] + label:before {
+  font-family: "Font Awesome 5 Free";
+  content: "★";
+  display: inline-block;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+label {
+  color: grey;
+}
+.clasificacion{
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  text-align: left;
+}
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+/* Estilos enlaces */
+a {
+  text-decoration: none;
+}
