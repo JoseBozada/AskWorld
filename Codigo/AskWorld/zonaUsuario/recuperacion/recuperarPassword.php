@@ -1,11 +1,34 @@
 <?php include "../includes/header.php" ?>
 
+<!-- Breadcrumb -->
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<br>
+			<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<strong>Está en: </strong>
+						<a href="index.php?categoria=0">
+							<span> Inicio</span>
+						</a>
+					</li>
+					<li class="breadcrumb-item active" aria-current="page">
+						<span> Recuperar Contraseña</span>        
+					</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
+</div>
+<!-- Termina Breadcrumb -->
+
 <div class="card bg-light">
 	<article class="card-body mx-auto" style="max-width: 400px;">
 		<h4 class="card-title mt-3 text-center">Recuperar tu contraseña</h4>
 		<p class="text-center">Introduce tu correo.</p>
 
-		<form method="POST">
+		<form method="POST" class="needs-validation">
 			<div class="form-group input-group">
 				<div class="input-group-prepend">
 					<div class="input-group">
@@ -15,6 +38,7 @@
 							</svg>
 						</span>
 						<input type="email" name="email" id="email" class="form-control" placeholder="Correo Electrónico" required>
+						<div class="invalid-feedback">El correo no es válido.</div>
 					</div>
 				</div>	
 			</div>
@@ -32,6 +56,8 @@
 <br>  
 
 <?php include "../includes/footer.php" ?>
+
+<script src="../../js/validacionRecuperarPassword.js"></script>
 
 <?php
 if(isset($_POST['submit'])){
