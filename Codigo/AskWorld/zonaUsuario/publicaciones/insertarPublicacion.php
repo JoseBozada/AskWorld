@@ -17,11 +17,11 @@
         Insertar Publicación
     </div>
     <div class="card-body">
-        <img src="../../zonaAdmin/img/Publicacion.png" width="150" height="150" style="border-radius: 20px;">
-        <form id="insertarPublicacion" enctype="multipart/form-data" method="post">
+        <img src="../../img/Publicacion.png" width="150" height="150" style="border-radius: 20px;">
+        <form id="insertarPublicacion" enctype="multipart/form-data" method="post" class="needs-validation">
             <div class="row">  
                 <!-- Categoría -->
-                <div class="col">
+                <div class="col-md-6">
                     <div align="left"><h5></i> Categoría</h5></div>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">
@@ -33,17 +33,16 @@
                         <select name="categoria" class="form-control" id="categoria" autofocus required>
                             <option value="">Seleccione una categoria</option>
                             <?php
+                                $get_categorias = mostrarCategorias($conexion);
 
-                            $get_categorias = mostrarCategorias($conexion);
+                                while ($row_categorias = mysqli_fetch_assoc($get_categorias)){
 
-                            while ($row_categorias = mysqli_fetch_assoc($get_categorias)){
+                                    $idCategoria = $row_categorias['idCategoria'];
 
-                                $idCategoria = $row_categorias['idCategoria'];
+                                    $nombreCategoria = $row_categorias['NombreCategoria'];
 
-                                $nombreCategoria = $row_categorias['NombreCategoria'];
-
-                                echo "<option value='$idCategoria'> $nombreCategoria </option>";
-                            }
+                                    echo "<option value='$idCategoria'> $nombreCategoria </option>";
+                                }
                             ?>
                         </select>
                     </div>
@@ -51,7 +50,7 @@
                 <!-- Termina Categoría -->
 
                 <!-- Nombre -->
-                <div class="col">
+                <div class="col-md-6">
                     <div align="left"><h5></i> Nombre</h5></div>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">
@@ -60,6 +59,7 @@
                             </svg>
                         </span>
                         <input type="text" name="nombrePublicacion" id="nombrePublicacion" class="form-control" placeholder="Programa de Televisión" required>
+                        <div class="invalid-feedback">El nombre tiene una longitud mínima de 4 caracteres y máximo de 20 caracteres. No se permiten caracteres especiales.</div>
                     </div>
                 </div>
             </div>
@@ -67,23 +67,23 @@
 
             <br>
 
-            <!-- Descripción -->
+            <!-- Imagen -->
             <div class="row">
-                <div class="col">
-                    <div align="left"><h5></i> Descripción</h5></div>
+                <div class="col-md-6">
+                    <h5 align="left"></i> Imagen</h5>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
-                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
+                                <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
                             </svg>
                         </span>
-                        <input type="text" name="descripcionPublicacion" id="descripcionPublicacion" class="form-control" placeholder="Trata sobre como..." required>
+                        <input type="file" name="img" id="img" class="form-control" required>
                     </div>
                 </div>
-                <!-- Termina Descripción -->
+                <!-- Termina Imagen -->
 
                 <!-- Fecha -->
-                <div class="col">
+                <div class="col-md-6">
                     <div align="left"><h5></i> Fecha</h5></div>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">
@@ -99,19 +99,20 @@
 
             <br>
 
-            <!-- Imagen -->
-            <div class="col">
-                <h5 align="left"></i> Imagen</h5>
+            <!-- Descripción -->
+            <div class="col-md-12">
+                <div align="left"><h5></i> Descripción</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
-                            <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
+                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                         </svg>
                     </span>
-                    <input type="file" name="img" id="img" class="form-control" required>
+                    <textarea name="descripcionPublicacion" id="descripcionPublicacion" class="form-control" placeholder="Trata sobre como..." rows="6" required></textarea>
+                    <div class="invalid-feedback">La descripción tiene una longitud mínima de 4 caracteres y máximo de 500 caracteres. No se permiten enlaces, saltos de línea ni caracteres especiales.</div>
                 </div>
             </div>                             
-            <!-- Termina Imagen -->
+            <!-- Termina Descripción -->
 
             <br>
 
@@ -124,6 +125,8 @@
 </div>
 
 <br>
+
+<script src="../../js/validacionPublicaciones.js"></script>
 
 <?php include "../includes/footer.php"; ?>
 
@@ -169,4 +172,4 @@ if(isset($_POST['insertar'])){
         echo "<script>window.open('publicaciones.php','_self')</script>";
     }
 }
-?>   
+?> 
