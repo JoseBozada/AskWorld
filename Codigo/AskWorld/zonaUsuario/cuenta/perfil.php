@@ -13,10 +13,10 @@
 
 <?php
 
-    	//Guardamos el id del Usuario logeado
-    	$idUsuario = $_SESSION['idUsuario'];
+	//Guardamos el id del Usuario logeado
+	$idUsuario = $_SESSION['idUsuario'];
         
-    	//Mostramos los datos del Usuario por su ID y guardamos los que necesitamos
+	//Mostramos los datos del Usuario por su ID y guardamos los que necesitamos
     	$get_usuario = mostrarUsuariosPorID($conexion, $idUsuario);
         
     	$row_edit = mysqli_fetch_assoc($get_usuario);
@@ -57,7 +57,7 @@
         <hr>
     </div>
 </div>
-<form id="formularioPerfil" enctype="multipart/form-data" method="post">
+<form id="formularioPerfil" enctype="multipart/form-data" method="post" class="needs-validation">
 	<div class="col-sm-12">
 		<div class="text-center">
 			<img src="../../<?php echo $imagenPerfil; ?>"  class="avatar rounded-circle img-thumbnail" alt="avatar" style="max-width: 100px; max-height: 100px;">
@@ -68,7 +68,7 @@
 			<br>    
 			<div class="row">  
 				<!-- Usuario -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Usuario</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -77,12 +77,13 @@
 							</svg>
 						</span>
 						<input type="text" name="usuario" id="usuario" class="form-control" value="<?php echo $Usuario; ?>" autofocus>
+						<div class="invalid-feedback">El usuario tiene una longitud mínima de 6 caracteres y máximo de 20 caracteres, no se permiten acentos, espacios ni caracteres especiales.</div>
 					</div>
 				</div>
 				<!-- Termina Usuario -->
 
 				<!-- Nombre -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Nombre</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -91,6 +92,7 @@
 							</svg>
 						</span>
 						<input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $Nombre; ?>">
+						<div class="invalid-feedback">El nombre tiene una longitud mínima de 3 caracteres y máximo de 20 caracteres.</div>
 					</div>
 				</div>
 			</div>
@@ -100,7 +102,7 @@
 
 			<!-- Contraseña -->
 			<div class="row">
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Contraseña</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -114,7 +116,7 @@
 				<!-- Termina Contraseña -->
 
 				<!-- Apellido -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Apellido</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -123,6 +125,7 @@
 							</svg>
 						</span>
 						<input type="text" name="apellido" id="apellido" class="form-control" value="<?php echo $Apellido; ?>">
+						<div class="invalid-feedback">Los apellidos tienen una longitud mínima de 4 caracteres y máxima de 20 caracteres.</div>
 					</div>
 				</div>
 			</div>
@@ -132,7 +135,7 @@
 
 			<!-- Dirección -->
 			<div class="row">
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Dirección</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -142,12 +145,13 @@
 							</svg>
 						</span>
 						<input type="text" name="direccion" id="direccion" class="form-control" value="<?php echo $Direccion; ?>">
+						<div class="invalid-feedback">La dirección no es válida.</div>
 					</div>
 				</div>
 				<!-- Termina Dirección -->
 
 				<!-- Apellido 2 -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Apellido 2</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -156,6 +160,7 @@
 							</svg>
 						</span>
 						<input type="text" name="apellido2" id="apellido2" class="form-control" value="<?php echo $Apellido2; ?>">
+						<div class="invalid-feedback">Los apellidos tienen una longitud mínima de 4 caracteres y máxima de 20 caracteres.</div>
 					</div>
 				</div>
 			</div>
@@ -165,7 +170,7 @@
 
 			<!-- Correo -->
 			<div class="row">
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Correo</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -174,12 +179,13 @@
 							</svg>
 						</span>
 						<input type="email" name="correo" id="correo" class="form-control" value="<?php echo $Correo; ?>">
+						<div class="invalid-feedback">El correo no es válido.</div>
 					</div>
 				</div>
 				<!-- Termina Correo -->
 
 				<!-- Fecha -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Fecha</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -187,7 +193,7 @@
 								<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
 							</svg>
 						</span>
-						<input type="date" name="fecha" id="fecha" class="form-control" value="<?php echo $Fecha; ?>">
+						<input type="date" name="fecha" id="fecha" class="form-control" min="1922-01-01" max="2009-12-31" value="<?php echo $Fecha; ?>">
 					</div>
 				</div>
 			</div>
@@ -197,7 +203,7 @@
 
 			<!-- Provincia -->
 			<div class="row">
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Provincia</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -216,7 +222,7 @@
 				<!-- Termina Provincia -->
 
 				<!-- Población -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Población</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -236,7 +242,7 @@
 
 			<!-- Teléfono -->
 			<div class="row">
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> Teléfono</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -245,12 +251,13 @@
 							</svg>
 						</span>
 						<input type="number" name="telefono" id="telefono" class="form-control" value="<?php echo $Telefono; ?>">
+						<div class="invalid-feedback">El teléfono no es válido.</div>
 					</div>
 				</div>
 				<!-- Termina Teléfono -->
 
 				<!-- DNI -->
-				<div class="col">
+				<div class="col-md-6">
 					<div align="left"><h5> DNI</h5></div>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
@@ -267,7 +274,7 @@
 
 			<!-- Actualizar y eliminar -->
 			<div class="form-group">
-				<div align="center" class="col-12">
+				<div align="center">
 					<br>
 					<button class="btn btn-lg btn-success" name="actualizar" type="submit"><i class="fas fa-user-edit"></i> Actualizar Datos
 					</button>
@@ -280,6 +287,8 @@
 </form>
 <br>
 
+<script src="../../js/validacionCuenta.js"></script>
+
 <?php include "../includes/footer.php"; ?>
 
 <?php } ?>
@@ -287,26 +296,26 @@
 <?php
 if(isset($_POST['actualizar'])){
 
-    //Recogemos los datos del formulario
-    $usuario = $_POST['usuario'];
+    	//Recogemos los datos del formulario
+    	$usuario = $_POST['usuario'];
 
-    $nombre = $_POST['nombre'];
+    	$nombre = $_POST['nombre'];
 
-    $apellido1 = $_POST['apellido'];
+    	$apellido1 = $_POST['apellido'];
 
-    $apellido2 = $_POST['apellido2'];
+    	$apellido2 = $_POST['apellido2'];
 
-    $email = $_POST['correo'];
+    	$email = $_POST['correo'];
 
-    $fecha = $_POST['fecha'];
+    	$fecha = $_POST['fecha'];
 
-    $direccion = $_POST['direccion'];
+    	$direccion = $_POST['direccion'];
 
-    $telefono = $_POST['telefono'];
+    	$telefono = $_POST['telefono'];
 
-    $provincia = $_POST['provincia'];
+    	$provincia = $_POST['provincia'];
 
-    $poblacion = $_POST['poblacion'];
+	$poblacion = $_POST['poblacion'];
 
 	//Si el usuario elige una foto nueva se borrará la anterior, en caso contrario se mantendrá la original.
 	if ($_FILES["img"]["name"] != '') {
@@ -343,7 +352,7 @@ if(isset($_POST['actualizar'])){
 		echo "<script>alert('La cuenta se ha actualizado correctamente.')</script>";
 
 		echo "<script>window.open('perfil.php','_self')</script>";
-	} 
+	}
 }
    
 ?>
