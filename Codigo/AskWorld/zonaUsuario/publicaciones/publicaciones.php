@@ -7,7 +7,7 @@
         
         echo "<script>alert('Debes iniciar sesión para entrar aquí.')</script>";
 
-        echo "<script>window.open('../../login.php','_self')</script>";
+        echo "<script>window.open('../sesion/login.php','_self')</script>";
         
     }else{
 ?>
