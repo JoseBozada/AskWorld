@@ -1,10 +1,10 @@
 <?php
-    //Incluimos el conector a la Base de datos e iniciamos la sesión
-    include "../../zonaAdmin/includes/Database.php";
-    session_start();
+    	//Incluimos el conector a la Base de datos e iniciamos la sesión
+    	include "../../zonaAdmin/includes/Database.php";
+    	session_start();
     
-    //Incluimos los ficheros donde están las funciones
-    include "../../zonaAdmin/includes/DAO/DAO_Valoraciones.php";
+	//Incluimos los ficheros donde están las funciones
+    	include "../../zonaAdmin/includes/DAO/DAO_Valoraciones.php";
 	include "../../zonaAdmin/includes/DAO/DAO_Publicaciones.php";
 ?>
 
@@ -29,43 +29,43 @@
 
 						$idUsuario = $_SESSION['idUsuario'];
 
-    					$consulta = mostrarValoracionesPorUsuario($conexion, $idUsuario);
+    						$consulta = mostrarValoracionesPorUsuario($conexion, $idUsuario);
     					
 						//Recorreremos la tabla de las Valoraciones y mostraremos sus datos
-	                    while($mostrar = mysqli_fetch_array($consulta)) {
+	                    			while($mostrar = mysqli_fetch_array($consulta)) {
 
-	                    $id_valoracion = $mostrar['idValoracion'];
+	                    				$id_valoracion = $mostrar['idValoracion'];
 
-						$valoracion = $mostrar['valoracion'];
+							$valoracion = $mostrar['valoracion'];
 
-						//Consulta de publicaciones: Necesitamos el nombre y la imagen para mostrarlo en la tabla.
-                        $idPublicacion = $mostrar['idPublicacion'];
+							//Consulta de publicaciones: Necesitamos el nombre y la imagen para mostrarlo en la tabla.
+                       					$idPublicacion = $mostrar['idPublicacion'];
 
-                        $get_publicaciones = mostrarPublicacionesPorID($conexion, $idPublicacion);
+							$get_publicaciones = mostrarPublicacionesPorID($conexion, $idPublicacion);
 
-                        $row_publicaciones = mysqli_fetch_assoc($get_publicaciones);
+							$row_publicaciones = mysqli_fetch_assoc($get_publicaciones);
 
-                        $nombrePublicacion = $row_publicaciones['NombrePublicacion'];
+							$nombrePublicacion = $row_publicaciones['NombrePublicacion'];
 
-                        $imgPublicacion = $row_publicaciones['ImagenPublicacion'];
+							$imgPublicacion = $row_publicaciones['ImagenPublicacion'];
 
-                        //Eliminamos la ruta de la imagen
+							//Eliminamos la ruta de la imagen
 
-                        $imagenPublicacion = str_replace("../", "", $imgPublicacion);
+							$imagenPublicacion = str_replace("../", "", $imgPublicacion);
 
-						//Aumentamos el contador
-						$i++;
-                	?>
+							//Aumentamos el contador
+							$i++;
+                			?>
 					<tr style="text-align: center;">
 						<td><strong><?php echo $i; ?></strong></td>
 						<td>
-                            <strong>
-                                <a class="text-dark" style="text-decoration:none" href="../../detallesPublicacion.php?publicacion=<?php echo $idPublicacion; ?>">
-                                    <?php echo $nombrePublicacion ?>
-                                </a>
-                            </strong>
-                        </td>
-                        <td><img src="../../<?php echo $imagenPublicacion; ?>" width="100" height="80"></td>
+						    <strong>
+							<a class="text-dark" style="text-decoration:none" href="../../detallesPublicacion.php?publicacion=<?php echo $idPublicacion; ?>">
+							    <?php echo $nombrePublicacion ?>
+							</a>
+						    </strong>
+                        			</td>
+                        			<td><img src="../../<?php echo $imagenPublicacion; ?>" width="100" height="80"></td>
 						<td><strong><?php echo $valoracion ?></strong><i class="fas fa-star"></i></td>
 						<td>
 							<a class="btn btn-warning btn-sm" href="editarValoracion.php?id=<?php echo $id_valoracion; ?>">
@@ -79,8 +79,8 @@
 						</td>
 					</tr>
 					<?php
-                		}
-                	?>
+						}
+					?>
 				</tbody>
 			</table>
 		</div>
