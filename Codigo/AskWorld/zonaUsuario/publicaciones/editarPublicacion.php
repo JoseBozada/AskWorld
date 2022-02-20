@@ -6,51 +6,51 @@
         
         echo "<script>alert('Debes iniciar sesión para entrar aquí.')</script>";
 
-        echo "<script>window.open('../../login.php','_self')</script>";
+        echo "<script>window.open('../sesion/login.php','_self')</script>";
         
     }else{
 ?>
 
 <?php
 
-    //Recogemos el ID recibido por URL
-    $idURL = $_GET['id'];
+	//Recogemos el ID recibido por URL
+   	$idURL = $_GET['id'];
         
-    //Mostramos y guardamos los datos de la publicación por su ID
-    $get_publicacion = mostrarPublicacionesPorID($conexion, $idURL);
+    	//Mostramos y guardamos los datos de la publicación por su ID
+   	$get_publicacion = mostrarPublicacionesPorID($conexion, $idURL);
         
-    $row_edit = mysqli_fetch_assoc($get_publicacion);
+	$row_edit = mysqli_fetch_assoc($get_publicacion);
 
-    $idPublicacion = $row_edit['idPublicacion'];
+	$idPublicacion = $row_edit['idPublicacion'];
 
-    $idCategoria = $row_edit['idCategoria'];
+	$idCategoria = $row_edit['idCategoria'];
 
-    $idUsuario = $row_edit['idUsuario'];
+	$idUsuario = $row_edit['idUsuario'];
 
-    $nombrePublicacion = $row_edit['NombrePublicacion'];
+	$nombrePublicacion = $row_edit['NombrePublicacion'];
 
-    $descripcionPublicacion = $row_edit['DescripcionPublicacion'];
+	$descripcionPublicacion = $row_edit['DescripcionPublicacion'];
 
-    $fechaPublicacion = $row_edit['FechaPublicacion'];
+	$fechaPublicacion = $row_edit['FechaPublicacion'];
 
-    $imagenPublicacion = $row_edit['ImagenPublicacion'];
+	$imagenPublicacion = $row_edit['ImagenPublicacion'];
 
-    //Eliminamos la ruta de la imagen
-    $mostrarImagen = str_replace("../", "", $imagenPublicacion);
+	//Eliminamos la ruta de la imagen
+	$mostrarImagen = str_replace("../", "", $imagenPublicacion);
 
-    //Buscamos la categoría al que pertenece la publicación
-    $get_categoria = mostrarCategoriasPorID($conexion, $idCategoria);
-        
-    $row_categoria = mysqli_fetch_assoc($get_categoria);
-    
-    $nombreCategoria = $row_categoria ['NombreCategoria'];
-    
-    //Buscamos el usuario al que pertenece la publicación
-    $get_usuario = mostrarUsuariosPorID($conexion, $idUsuario);
-        
-    $row_usuario = mysqli_fetch_assoc($get_usuario);
-    
-    $usuario = $row_usuario['Usuario'];
+	//Buscamos la categoría al que pertenece la publicación
+	$get_categoria = mostrarCategoriasPorID($conexion, $idCategoria);
+
+	$row_categoria = mysqli_fetch_assoc($get_categoria);
+
+	$nombreCategoria = $row_categoria ['NombreCategoria'];
+
+	//Buscamos el usuario al que pertenece la publicación
+	$get_usuario = mostrarUsuariosPorID($conexion, $idUsuario);
+
+	$row_usuario = mysqli_fetch_assoc($get_usuario);
+
+	$usuario = $row_usuario['Usuario'];
 
 ?>
 
@@ -60,11 +60,11 @@
         Editar Publicación
     </div>
     <div class="card-body">
-        <img src="../../zonaAdmin/img/EditarPublicacion.png" width="150" height="150" style="border-radius: 20px;">
-        <form id="editarPublicacion" enctype="multipart/form-data" method="post">
+        <img src="../../img/EditarPublicacion.png" width="150" height="150" style="border-radius: 20px;">
+        <form id="editarPublicacion" enctype="multipart/form-data" method="post" class="needs-validation">
             <div class="row">  
                 <!-- Categoría -->
-                <div class="col">
+                <div class="col-md-6">
                     <div align="left"><h5> Categoría</h5></div>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">
@@ -76,17 +76,16 @@
                         <select name="categoria" class="form-control" id="categoria">
                             <option value="<?php echo $idCategoria; ?>"><?php echo $nombreCategoria; ?></option>
                             <?php
+				    $get_categorias = mostrarCategorias($conexion);
 
-                            $get_categorias = mostrarCategorias($conexion);
+				    while ($row_categorias = mysqli_fetch_assoc($get_categorias)){
 
-                            while ($row_categorias = mysqli_fetch_assoc($get_categorias)){
+					$idCategoria = $row_categorias['idCategoria'];
 
-                                $idCategoria = $row_categorias['idCategoria'];
+					$nombreCategoria = $row_categorias['NombreCategoria'];
 
-                                $nombreCategoria = $row_categorias['NombreCategoria'];
-
-                                echo "<option value='$idCategoria'> $nombreCategoria </option>";
-                            }
+					echo "<option value='$idCategoria'> $nombreCategoria </option>";
+				    }
                             ?>
                         </select>
                     </div>
@@ -94,15 +93,16 @@
                 <!-- Termina Categoría -->
 
                 <!-- Nombre -->
-                <div class="col">
+                <div class="col-md-6">
                     <div align="left"><h5> Nombre</h5></div>
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fonts" viewBox="0 0 16 16">
-                                    <path d="M12.258 3h-8.51l-.083 2.46h.479c.26-1.544.758-1.783 2.693-1.845l.424-.013v7.827c0 .663-.144.82-1.3.923v.52h4.082v-.52c-1.162-.103-1.306-.26-1.306-.923V3.602l.431.013c1.934.062 2.434.301 2.693 1.846h.479L12.258 3z"/>
-                                </svg>
-                            </span>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fonts" viewBox="0 0 16 16">
+                                <path d="M12.258 3h-8.51l-.083 2.46h.479c.26-1.544.758-1.783 2.693-1.845l.424-.013v7.827c0 .663-.144.82-1.3.923v.52h4.082v-.52c-1.162-.103-1.306-.26-1.306-.923V3.602l.431.013c1.934.062 2.434.301 2.693 1.846h.479L12.258 3z"/>
+                            </svg>
+                        </span>
                         <input type="text" name="nombrePublicacion" id="nombrePublicacion" class="form-control" value="<?php echo $nombrePublicacion ?>">
+                        <div class="invalid-feedback">El nombre tiene una longitud mínima de 4 caracteres y máximo de 20 caracteres. No se permiten caracteres especiales.</div>
                     </div>
                 </div>
             </div>
@@ -110,23 +110,24 @@
 
             <br>
 
-            <!-- Descripción -->
+            <!-- Imagen -->
             <div class="row">
-                <div class="col">
-                    <div align="left"><h5> Descripción</h5></div>
+                <div class="col-md-6">
+                    <h5 align="left"> Imagen</h5>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
-                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
+                                <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
                             </svg>
                         </span>
-                        <input type="text" name="descripcionPublicacion" id="descripcionPublicacion" class="form-control" value="<?php echo $descripcionPublicacion ?>">
+                        <img src="../../<?php echo $mostrarImagen; ?>" width="60" height="60">
+                        <input type="file" id="img" name="img">
                     </div>
                 </div>
-                <!-- Termina Descripción -->
-
+                <!-- Termina Imagen -->
+                
                 <!-- Fecha -->
-                <div class="col">
+                <div class="col-md-6">
                     <div align="left"><h5> Fecha</h5></div>
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">
@@ -142,20 +143,20 @@
 
             <br>
 
-            <!-- Imagen -->
-            <div class="col">
-                <h5 align="left"> Imagen</h5>
+            <!-- Descripción -->
+            <div class="col-md-12">
+                <div align="left"><h5> Descripción</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image-fill" viewBox="0 0 16 16">
-                            <path d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
+                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                         </svg>
                     </span>
-                    <img src="../../<?php echo $mostrarImagen; ?>" width="60" height="60">
-                    <input type="file" id="img" name="img">
+                    <textarea name="descripcionPublicacion" id="descripcionPublicacion" rows="3" class="form-control" rows="3"><?php echo $descripcionPublicacion ?></textarea>
+                    <div class="invalid-feedback">La descripción tiene una longitud mínima de 4 caracteres y máximo de 500 caracteres. No se permiten enlaces, saltos de línea ni caracteres especiales.</div>
                 </div>
             </div>
-            <!-- Termina Imagen -->
+            <!-- Termina Descripción -->
 
             <br>
 
@@ -168,6 +169,8 @@
 </div>
 
 <br>
+
+<script src="../../js/validacionPublicaciones.js"></script>
 
 <?php include "../../includes/footer.php"; ?>
 
@@ -186,41 +189,41 @@ if(isset($_POST['actualizar'])){
     $fecha = $_POST['fecha'];
 
     //Si el usuario elige una foto nueva se borrará la anterior, en caso contrario se mantendrá la original.
-	if ($_FILES["img"]["name"] != '') {
-		
-		if(is_uploaded_file($_FILES["img"]["tmp_name"])) {
-			
-			$ruta= "../../img/publicaciones/".$_FILES["img"]["name"];
-			
-			move_uploaded_file($_FILES["img"]["tmp_name"], $ruta);
-			
-			echo "<script>alert('Actualizando la publicación...')</script>";
-			
-			unlink($imagenPublicacion); //Borramos la imagen anterior
-			
-			$consulta = actualizarPublicacion($conexion, $categoria, $nombrePublicacion, $descripcionPublicacion, $fecha, $ruta, $idPublicacion);
-			
-			echo "<script>alert('Tu publicación se ha actualizado correctamente.')</script>";
+    if ($_FILES["img"]["name"] != '') {
+        
+        if(is_uploaded_file($_FILES["img"]["tmp_name"])) {
+            
+            $ruta= "../../img/publicaciones/".$_FILES["img"]["name"];
+            
+            move_uploaded_file($_FILES["img"]["tmp_name"], $ruta);
+            
+            echo "<script>alert('Actualizando la publicación...')</script>";
+            
+            unlink($imagenPublicacion); //Borramos la imagen anterior
+            
+            $consulta = actualizarPublicacion($conexion, $categoria, $nombrePublicacion, $descripcionPublicacion, $fecha, $ruta, $idPublicacion);
+            
+            echo "<script>alert('Tu publicación se ha actualizado correctamente.')</script>";
 
-			echo "<script>window.open('publicaciones.php','_self')</script>";
+            echo "<script>window.open('publicaciones.php','_self')</script>";
 
-		} else {
-			
-			echo "<script>alert('No se puede actualizar tu publicación.')</script>";
-			
-			echo "<script>window.open('publicaciones.php','_self')</script>";
+        } else {
+            
+            echo "<script>alert('No se puede actualizar tu publicación.')</script>";
+            
+            echo "<script>window.open('publicaciones.php','_self')</script>";
         }
-	
-	}else{
-		
-		echo "<script>alert('Actualizando la publicación...')</script>";
-		
-		$consulta = actualizarPublicacion($conexion, $categoria, $nombrePublicacion, $descripcionPublicacion, $fecha, $imagenPublicacion, $idPublicacion);
-		
-		echo "<script>alert('Tu publicación se ha actualizado correctamente.')</script>";
+    
+    }else{
+        
+        echo "<script>alert('Actualizando la publicación...')</script>";
+        
+        $consulta = actualizarPublicacion($conexion, $categoria, $nombrePublicacion, $descripcionPublicacion, $fecha, $imagenPublicacion, $idPublicacion);
+        
+        echo "<script>alert('Tu publicación se ha actualizado correctamente.')</script>";
 
-		echo "<script>window.open('publicaciones.php','_self')</script>";
-	}
+        echo "<script>window.open('publicaciones.php','_self')</script>";
+    }
 
 }
 
