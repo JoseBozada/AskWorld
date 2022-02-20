@@ -6,7 +6,7 @@
         
         echo "<script>alert('Debes iniciar sesión para entrar aquí.')</script>";
 
-        echo "<script>window.open('../../login.php','_self')</script>";
+        echo "<script>window.open('../sesion/login.php','_self')</script>";
         
     }else{
 ?>
@@ -17,24 +17,24 @@
 	$idURL = $_GET['id'];
         
 	//Mostramos y guardamos los datos de la valoración por su ID
-    $get_valoracion = mostrarValoracionesPorID($conexion, $idURL);
+    	$get_valoracion = mostrarValoracionesPorID($conexion, $idURL);
         
-    $row_edit = mysqli_fetch_assoc($get_valoracion);
+    	$row_edit = mysqli_fetch_assoc($get_valoracion);
 
-    $idValoracion = $row_edit['idValoracion'];
+    	$idValoracion = $row_edit['idValoracion'];
 
-    $idUsuario = $row_edit['idUsuario'];
+    	$idUsuario = $row_edit['idUsuario'];
 
-    $idPublicacion = $row_edit['idPublicacion'];
+    	$idPublicacion = $row_edit['idPublicacion'];
         
-    $valoracion = $row_edit['valoracion'];
+    	$valoracion = $row_edit['valoracion'];
 
-    //Buscamos la publicación donde se hizo la valoración
-    $get_publicacion = mostrarPublicacionesPorID($conexion, $idPublicacion);
+    	//Buscamos la publicación donde se hizo la valoración
+    	$get_publicacion = mostrarPublicacionesPorID($conexion, $idPublicacion);
         
-    $row_publicacion = mysqli_fetch_assoc($get_publicacion);
+    	$row_publicacion = mysqli_fetch_assoc($get_publicacion);
     
-    $publicacion = $row_publicacion['NombrePublicacion'];
+    	$publicacion = $row_publicacion['NombrePublicacion'];
 
 ?>
 
@@ -44,7 +44,7 @@
         Editar Valoración
     </div>
     <div class="card-body">
-        <img src="../../zonaAdmin/img/Valoracion.png" width="150" height="150" style="border-radius: 20px;">
+        <img src="../../img/Valoracion.png" width="150" height="150" style="border-radius: 20px;">
         <form id="editarComentario" method="post">
             <h5 align="left"></i> Valoración</h5>
             <div class="input-group">
