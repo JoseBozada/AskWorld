@@ -1,11 +1,11 @@
 <?php
-    //Incluimos el conector a la Base de datos e iniciamos la sesión
-    include "../../zonaAdmin/includes/Database.php";
-    session_start();
+    	//Incluimos el conector a la Base de datos e iniciamos la sesión
+	include "../../zonaAdmin/includes/Database.php";
+    	session_start();
     
-    //Incluimos los ficheros donde están las funciones
-    include "../../zonaAdmin/includes/DAO/DAO_Publicaciones.php";
-    include "../../zonaAdmin/includes/DAO/DAO_Categorias.php";
+	//Incluimos los ficheros donde están las funciones
+	include "../../zonaAdmin/includes/DAO/DAO_Publicaciones.php";
+	include "../../zonaAdmin/includes/DAO/DAO_Categorias.php";
 ?>
 
 <div class="row">
@@ -26,46 +26,46 @@
                 </thead>
                 <tbody>
                     <?php
-
-                        //Contador
-						$i=0;
+                        
+			//Contador
+			$i=0;
 
                         $idUsuario = $_SESSION['idUsuario'];
 
-    					$consulta = mostrarPublicacionesPorUsuario($conexion, $idUsuario);
+    			$consulta = mostrarPublicacionesPorUsuario($conexion, $idUsuario);
 
-						//Recorreremos la tabla de las publicaciones  y mostraremos sus datos
-	                    while($mostrar = mysqli_fetch_assoc($consulta)) {
+			//Recorreremos la tabla de las publicaciones  y mostraremos sus datos
+	                while($mostrar = mysqli_fetch_assoc($consulta)) {
 
-                        //Consulta de categorias: Necesitamos el nombre para mostrarlo en la tabla.
-                        $idCategorias = $mostrar['idCategoria'];
+				//Consulta de categorias: Necesitamos el nombre para mostrarlo en la tabla.
+				$idCategorias = $mostrar['idCategoria'];
 
-                        $get_categorias = mostrarCategoriasPorID($conexion, $idCategorias);
+				$get_categorias = mostrarCategoriasPorID($conexion, $idCategorias);
 
-                        $row_categorias = mysqli_fetch_assoc($get_categorias);
+				$row_categorias = mysqli_fetch_assoc($get_categorias);
 
-                        $nombreCategoria = $row_categorias['NombreCategoria'];
+				$nombreCategoria = $row_categorias['NombreCategoria'];
 
-	                    //Guardamos los datos que necesitamos de la publicación
-	                    $id_publicacion = $mostrar['idPublicacion'];
+	                    	//Guardamos los datos que necesitamos de la publicación
+	                    	$id_publicacion = $mostrar['idPublicacion'];
 
-                        $imagen_Publicacion = $mostrar['ImagenPublicacion'];
+                        	$imagen_Publicacion = $mostrar['ImagenPublicacion'];
 
-                        //Eliminamos la ruta de la imagen
-                        $imagenPublicacion = str_replace("../", "", $imagen_Publicacion);
+                        	//Eliminamos la ruta de la imagen
+                        	$imagenPublicacion = str_replace("../", "", $imagen_Publicacion);
 
-                        $nombrePublicacion = $mostrar['NombrePublicacion'];
+                        	$nombrePublicacion = $mostrar['NombrePublicacion'];
 
-                        $descripcionPublicacion = $mostrar['DescripcionPublicacion'];
+                        	$descripcionPublicacion = $mostrar['DescripcionPublicacion'];
 
-                        $fechaPublicacion = $mostrar['FechaPublicacion'];
+                        	$fechaPublicacion = $mostrar['FechaPublicacion'];
 
-                        //Aumentamos el contador
-						$i++;
+                        	//Aumentamos el contador
+				$i++;
                 	?>
                     <tr style="text-align: center;">
                         <td><strong><?php echo $i ?></strong></td>
-						<td><strong><?php echo $nombreCategoria ?></strong></td>
+			<td><strong><?php echo $nombreCategoria ?></strong></td>
                         <td>
                             <strong>
                                 <a class="text-dark" style="text-decoration:none" href="../../detallesPublicacion.php?publicacion=<?php echo $id_publicacion; ?>">
