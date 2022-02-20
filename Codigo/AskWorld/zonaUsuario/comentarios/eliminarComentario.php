@@ -1,15 +1,15 @@
 <?php
 	//Incluimos el conector a la Base de datos 
-    include "../../zonaAdmin/includes/Database.php";
+    	include "../../zonaAdmin/includes/Database.php";
 
-    //Incluimos el fichero donde están las funciones
-    require "../../zonaAdmin/includes/DAO/DAO_Comentarios.php";
+    	//Incluimos el fichero donde están las funciones
+    	require "../../zonaAdmin/includes/DAO/DAO_Comentarios.php";
 
-    //Recogemos el ID recibido por URL
-    $idURL = $_GET["id"];
+    	//Recogemos el ID recibido por URL
+    	$idURL = $_GET["id"];
 
-    //Eliminamos el comentario
-    $consulta = eliminarComentario($conexion, $idURL);
+    	//Eliminamos el comentario
+    	$consulta = eliminarComentario($conexion, $idURL);
 
 	if($consulta){
 
@@ -21,7 +21,6 @@
 
 		echo "<script>alert('Tu comentario no se ha podido eliminar.')</script>";
             
-        echo "<script>window.open('comentarios.php','_self')</script>";
+        	echo "<script>window.open('comentarios.php','_self')</script>";
 	}
-
 ?>
