@@ -201,7 +201,7 @@ La Tierra simboliza la globalidad de las personas que pueden usar la página, es
 
 ### Modelo relacional BBDD
 
-![image](https://user-images.githubusercontent.com/55547053/142044574-c3bf059a-8775-4118-9c42-dc02f68edac6.png) 
+![Modelo Relacional BBDD](https://user-images.githubusercontent.com/55547053/155227960-844b9623-c924-4b0e-812b-7073c4da834f.png)
 
 ### Script de creación BBDD
 
