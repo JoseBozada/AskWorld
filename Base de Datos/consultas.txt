@@ -11,5 +11,5 @@ Se utiliza la consulta UPDATE *tabla* SET *campo* para modificar datos en la BD,
 Ejemplo: "UPDATE valoracion SET valoracion = '$valoracion' WHERE (`idValoracion` = '$idValoracion')";
 
 #Eliminar
-Se utiliza la consulta DELETE FROM para eliminar datos en la BD, esta se utiliza para eliminar Usuarios, Publicaciones, Valoraciones y demás.
+Se utiliza la consulta DELETE FROM para eliminar datos en la BD, esta se utiliza para eliminar Usuarios, Publicaciones, Valoraciones y demás mediante su ID.
 Ejemplo: "DELETE FROM `usuarios` WHERE `idUsuario` = '$idUsuario'";
