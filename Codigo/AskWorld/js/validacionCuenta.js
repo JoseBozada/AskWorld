@@ -63,7 +63,7 @@ function validarApellido() {
 
 function validarDireccion() {
   const direccion = document.querySelector('#direccion');
-  const expresion = /^[a-zA-Z0-9 \_\-]{6,80}$/;
+  const expresion = /^[a-zA-Z á é í ó ú ' 0-9 ,]{12,80}$/;
 
   if (expresion.test(direccion.value)) {
     direccion.classList.remove('is-invalid');
