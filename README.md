@@ -68,7 +68,7 @@ Se han utilizado distintos lenguajes de programación, como pueden ser PHP y Jav
 
 # REQUISITOS
 
-Se describen de forma concisa los requisitos funcionales de vuestra aplicación.
+Queremos crear una página que mantenga la esencia de un foro que nos permita publicar, comentar y realizar acciones en ella de manera sencilla para la mayoría de los usuarios.
 ## Requisitos funcionales
 
 - Diseño responsive
@@ -100,13 +100,13 @@ Se describen de forma concisa los requisitos funcionales de vuestra aplicación.
 # ANÁLISIS Y DISEÑO WEB
 
 Existen dos secciones de la página:
-- Zona Administrador: Solo podrán acceder los usuarios Administradores de la página, tienen control de todo (publicaciones, comentarios y usuarios), pueden crear sus propias publicaciones así como borrar los datos y roles de todos los usuarios.
+- Zona Administrador: Solo podrán acceder los usuarios Administradores de la página, tienen control de todo (publicaciones, comentarios y usuarios), pueden crear sus propias publicaciones así como borrar los datos de todos los usuarios.
 
 - Mapa web:
 
 ![Mapa web admin](https://user-images.githubusercontent.com/55547053/149623156-7be0fab2-0ab2-4de7-85e4-bf0932a029a0.jpg)
 
-- Página web y Zona Usuario: Se permite a los usuarios no registrado acceder a los detalles de las publicaciones, pero si no se registran o inician sesión no tendrán acceso a sus publicaciones, comentarios ni su cuenta.
+- Página web y Zona Usuario: Se permite a los usuarios no registrados acceder a los detalles de las publicaciones, pero si no se registran o inician sesión no podrán comentar ni valorar y tampoco tendrán acceso a sus publicaciones, comentarios ni su cuenta.
 
 - Mapa web:
 
@@ -190,11 +190,11 @@ Existen dos secciones de la página:
 
 ### Colores corporativos del logo
 
-La palabra "Ask" se ha usado el rojo para destacarla y el azul junto al verde en la Tierra para simbolizarla como la misma formando así "AskWorld" 
+La palabra "Ask" se ha usado el rojo para destacarla como primer nombre y el azul junto al verde en la Tierra para simbolizarla como la misma formando así "AskWorld" 
 
 ### Justificación de diseño del logo
 
-La Tierra simboliza la globalidad de las personas que pueden usar la página, es decir, que cualquier persona desde cualquier parte del mundo podrán consultar sus dudas o participar en ellas.
+La Tierra simboliza la globalidad de las personas que pueden usar la página, es decir, que cualquier persona desde cualquier parte del mundo podrán consultar sus dudas, participar en las publicaciones de los demás usuarios valorando o comentando sobre ellas asi como crear sus propias publicaciones.
 
 ## Planificación de tareas
 
