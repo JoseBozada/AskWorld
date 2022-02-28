@@ -11,8 +11,10 @@ error_reporting(E_ALL);
 	//Incluimos el fichero donde están las funciones
 	include '../../includes/DAO/DAO_Admin.php';
 
-	//Incluimos el fichero para mandar correos
-	include '../../librerias/PHPMailer/PHPMailerAutoload.php';
+	//Incluimos los ficheros para mandar correos
+	include '../../librerias/PHPMailer/src/PHPMailer.php';
+	include '../../src/SMTP.php';
+	include '../../src/Exception.php';
 ?>
 
 <!DOCTYPE html>
