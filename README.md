@@ -38,6 +38,10 @@
       - [Usuarios](#usuarios)
       - [Valoración](#valoración)
     - [Consultas](#consultas)
+      - [Seleccionar](#seleccionar) 
+      - [Insertar](#insertar) 
+      - [Modificar](#modificar) 
+      - [Eliminar](#eliminar)
   - [Validación de formularios](#validación-de-formularios)
   - [Proceso de carga](#proceso-de-carga)
   - [Jerarquía de directorios](#jerarquía-de-directorios)
@@ -362,7 +366,28 @@ CREATE TABLE `valoracion` (
 
 ### Consultas 
 
-Se incluyen y describen todas las consultas que se emplean en el desarrollo del proyecto.
+Las consultas a continuación se utilizan para todas las tablas del proyecto (Categoría, Comentarios, Publicaciones, Usuarios y Valoración) y se pondrá ejemplos distintos para explicar su funcionamiento.
+
+#### Seleccionar:
+
+Si queremos mostrar todos los datos de los usuarios que tenemos registrados usaremos: **SELECT * FROM `usuarios`;**
+
+Si necesitamos solo unos datos o mostrar datos de un usuario en concreto utilizamos: **SELECT * FROM usuarios WHERE (`Email` = '$email');**
+
+#### Insertar:
+Se utiliza INSERT INTO para insertar datos a la BD.
+
+**Ejemplo:** INSERT INTO categoria (`NombreCategoria`) VALUES ('$nombreCategoria');
+
+#### Modificar:
+Para modificar datos se utiliza UPDATE **tabla** SET **datos** y también mediante su ID.
+
+**Ejemplo:** UPDATE publicaciones SET `idCategoria` = '$idCategoria', `NombrePublicacion` = '$nombrePublicacion', `DescripcionPublicacion` = '$descripcionPublicacion', `FechaPublicacion` = '$fechaPublicacion', `ImagenPublicacion` = '$imagenPublicacion' WHERE (`idPublicacion` = '$idPublicacion');
+
+#### Eliminar:
+Para eliminar datos de la BD se utiliza DELETE FROM junto al ID que queremos eliminar.
+
+**Ejemplo:** DELETE FROM valoracion WHERE (`idValoracion` = '$idValoracion');
 
 ## Validación de formularios
 
