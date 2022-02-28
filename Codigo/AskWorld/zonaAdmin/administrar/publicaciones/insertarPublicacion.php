@@ -157,9 +157,9 @@ if(isset($_POST['insertar'])){
     $fecha = $_POST['fecha'];
     
     //Imagen
-    $nombreImg = $_FILES['img']['name'];
+    $nombreImagen = $_FILES['img']['name'];
     $ruta      = $_FILES['img']['tmp_name'];
-    $destino   = "../../../img/publicaciones/" . $nombreImg;
+    $destino   = "../../../img/publicaciones/" . $nombreImagen;
 
     //Si se inserta la publicación, moveremos la imagen a la carpeta correspondiente
     $consulta = insertarPublicacion($conexion, $categoria, $idAdmin, $nombrePublicacion, $descripcionPublicacion, $fecha, $destino);
