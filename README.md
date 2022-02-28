@@ -391,7 +391,47 @@ Para eliminar datos de la BD se utiliza DELETE FROM junto al ID que queremos eli
 
 ## Validación de formularios
 
-Se incluyen todos los formularios que se emplean en la WEB y se especifican qué tipo de validación se va ha realizar.
+Para valir los formularios del proyecto utilizaremos Javascript. Se ha utilizado el mismo funcionamiento del script para cada uno de los casos que necesitemos (usuarios, login, registro...) pero separados por archivos para cada caso. Tanto la zonaAdmin como la zonaUsuario tiene scripts y se ha hecho diferentes pruebas con expresiones regulares para evitar escribir contenido no permitido en ciertos campos (por ejemplo que no se pueda usar números en el nombre) y evitar que el botón submit funcione si los campos o un solo campo esté incorrecto. Se adjunta imágenes de los diferentes formularios (se evita repetir formularios que funcionan igual como insertar Usuario con registro).
+
+**Nota:** Algunos datos como la contraseña, DNI y población no pueden ser modificados.
+
+**Formularios de la página:** 
+
+Login: 
+
+![Login](https://user-images.githubusercontent.com/55547053/156065309-931ddb1d-c679-48bb-b7e2-04473d0839d3.png)
+
+Registro:
+
+![Registro](https://user-images.githubusercontent.com/55547053/156065584-467cd22c-3dc6-4e96-929b-407af67854f2.png)
+
+Insertar categorías: 
+
+![Insertar Categoria](https://user-images.githubusercontent.com/55547053/156065864-fdc1999f-d90e-4cb3-a375-61ddc634f0a7.png)
+
+Insertar Comentaios: 
+
+![Insertar Comentario](https://user-images.githubusercontent.com/55547053/156065998-7a33b03e-d43b-43c8-b9d2-db9c7ed3bfe7.png)
+
+Insertar Publicaciones: 
+
+![Insertar Publicacion](https://user-images.githubusercontent.com/55547053/156066271-e34ab616-404b-490f-b44e-367096f27b15.png)
+
+Modificar cuenta: 
+
+![Modificar Cuenta](https://user-images.githubusercontent.com/55547053/156066392-175fcb8e-881a-499e-8ca6-d369bd57beb4.png)
+
+Recuperar contraseña:
+
+![Recuperar Password](https://user-images.githubusercontent.com/55547053/156066636-b7305718-2e52-43f3-97d2-d9e4cc3680bf.png)
+
+Actualizar contraseña:
+
+![Nueva Password](https://user-images.githubusercontent.com/55547053/156066620-f9a7db20-8d21-42e1-a9a9-6104f68e33df.png)
+
+**Imagen del funcionamiento del script:** 
+
+![Script](https://user-images.githubusercontent.com/55547053/156067086-8dcf49f4-839e-42b1-92e7-712ca649ddb1.png)
 
 ## Proceso de carga
 
