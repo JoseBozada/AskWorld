@@ -1,13 +1,4 @@
-<?php
-	//Incluimos el conector a la Base de datos
-	include '../../includes/Database.php';
 
-	//Incluimos el fichero donde están las funciones
-	include '../../includes/DAO/DAO_Admin.php';
-
-	//Incluimos el fichero para mandar correos
-	include '../../librerias/PHPMailer/PHPMailerAutoload.php';
-?>
 
 <!DOCTYPE html>
 <html lang="es">
