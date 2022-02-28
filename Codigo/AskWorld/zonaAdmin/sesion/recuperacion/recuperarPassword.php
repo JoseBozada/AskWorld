@@ -1,12 +1,12 @@
 <?php
 	//Incluimos el conector a la Base de datos
-	require('../../includes/Database.php');
+	include '../../includes/Database.php';
 
 	//Incluimos el fichero donde están las funciones
-	require('../../includes/DAO/DAO_Admin.php');
+	include '../../includes/DAO/DAO_Admin.php';
 
 	//Incluimos el fichero para mandar correos
-	require('../../librerias/PHPMailer/PHPMailerAutoload.php');
+	include '../../librerias/PHPMailer/PHPMailerAutoload.php';
 ?>
 
 <!DOCTYPE html>
