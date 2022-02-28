@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -48,7 +46,16 @@
 
 <?php
 if(isset($_POST['submit'])){
+	
+	//Incluimos el conector a la Base de datos
+	include '../../includes/Database.php';
 
+	//Incluimos el fichero donde están las funciones
+	include '../../includes/DAO/DAO_Admin.php';
+
+	//Incluimos el fichero para mandar correos
+	include '../../librerias/PHPMailer/PHPMailerAutoload.php';
+	
 	//Recogemos el correo introducido en el formulario
 	$email = $_POST['email'];
 
