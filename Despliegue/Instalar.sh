@@ -33,6 +33,4 @@ mysql -u $USERDB -p$USERDB $BBDD < ../DataBase/$DATOS
 echo "http://$HOST/Codigo/AskWorld/index.php"
 
 #Cambiamos los permisos de las carpetas que contienen las imágenes
-sudo chmod +777 /var/www/html/Codigo/AskWorld/img
-sudo chmod +777 /var/www/html/Codigo/AskWorld/img/publicaciones
-sudo chmod +777 /var/www/html/Codigo/AskWorld/img/usuarios
+sudo chmod -R +777 /var/www/html/Codigo/AskWorld/img
