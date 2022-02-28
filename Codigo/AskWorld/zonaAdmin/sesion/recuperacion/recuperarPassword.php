@@ -12,7 +12,13 @@ error_reporting(E_ALL);
 	include '../../includes/DAO/DAO_Admin.php';
 
 	//Incluimos los ficheros para mandar correos
+	include '../../librerias/PHPMailer/src/Exception.php';
 	include '../../librerias/PHPMailer/src/PHPMailer.php';
+	include '../../librerias/PHPMailer/src/SMTP.php';
+
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\SMTP;
+	use PHPMailer\PHPMailer\Exception;
 ?>
 
 <!DOCTYPE html>
