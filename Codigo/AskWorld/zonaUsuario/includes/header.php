@@ -11,8 +11,14 @@
 	include "../..//zonaAdmin/includes/DAO/DAO_Valoraciones.php";
 	include "../../zonaAdmin/includes/DAO/DAO_Comentarios.php";
 
-	//Incluimos el fichero para mandar correos
-	include '../../zonaAdmin/librerias/PHPMailer/PHPMailerAutoload.php';	    
+	//Incluimos los ficheros para mandar correos
+	include '../../librerias/PHPMailer/src/Exception.php';
+	include '../../librerias/PHPMailer/src/PHPMailer.php';
+	include '../../librerias/PHPMailer/src/SMTP.php';
+
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\SMTP;
+	use PHPMailer\PHPMailer\Exception;	    
 
 
 ?>
