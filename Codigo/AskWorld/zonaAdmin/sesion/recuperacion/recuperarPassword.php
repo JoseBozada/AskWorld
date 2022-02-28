@@ -13,8 +13,8 @@ error_reporting(E_ALL);
 
 	//Incluimos los ficheros para mandar correos
 	include '../../librerias/PHPMailer/src/PHPMailer.php';
-	include '../../src/SMTP.php';
-	include '../../src/Exception.php';
+	include '../../librerias/src/SMTP.php';
+	include '../../librerias/src/Exception.php';
 ?>
 
 <!DOCTYPE html>
