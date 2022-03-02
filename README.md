@@ -71,6 +71,10 @@
     - [Página de Valoraciones](#página-de-valoraciones)
     - [Página de Categorias](#página-de-categorías)
     - [Página de Mi Cuenta](#página-de-mi-cuenta)
+  - [Página Web](#página-web)
+    - [Página Inicio](#página-inicio)
+    - [Página detalles (sin login)](#página-detalles-sin-login)
+    - [Página detalles (con login)](#página-detalles-con-login)
   - [zona Usuario](#zonausuario)
 - [BIBLIOGRAFÍA](#bibliografía)
 
@@ -562,23 +566,20 @@ Esto se realiza para cada uno de los requisitos de nuestra aplicación.
 
 # PRUEBAS
 
-Breve descripción de cómo se han realizado las pruebas. Por ejemplo:
-
-> Para la realización de las pruebas he montado una máquina virtual con linux + apache + mysql + php.
-> 
-> A lo largo del desarrollo he subido diferentes versiones y comprobado las diferentes funcionalidades.
+Breve descripción de cómo se han realizado las pruebas. 
 
 ## Metodología de las pruebas
 
-Para hacer pruebas he usado los programas MAMP y MySQL Workbench para trabajar en Windows.
-
-Constantemente se ha buscado que la página funcione lo mas eficaz posible siendo modificada tanto en aspecto como en funcionamiento para ser optimizada.
-
-Para comprobar el funcionamiento del CRUD se ha aplicado restricciones tanto en HTML como en el JS para no permitir entrada de datos incorrectos en la BD.
-
-Se ha añadido diferentes mensajes de advertencia, confirmación y demás para saber en todo momento la acción que hemos realizado.
-
-Mediente la herramienta para de desarrolladores se ha visualizado la página en diferentes dispositivos para comprobar el funcionamiento del diseño responsive.
+> Para hacer pruebas he usado los programas MAMP y MySQL Workbench para trabajar en Windows.
+>
+> Constantemente se ha buscado que la página funcione lo mas eficaz posible siendo modificada tanto en aspecto como en funcionamiento para ser optimizada.
+>
+> Para comprobar el funcionamiento del CRUD se ha aplicado restricciones tanto en HTML como en el JS para no permitir entrada de datos incorrectos en la BD.>
+>
+> Se ha añadido diferentes mensajes de advertencia, confirmación y demás para saber en todo momento la acción que hemos realizado.
+>
+> Mediente la herramienta para de desarrolladores se ha visualizado la página en diferentes dispositivos para comprobar el funcionamiento del diseño responsive.
+>
 
 # DESPLIEGUE
 
@@ -609,7 +610,7 @@ Descripción de todas las herramientas que se han usado para el desarrollo del p
 > Se ha utilizado como servidor Apache y como soporte para MySQL Workbench para la BD.
 > 
 
-> ## MySQL Worbench
+> ## MySQL Workbench
 > 
 > MySQL Workbench es una herramienta visual de diseño de bases de datos que integra desarrollo de software, administración de bases de datos, diseño de bases de datos, gestión y mantenimiento para el sistema de base de datos MySQL.
 > 
@@ -710,6 +711,22 @@ Descripción de los lenguajes y frameworks utilizados para el desarrollo del pro
 ### Página de Mi Cuenta
 
 ![Pagina de mi cuenta](https://user-images.githubusercontent.com/55547053/156391164-fe2646c2-4f4b-4511-9da7-c2eb77ef80e2.png)
+
+## Página Web
+
+### Página inicio
+
+![Página Inicio](https://user-images.githubusercontent.com/55547053/156410230-07b96298-4ab8-41a4-97f5-5bf0200bedd7.png)
+
+### Página detalles (sin login)
+
+![Página detalles 1](https://user-images.githubusercontent.com/55547053/156410247-aa4a4faf-b03f-4ede-b1fd-fbb9ed11ede7.png)
+
+### Página detalles (con login)
+
+![Página detalles 2](https://user-images.githubusercontent.com/55547053/156410271-1c58cbbf-d3da-49c1-bbde-3f39a6fa4983.png)
+
+## ZonaUsuario
 
 # BIBLIOGRAFÍA
 
