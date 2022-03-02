@@ -120,17 +120,17 @@ Queremos crear una página que mantenga la esencia de un foro que nos permita pu
 # ANÁLISIS Y DISEÑO WEB
 
 Existen dos secciones de la página:
-- Zona Administrador: Solo podrán acceder los usuarios Administradores de la página, tienen control de todo (publicaciones, comentarios y usuarios), pueden crear sus propias publicaciones así como borrar los datos de todos los usuarios.
+- Zona Administrador: Solo podrán acceder los usuarios con rol Administrador, tienen control de todo el contenido de la página (publicaciones, comentarios, valoraciones y usuarios), pueden crear sus propias publicaciones, comentarios, valoraciones e insertar usuarios así como borrar los datos de todos los usuarios.
 
 - Mapa web:
 
-![Mapa web admin](https://user-images.githubusercontent.com/55547053/149623156-7be0fab2-0ab2-4de7-85e4-bf0932a029a0.jpg)
+![149623156-7be0fab2-0ab2-4de7-85e4-bf0932a029a0](https://user-images.githubusercontent.com/55547053/156462259-93005acf-516e-403c-90ef-d502807a9093.jpg)
 
-- Página web y Zona Usuario: Se permite a los usuarios no registrados acceder a los detalles de las publicaciones, pero si no se registran o inician sesión no podrán comentar ni valorar y tampoco tendrán acceso a sus publicaciones, comentarios ni su cuenta.
+- Página web y Zona Usuario: Se permite a los usuarios no registrados acceder a los detalles de las publicaciones, pero si no inician sesión no podrán comentar, valorar y tampoco tendrán acceso a sus publicaciones, comentarios, valoraciones ni acceder a su cuenta.
 
 - Mapa web:
 
-![Mapa web](https://user-images.githubusercontent.com/55547053/149623159-1e86d25d-8fee-47d5-ad4e-21542da4957f.jpg)
+![149623159-1e86d25d-8fee-47d5-ad4e-21542da4957f](https://user-images.githubusercontent.com/55547053/156463193-55e54cf0-87c8-42d3-b8d5-8bb8d38c6d4f.jpg)
 
 ## Prototipo web y boceto de la estructura
 
