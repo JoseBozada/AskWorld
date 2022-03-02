@@ -506,8 +506,10 @@ En base al apartado [Prototipo web y boceto de la estructura](#prototipo-web-y-b
 > El sitio web consta de tres partes fundamentales. Esta estructura es común en todas las páginas que forman el sitio web.
 > 
 > **Header**: Contiene el logo de la empresa, que es "AskWorld". También contiene la barra de navegación para ir a las páginas que cambiarán dinámicamente si el usuario inicia sesión.
-> Sin iniciar sesión: Inicio, Iniciar Sesión, Registrarme y Recuperar Contraseña.
-> Iniciando sesión: Inicio, Mis publicaciones, Mis comentarios, Mis valoraciones, Mi cuenta y salir
+> 
+> **Sin iniciar sesión:** Inicio, Iniciar Sesión, Registrarme y Recuperar Contraseña.
+> 
+> **Iniciando sesión:** Inicio, Mis publicaciones, Mis comentarios, Mis valoraciones, Mi cuenta y salir
 > 
 >**Contenido body**: Se actualizará acorde a la página que visitemos, si miramos una publicación mostrará sus datos, si vamos a nuestra cuenta mostrará nuestros datos como usuario y así con las demás.
 > 
