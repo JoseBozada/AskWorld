@@ -504,7 +504,7 @@ En base al apartado [Prototipo web y boceto de la estructura](#prototipo-web-y-b
 
 ### Estructura gráfica de la interface
 
-![image](https://user-images.githubusercontent.com/55547053/142046487-d6516e3f-c766-4ecc-9766-c3afa292cc6c.png)
+![Estructura gráfica](https://user-images.githubusercontent.com/55547053/156380646-edefb282-fcc6-492e-a84d-9f84b930ca50.png)
 
 # IMPLEMENTACIÓN
 
@@ -556,9 +556,15 @@ Breve descripción de cómo se han realizado las pruebas. Por ejemplo:
 
 ## Metodología de las pruebas
 
-Descripción de las pruebas que se han realizado para probar el funcionamiento de toda la aplicación. 
+Para hacer pruebas he usado los programas MAMP y MySQL Workbench para trabajar en Windows.
 
-Imprescindible comprobar el CRUD y el acceso público y privado de nuestra aplicación.
+Constantemente se ha buscado que la página funcione lo mas eficaz posible siendo modificada tanto en aspecto como en funcionamiento para ser optimizada.
+
+Para comprobar el funcionamiento del CRUD se ha aplicado restricciones tanto en HTML como en el JS para no permitir entrada de datos incorrectos en la BD.
+
+Se ha añadido diferentes mensajes de advertencia, confirmación y demás para saber en todo momento la acción que hemos realizado.
+
+Mediente la herramienta para de desarrolladores se ha visualizado la página en diferentes dispositivos para comprobar el funcionamiento del diseño responsive.
 
 # DESPLIEGUE
 
@@ -571,31 +577,31 @@ Se copia y describe el funcionamiento del script.
 Descripción de todas las herramientas que se han usado para el desarrollo del proyecto. Por ejemplo:
 
 > Para la realización del proyecto se han empleado las siguientes herramientas:
-> ## Visual Studio
+> ## Visual Studio Code
 > 
-> Descripción de Visual Studio
+> Es un editor de código fuente desarrollado por Microsoft para Windows, Linux, macOS y Web. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código.
 > 
 > ### Características
 > 
-> Breve descripción de las características y plugins que hemos usado 
+> Se ha utilizado como editor de texto.
 > 
 
-> ## XAMPP
+> ## MAMP
 > 
-> Descripción de XAMPP
+> El acrónimo MAMP se refiere al conjunto de programas software comúnmente usados para desarrollar sitios web dinámicos sobre sistemas operativos Apple Macintosh, MAC OS X. - macOS: Sistema operativo. - Apache: Servidor Web. - MySQL: Sistema de gestión de bases de datos.
 > 
 > ### Características
 > 
-> Breve descripción de las características y plugins que hemos usado 
+> Se ha utilizado como servidor Apache y como soporte para MySQL Workbench para la BD.
 > 
 
 > ## MySQL Worbench
 > 
-> Descripción de MySQL Worbench
+> MySQL Workbench es una herramienta visual de diseño de bases de datos que integra desarrollo de software, administración de bases de datos, diseño de bases de datos, gestión y mantenimiento para el sistema de base de datos MySQL.
 > 
 > ### Características
 > 
-> Breve descripción de las características y plugins que hemos usado 
+> Creación de la BD y gestionarla. 
 > 
 
 # LENGUAJES
@@ -604,36 +610,44 @@ Descripción de los lenguajes y frameworks utilizados para el desarrollo del pro
 
 > ## HTML
 > 
-> Descripción de qué es HTML
+> Es un estándar que sirve de referencia del software que conecta con la elaboración de páginas web en sus diferentes versiones, define una estructura básica y un código (denominado código HTML) para la definición de contenido de una página web, como texto, imágenes, videos, juegos, entre otros.
 > 
 > ### Características
 > 
-> Breve descripción de sus características  
+> Utilizado para crear las páginas de nuestra web. 
 
 > ## PHP
 > 
-> Descripción de qué es PHP
+> Es un lenguaje de programación de uso general que se adapta especialmente al desarrollo web.
 > 
 > ### Características
 > 
-> Breve descripción de sus características  
+> 
 
 > ## JavaScript
 > 
-> Descripción de qué es JavaScript
+> Es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.
 > 
 > ### Características
 > 
-> Breve descripción de sus características  
+> Se utiliza para validar los formularios. 
 > 
 
-> ## CSS
+> ## Bootstrap
 > 
-> Descripción de qué es CSS
+> Es una biblioteca multiplataforma o conjunto de herramientas de código abierto para diseño de sitios y aplicaciones web.
 > 
 > ### Características
 > 
-> Breve descripción de sus características
+> Se ha utilizado para crear el diseño de la página y el diseño responsive.
+
+> ## PHPMailer
+> 
+> Es una biblioteca de códigos para enviar correos electrónicos de forma segura y sencilla a través de código PHP desde un servidor web.
+> 
+> ### Características
+> 
+> Se utiliza para mandar correos al correo del usuario.
 
 # PRODUCTO
 
