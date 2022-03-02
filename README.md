@@ -73,9 +73,16 @@
     - [Página de Mi Cuenta](#página-de-mi-cuenta)
   - [Página Web](#página-web)
     - [Página Inicio](#página-inicio)
+    - [Página Registro](#página-registro)
     - [Página detalles (sin login)](#página-detalles-sin-login)
     - [Página detalles (con login)](#página-detalles-con-login)
+    - [Página Recuperar Contraseña](#página-recuperar-contraseña)
+    - [Página Actualizar Contraseña](#página-actualizar-contraseña)
   - [zona Usuario](#zonausuario)
+    - [Mis Publicaciones](#mis-publicaciones)
+    - [Mis Comentarios](#mis-comentarios)
+    - [Mis Valoraciones](#mis-valoraciones)
+    - [Mi Cuenta](#mi-cuenta)
 - [BIBLIOGRAFÍA](#bibliografía)
 
 # TÍTULO DE PROYECTO
@@ -574,7 +581,7 @@ Breve descripción de cómo se han realizado las pruebas.
 >
 > Constantemente se ha buscado que la página funcione lo mas eficaz posible siendo modificada tanto en aspecto como en funcionamiento para ser optimizada.
 >
-> Para comprobar el funcionamiento del CRUD se ha aplicado restricciones tanto en HTML como en el JS para no permitir entrada de datos incorrectos en la BD.>
+> Para comprobar el funcionamiento del CRUD se ha aplicado restricciones tanto en HTML como en el JS para no permitir entrada de datos incorrectos en la BD.
 >
 > Se ha añadido diferentes mensajes de advertencia, confirmación y demás para saber en todo momento la acción que hemos realizado.
 >
@@ -583,9 +590,58 @@ Breve descripción de cómo se han realizado las pruebas.
 
 # DESPLIEGUE
 
-Creación de un Script en BASH que permita el despliegue en automático de la aplicación en cualquier servidor linux, que contenga un Apache+PHP y una base de datos SQL.
+## Variables de entorno
 
-Se copia y describe el funcionamiento del script.
+> USERDB="debianDB"
+> 
+> PASSDB="debianDB"
+> 
+> HOST=$(hostname -I)
+> 
+> WWW="/var/www/html/"
+> 
+
+## Nombre del fichero de los datos en el proyecto 
+
+> DATOS="datos.sql"
+>
+> BBDD="askworld"
+>
+
+## Se toman los parámetros como USER y PASS de la BBDD
+
+>if [ $# = 2 ];
+>
+>then
+>
+   >USERDB=$1
+   >
+   >PASSDB=$2
+   >
+>fi
+>
+
+## Copiamos el contenido de la carpeta proyecto a la página html
+
+> cp -r ../Codigo/ $WWW
+> 
+
+## Restauramos los datos de ejemplo a la BBDD
+
+> mysqladmin -u $USERDB -p$USERDB create $BBDD
+> 
+> mysql -u $USERDB -p$USERDB $BBDD < ../DataBase/$DATOS
+>
+
+## Mostramos url de carga
+
+> echo "http://$HOST/Codigo/AskWorld/index.php"
+>
+
+## Cambiamos los permisos de las carpetas que contienen las imágenes
+
+> sudo chmod -R +777 /var/www/html/Codigo/AskWorld/img
+> 
 
 # HERRAMIENTAS
 
@@ -618,6 +674,18 @@ Descripción de todas las herramientas que se han usado para el desarrollo del p
 > 
 > Creación de la BD y gestionarla. 
 > 
+
+> ## OVA Lamp
+> 
+> **OVA** es un Objeto Virtual de Aprendizaje, que algunas empresas ponen en funcionamiento y suben a internet para ser usadas. 
+> 
+> **LAMP:** es el acrónimo usado para describir un sistema de infraestructura de internet que usa las siguientes herramientas: Linux, Apache, MySQL/MariaDB y PHP.
+> 
+> ### Características
+> 
+> Se utiliza como máquina de pruebas de nuestro proyecto para instalar el SCRIPT de despliegue y probar el despliegue de nuestra aplicación.
+> 
+
 
 # LENGUAJES
 
@@ -718,6 +786,10 @@ Descripción de los lenguajes y frameworks utilizados para el desarrollo del pro
 
 ![Página Inicio](https://user-images.githubusercontent.com/55547053/156410230-07b96298-4ab8-41a4-97f5-5bf0200bedd7.png)
 
+### Página Registro
+
+![Registro](https://user-images.githubusercontent.com/55547053/156467409-41dc7e3c-2390-41a9-b857-8e656aa6af15.png)
+
 ### Página detalles (sin login)
 
 ![Página detalles 1](https://user-images.githubusercontent.com/55547053/156410247-aa4a4faf-b03f-4ede-b1fd-fbb9ed11ede7.png)
@@ -726,16 +798,39 @@ Descripción de los lenguajes y frameworks utilizados para el desarrollo del pro
 
 ![Página detalles 2](https://user-images.githubusercontent.com/55547053/156410271-1c58cbbf-d3da-49c1-bbde-3f39a6fa4983.png)
 
+### Página Recuperar Contraseña
+
+![Recuperar Contraseña](https://user-images.githubusercontent.com/55547053/156467651-7d5d99e8-3064-401c-a746-be57bcd6974b.png)
+
+### Página Actualizar Contraseña
+
+![Actualizar Contraseña](https://user-images.githubusercontent.com/55547053/156467641-60c105b5-ace6-47f8-b1b3-7e0acf9d3b09.png)
+
 ## ZonaUsuario
+
+### Mis Publicaciones
+
+![Mis publicaciones](https://user-images.githubusercontent.com/55547053/156468062-61c268ae-7f88-49ce-a2a2-6af753753d2a.png)
+
+### Mis Comentarios
+
+![Mis Comentarios](https://user-images.githubusercontent.com/55547053/156468074-15210a3d-0071-4ab6-9d40-324cf314bc79.png)
+
+### Mis Valoraciones
+
+![Mis Valoraciones](https://user-images.githubusercontent.com/55547053/156468080-1dc69aba-7c0b-4a67-886a-ad6da0420785.png)
+
+### Mi Cuenta
+
+![Mi cuenta](https://user-images.githubusercontent.com/55547053/156468088-fbfdaceb-cd97-4bef-90d0-3e4077e4e162.png)
 
 # BIBLIOGRAFÍA
 
-- Comentarios: https://www.youtube.com/watch?v=EHca8OI8ez0
+- Sistema de Comentarios: https://www.youtube.com/watch?v=EHca8OI8ez0
 - Iconos: https://fontawesome.com/ 
 - Iconos 2: https://icons.getbootstrap.com/
-- Bootstrap: https://getbootstrap.com/docs/5.1/getting-started/introduction/
+- Guía Bootstrap: https://getbootstrap.com/docs/5.1/getting-started/introduction/
 - Tablas avanzadas: https://datatables.net/
-- Ocultar contenido con código: https://www.seabrookewindows.com/s/ocultar-texto-en-php/
 - Mantener imagen del usuario: https://es.stackoverflow.com/questions/125941/almacenar-nombre-y-ruta-de-imagen-para-actualizar-php
 - No permitir repetir datos: https://www.youtube.com/watch?v=cbec05bEfwI
 - Sistema de valoración: https://programandoamimanera.com/sistema-de-valoracion-de-opinion-de-usuarios-para-webs-con-php/
