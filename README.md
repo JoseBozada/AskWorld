@@ -445,40 +445,64 @@ Descripción del proceso de carga de vuestra aplicación. Por ejemplo:
 
 ## Jerarquía de directorios
 
-Mostramos el árbol de directorios de nuestro proyecto WEB, tal y como lo visualizaríamos en la carpeta WWW.
-
-Podemos usar la herramienta `tree -d` en entorno linux.
-
-![ArbolDirectorios](Imagenes/ArbolDirectorios.png)
+![Directorios](https://user-images.githubusercontent.com/55547053/156375756-ead4f5db-fbfc-4d43-8858-b55c853ff9db.JPG)
 
 ### Contenido directorios
 
 Breve explicación de lo que tenemos contenido en cada directorio. Por ejemplo:
 
-> `./` -> Contiene los ficheros principales “index.php”, “estilos.css”, “realizar_recomendacion.php”, “realizar_enviao.php”, “descargas.php” y “javascript.js”.
+> `./` -> Contiene los ficheros principales “index.php”, detallesPublicación” que serán las encargadas de mostrar el contenido de la página y los detalles de una publicación.
 > 
-> `descargas` -> Contiene los archivo PDF descargables desde el sitio web.
+> `img` -> Contiene las imágenes que se utilizan en los formularios, las de los usuarios y las de las publicaciones.
 > 
-> `Esp` -> Contiene las imágenes y las páginas web en español.
+> `Includes` -> Contiene el header y footer que cambiará de manera dinámica según el estado de la sesión y también contiene el sidebar que carga las categorías de las publicaciones.
 > 
-> `Eus` -> Contiene las imágenes y las páginas web en euskera.
+> `js` -> Contiene los archivos javascript para validar los formularios.
 > 
-> ...
+
+Explicación directorios zonaAdmin
+> 
+> `administrar` -> Contiene los archivos php que utilizaremos para crear, editar y eliminar las categorías, usuarios, valoraciones, publicaciones y comentarios de la página.
+>
+> `includes` -> Contiene el header y footer y también los archivos DAO con las consultas que necesitaremos.
+> 
+> `librerias` -> Contiene los framework bootstrap, jquery y PHPMailer.
+> 
+> `sesion` -> Contiene los archivos php que se encargan de modificar datos, eliminar cuenta, crear la sesión y cerrarla.
+
+Explicación directorios zonaUsuario
+> 
+> `comentarios` -> Contiene los archivos php que utilizaremos para editar y eliminar nuestros comentarios.
+>
+> `cuenta` -> Contiene los archivos php para modificar o eliminar cuenta.
+> 
+> `includes` -> Contiene el header y footer.
+> 
+> `publicaciones` -> Contiene los archivos php que utilizaremos para crear, editar y eliminar nuestras publicaciones.
+> 
+> `recuperacion` -> Contiene los archivos php que se encargan de recuperar nuestra contraseña por correo y actualizar la contraseña.
+> 
+> `sesion` -> Contiene los archivos php que se encargan de crear y cerrar la sesion.
+> 
+> `valoraciones` -> Contiene los archivos php que utilizaremos para editar y eliminar nuestras valoraciones.
+> 
 
 ## Diseño de la interface
 
 En base al apartado [Prototipo web y boceto de la estructura](#prototipo-web-y-boceto-de-la-estructura) describimos el contenido de la interface de nuestra aplicación. Por ejemplo:
 
-> El sitio web consta de cinco partes fundamentales. Esta estructura es común en todas las páginas que forman el sitio web.
+> El sitio web consta de tres partes fundamentales. Esta estructura es común en todas las páginas que forman el sitio web.
 > 
-> **Cabecera**: Contiene el logo de la empresa, que es "AskWorld". También contiene los enlaces a las páginas: inicio, iniciar sesión, registrarme.
+> **Header**: Contiene el logo de la empresa, que es "AskWorld". También contiene la barra de navegación para ir a las páginas que cambiarán dinámicamente si el usuario inicia sesión.
+> Sin iniciar sesión: Inicio, Iniciar Sesión, Registrarme y Recuperar Contraseña.
+> Iniciando sesión: Inicio, Mis publicaciones, Mis comentarios, Mis valoraciones, Mi cuenta y salir
 > 
+>**Contenido body**: Se actualizará acorde a la página que visitemos, si miramos una publicación mostrará sus datos, si vamos a nuestra cuenta mostrará nuestros datos como usuario y así con las demás.
+> 
+>**Footer:** Encontraremos la sección del usuario con las páginas que se encuentran en el header y también las cinco publicaciones más recientes.
+>
 
 ### Estructura gráfica de la interface
-
-Mostramos la estructura gráfica de nuestro diseño. Por ejemplo.
-
-![image](https://user-images.githubusercontent.com/55547053/142046444-7a0bea72-12d2-4d3a-81e5-fdfc439d679b.png)
 
 ![image](https://user-images.githubusercontent.com/55547053/142046487-d6516e3f-c766-4ecc-9766-c3afa292cc6c.png)
 
