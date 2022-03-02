@@ -59,7 +59,19 @@
 - [HERRAMIENTAS](#herramientas)
 - [LENGUAJES](#lenguajes)
 - [PRODUCTO](#producto)
-  - [Página de Inicio](#página-de-inicio)
+  - [Zona Administrador](#zonaadmin)  
+    - [Página de Login (sin código)](#página-de-login-sin-código)
+    - [Página de Login (con código)](#página-de-login-con-código)
+    - [Página de Recuperar Contraseña](#página-de-recuperar-contraseña)
+    - [Página de Actualizar Contraseña](#página-de-actualizar-contraseña)
+    - [Página de Inicio](#página-de-inicio)
+    - [Página de Usuarios](#página-de-usuarios)
+    - [Página de Publicaciones](#página-de-publicaciones)
+    - [Página de Comentarios](#página-de-comentarios)
+    - [Página de Valoraciones](#página-de-valoraciones)
+    - [Página de Categorias](#página-de-categorías)
+    - [Página de Mi Cuenta](#página-de-mi-cuenta)
+  - [zona Usuario](#zonausuario)
 - [BIBLIOGRAFÍA](#bibliografía)
 
 # TÍTULO DE PROYECTO
@@ -651,16 +663,61 @@ Descripción de los lenguajes y frameworks utilizados para el desarrollo del pro
 
 # PRODUCTO
 
-Se muestran diferentes pantallas que constituyen el desarrollo final de la aplicación:
+## ZonaAdmin
 
-## Página de Inicio
+### Página de Login (sin código)
 
-![EjemploInicio](Imagenes/EjemploInicio.png)
+![Login 1](https://user-images.githubusercontent.com/55547053/156387699-9322af73-6724-4a28-b31c-d23ee7373049.png)
 
-Y lo vamos realizando con todas las pantallas.
+### Página de Login (con código)
+
+![Login 2](https://user-images.githubusercontent.com/55547053/156387725-50d07746-f021-4734-85c1-dfa7b7f14789.png)
+
+### Página de Recuperar Contraseña
+
+![Recuperar Contraseña](https://user-images.githubusercontent.com/55547053/156388158-3050238a-fe20-4357-8348-b10dac799311.png)
+
+### Página de Actualizar Contraseña
+
+![Actualizar Contraseña](https://user-images.githubusercontent.com/55547053/156388180-8dbcb32d-8b8f-404f-b05b-935b47f9af89.png)
+
+### Página de Inicio
+
+![Pagina Inicio Admin](https://user-images.githubusercontent.com/55547053/156388373-6ed139b9-148a-45fd-aa78-45cd037b9280.png)
+
+### Página de Usuarios
+
+![Pagina de Usuarios](https://user-images.githubusercontent.com/55547053/156389136-1db55cd3-b37c-425e-be46-02479bc0bfa4.png)
+
+### Página de Publicaciones
+
+![Pagina de Publicaciones](https://user-images.githubusercontent.com/55547053/156389417-c003d8cb-c8de-463f-9583-62aac0fa872a.png)
+
+### Página de Comentarios
+
+![Pagina de Comentarios](https://user-images.githubusercontent.com/55547053/156391094-4be3c28a-ed0a-4517-aa32-1f7523b375e1.png)
+
+### Página de Valoraciones
+
+![Pagina de Valoraciones](https://user-images.githubusercontent.com/55547053/156391116-4874c741-ca59-4ac9-9d4a-6aff10dd6f4f.png)
+
+### Página de Categorías
+
+![Pagina de Categorías](https://user-images.githubusercontent.com/55547053/156391131-8bbbad89-64be-47ad-ad50-3ca4b3f8fbc4.png)
+
+### Página de Mi Cuenta
+
+![Pagina de mi cuenta](https://user-images.githubusercontent.com/55547053/156391164-fe2646c2-4f4b-4511-9da7-c2eb77ef80e2.png)
+
 # BIBLIOGRAFÍA
 
 - Comentarios: https://www.youtube.com/watch?v=EHca8OI8ez0
-- Sistema de valoración: https://www.youtube.com/watch?v=0bqm-2wLKW4
-- Añadir iconos: https://fontawesome.com/ 
+- Iconos: https://fontawesome.com/ 
+- Iconos 2: https://icons.getbootstrap.com/
+- Bootstrap: https://getbootstrap.com/docs/5.1/getting-started/introduction/
 - Tablas avanzadas: https://datatables.net/
+- Ocultar contenido con código: https://www.seabrookewindows.com/s/ocultar-texto-en-php/
+- Mantener imagen del usuario: https://es.stackoverflow.com/questions/125941/almacenar-nombre-y-ruta-de-imagen-para-actualizar-php
+- No permitir repetir datos: https://www.youtube.com/watch?v=cbec05bEfwI
+- Sistema de valoración: https://programandoamimanera.com/sistema-de-valoracion-de-opinion-de-usuarios-para-webs-con-php/
+- Cifrar contraseña: https://www.w3schools.com/php/func_string_sha1.asp
