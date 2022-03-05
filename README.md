@@ -52,9 +52,49 @@
   - [REQUISITO 1: Diseño responsive](#requisito-1-diseño-responsive)
     - [Funcionamiento](#funcionamiento)
     - [Ejemplo de código](#ejemplo-de-código)
-  - [REQUISITO 2: ...](#requisito-2-)
-- [PRUEBAS](#pruebas)
-  - [Metodología de las pruebas](#metodología-de-las-pruebas)
+    - [Implementación](#implementación)
+  - [REQUISITO 2: Control de errores en formularios](#requisito-2-control-de-errores-en-formularios)
+    - [Funcionamiento](#funcionamiento)
+    - [Ejemplo de código](#ejemplo-de-código)
+    - [Implementación](#implementación)
+  - [REQUISITO 3: Acceso restringido a usuarios no registrados](#requisito-3-acceso-restringido-a-usuarios-no-registrados)
+    - [Funcionamiento](#funcionamiento)
+    - [Ejemplo de código](#ejemplo-de-código)
+    - [Implementación](#implementación)
+  - [REQUISITO 4: Que solo los usuarios registrados puedan comentar y valorar positivamente o negativamente sobre el tema](#requisito-4-que-solo-los-usuarios-registrados-puedan-comentar-y-valorar-positivamente-o-negativamente-sobre-el-tema)
+    - [Funcionamiento](#funcionamiento)
+    - [Ejemplo de código](#ejemplo-de-código)
+    - [Implementación](#implementación)
+  - [REQUISITO 5: Los usuarios sin registrar tendrán acceso al contenido pero no podrán comentar ni valorar](#requisito-5-los-usuarios-sin-registrar-tendrán-acceso-al-contenido-pero-no-podrán-comentar-ni-valorar)
+    - [Funcionamiento](#funcionamiento)
+    - [Ejemplo de código](#ejemplo-de-código)
+    - [Implementación](#implementación)
+  - [REQUISITO 6: Solo los administradores pueden añadir los temas a tratar (foto, descripción, categoría, etc)](#requisito-6-solo-los-administradores-pueden-añadir-los-temas-a-tratar-foto-descripción-categoría-etc)
+    - [Funcionamiento](#funcionamiento)
+    - [Ejemplo de código](#ejemplo-de-código)
+    - [Implementación](#implementación)
+  - [REQUISITO 7: Añadir filtros para poder ordenar por categoría](#requisito-7-añadir-filtros-para-poder-ordenar-por-categoría)
+    - [Funcionamiento](#funcionamiento)
+    - [Ejemplo de código](#ejemplo-de-código)
+    - [Implementación](#implementación)
+  - [REQUISITO 8: Cada usuario tendrá su perfil para modificar sus datos (nombre, apellidos, correo...)](#requisito-1-diseño-responsive)
+    - [Funcionamiento](#funcionamiento)
+    - [Ejemplo de código](#ejemplo-de-código)
+    - [Implementación](#implementación)
+   - [REQUISITO 9: En la noticia aparecerá la foto, descripción, comentarios y valoración](#requisito-9-en-la-noticia-aparecerá-la-foto-descripción-comentarios-y-valoración)
+      - [Funcionamiento](#funcionamiento)
+      - [Ejemplo de código](#ejemplo-de-código)
+      - [Implementación](#implementación)
+  - [REQUISITO 10: Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios](#requisito-10-los-administradores-tendrán-un-panel-que-les-permita-modificar-borrar-o-añadir-contenido-a-la-página-y-del-mismo-modo-con-los-usuarios)
+      - [Funcionamiento](#funcionamiento)
+      - [Ejemplo de código](#ejemplo-de-código)
+      - [Implementación](#implementación)
+  - [REQUISITO 11: Para acceder al contenido tendrán que clickear en una tarjeta y les mostrará la foto, descripción, valoración y comentarios](#requisito-11-para-acceder-al-contenido-tendrán-que-clickear-en-una-tarjeta-y-les-mostrará-la-foto-descripción-valoración-y-comentarios)
+    - [Funcionamiento](#funcionamiento)
+    - [Ejemplo de código](#ejemplo-de-código)
+    - [Implementación](#implementación)
+  - [PRUEBAS](#pruebas)
+     - [Metodología de las pruebas](#metodología-de-las-pruebas)
 - [DESPLIEGUE](#despliegue)
 - [HERRAMIENTAS](#herramientas)
 - [LENGUAJES](#lenguajes)
@@ -78,7 +118,7 @@
     - [Página detalles (con login)](#página-detalles-con-login)
     - [Página Recuperar Contraseña](#página-recuperar-contraseña)
     - [Página Actualizar Contraseña](#página-actualizar-contraseña)
-  - [zona Usuario](#zonausuario)
+  - [Zona Usuario](#zonausuario)
     - [Mis Publicaciones](#mis-publicaciones)
     - [Mis Comentarios](#mis-comentarios)
     - [Mis Valoraciones](#mis-valoraciones)
@@ -89,9 +129,9 @@
 ## Antecedentes
 
 Este proyecto muestra todos los pasos a seguir para recolectar, organizar, tratar y construir un portal Web empezando desde cero, para montar una página web como si fuera un “foro” para comentar diversos temas y valorar sobre ellos.
-He optado por un diseño más gráfico que de texto ya que por experiencia personal un foro normal llega a ser tedioso si hay demasiadas páginas junto al texto (como la combinación de colores negros con letra blanca que acaba cansando la vista), por eso prefiero organizarlo por imágenes, facilitando la búsqueda del tema y ver los comentarios más cómodamente.
+He optado por un diseño más gráfico que de texto ya que por experiencia personal un foro normal llega a ser tedioso si hay demasiadas páginas junto al texto (como la combinación de colores negros con letra blanca que acaba cansando la vista), por eso prefiero organizarlo por imágenes, facilitando la búsqueda del tema y ver el texto más cómodamente.
 
-Se han utilizado distintos lenguajes de programación, como pueden ser PHP y JavaScript para su desarrollo, y para su diseño se ha hecho uso de estilos CSS y de librerías como Boostrap que nos facilita la creación de headers, diseño responsive, o cualquier recurso que necesitemos.
+Se han utilizado distintos lenguajes de programación, como pueden ser PHP y JavaScript para su desarrollo, y para su diseño se ha hecho uso de estilos CSS y de librerías como Boostrap que nos facilita la creación de diseño responsive, columnas o cualquier recurso que necesitemos.
 
 # REQUISITOS
 
@@ -395,7 +435,7 @@ Las consultas a continuación se utilizan para todas las tablas del proyecto (Ca
 
 Si queremos mostrar todos los datos de los usuarios que tenemos registrados usaremos: **SELECT * FROM `usuarios`;**
 
-Si necesitamos solo unos datos o mostrar datos de un usuario en concreto utilizamos: **SELECT * FROM usuarios WHERE (`Email` = '$email');**
+Si necesitamos solo unos datos o mostrar datos de un usuario en concreto utilizamos una condición: **SELECT * FROM usuarios WHERE (`Email` = '$email');**
 
 #### Insertar:
 Se utiliza INSERT INTO para insertar datos a la BD.
@@ -484,14 +524,15 @@ Breve explicación de lo que tenemos contenido en cada directorio. Por ejemplo:
 > 
 
 Explicación directorios zonaAdmin
-> 
+>`./` -> Contiene los ficheros Index.php y login.php. Al entrar cargará directamente el archivo login.php ya que debemos iniciar sesión para poder acceder al index.php
+>  
 > `administrar` -> Contiene los archivos php que utilizaremos para crear, editar y eliminar las categorías, usuarios, valoraciones, publicaciones y comentarios de la página.
 >
 > `includes` -> Contiene el header y footer y también los archivos DAO con las consultas que necesitaremos.
 > 
 > `librerias` -> Contiene los framework bootstrap, jquery y PHPMailer.
 > 
-> `sesion` -> Contiene los archivos php que se encargan de modificar datos, eliminar cuenta, crear la sesión y cerrarla.
+> `sesion` -> Contiene los archivos php que se encargan de comprobar datos del login, modificar datos, eliminar cuenta, crear la sesión, recuperar y actualizar contreaseña y cerrar la sesión.
 
 Explicación directorios zonaUsuario
 > 
@@ -542,38 +583,241 @@ Descripción detallada de cada requisito, incluyendo su funcionamiento, validaci
 Cada vez hay mas usuarios de Internet que utilizan dispositivos móviles para navegar. Si nos fijamos en la analítica de nuestra web, nos damos cuenta que cada vez hay un gran numero de visitas que provienen de dispositivos móviles, por lo que las resoluciones a las cuales vemos nuestro desarrollo son diferentes.
 
 La principal necesidad que existe para hacer un diseño «adaptable», es porque se pierden bastantes visitantes, al no tener el site adaptable a todos.
+
 ### Funcionamiento
 
-Para incluir un diseño responsive en la WEB se ha empleado CSS, y el framework Bootstrap.
+Para incluir un diseño responsive en la WEB se ha empleado el framework Bootstrap.
+
 ### Ejemplo de código
 
-Para la zona de publicacione se ha empleado el siguiente código:
+Para la página de publicaciones se ha empleado el siguiente código:
 
-```css
-.blog-pagination {
-    margin-bottom: 4rem;
-}
- 
-.blog-pagination > .btn {
-    border-radius: 2rem;
-}
- 
- 
-.blog-footer {
-    padding: 2.5rem 0;
-    color: #999;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-top: .05rem solid #e5e5e5;
-}
 ```
-## REQUISITO 2: ...
 
-Esto se realiza para cada uno de los requisitos de nuestra aplicación.
+<div class="col-md-3">
+
+```
+
+Para entender el funcionamiento de esta línea de código debemos tener en mente que tenemos 12 columnas que podemos ocupar en la página, indicando que queremos 3 nos permite coger hasta 4 más para colocar por ejemplo botones, tarjetas... y con md (existen mas tamaños) indicamos que si un dispositivo tiene una determinada pantalla (un móvil) queremos que se adapte a su dispositivo (logrando así el diseño responsive).
+
+### Implementación
+
+Conseguida.
+
+## REQUISITO 2: Control de errores en formularios
+
+Necesitamos evitar que se pueda introducir cualquier tipo de dato así como datos erróneos en los formularios (por ejemplo escribir números en el nombre) y mediante iconos y mensajes de error ayudar al usuario en los mismos.
+
+### Funcionamiento
+
+Para incluirlo se ha empleado JavaScript y el framework Bootstrap.
+
+### Ejemplo de código
+
+```
+
+function validarNombre() {
+  const nombre = document.querySelector('#nombreCategoria');
+  const expresion = /^[a-zA-Z á é í ó ú 0-9]{4,20}$/;
+  if (expresion.test(nombre.value)) {
+    nombre.classList.remove('is-invalid');
+    nombre.classList.add('is-valid');
+    return true;
+  } else {
+    nombre.classList.add('is-invalid');
+    nombre.classList.remove('is-valid');
+    return false;
+  }
+}
+
+```
+
+### Implementación
+
+Conseguido.
+
+## REQUISITO 3: Acceso restringido a usuarios no registrados
+
+No queremos que los usuarios no registrados tengan acceso a funciones de un usuario registrado como por ejemplo acceder a sus publicaciones.
+
+### Funcionamiento
+
+Para incluirlo se ha utilizado PHP.
+
+### Ejemplo de código
+
+```
+
+<?php
+    
+    if(!isset($_SESSION['Usuario'])){
+        
+        echo "<script>alert('Debes iniciar sesión para entrar aquí.')</script>";
+
+        echo "<script>window.open('../sesion/login.php','_self')</script>";
+        
+    }else{
+?>
+
+```
+
+Lo que hace este código es que si detecta que la sesión no se ha creado y por tanto no encuentra el campo Usuario nos echará de la página llevándonos al Login.
+
+### Implementación
+
+Conseguido.
+
+## REQUISITO 4: Que solo los usuarios registrados puedan comentar y valorar positivamente o negativamente sobre el tema.
+
+Solo podrán hacerlo los registrados ya que de esta manera incentivamos a que los usuarios se registren.
+
+### Funcionamiento
+
+Para incluirlo se ha empleado PHP y HTML.
+
+### Ejemplo de código
+
+```
+
+      <form name="formularioValorar" method="POST">
+					<p class="clasificacion text-center">
+						<input onclick="this.form.submit()" id="rat5"  name="rate" value="5" type="radio" class="star"<?php if ($media==5) echo "checked='checked'"; ?>/>
+
+						<label class="star" for="rat5"></label>
+						<input onclick="this.form.submit()" id="rat4"  name="rate" value="4" type="radio" class="star"<?php if ($media==4) echo "checked='checked'"; ?>/>
+						
+						<label class="star" for="rat4"></label> 
+						<input onclick="this.form.submit()" id="rat3"  name="rate" value="3" type="radio" class="star"<?php if ($media==3) echo "checked='checked'"; ?>/>
+
+						<label class="star" for="rat3"></label>
+						<input onclick="this.form.submit()" id="rat2"  name="rate" value="2" type="radio" class="star"<?php if ($media==2) echo "checked='checked'"; ?>/>
+
+						<label class="star" for="rat2"></label> 
+						<input onclick="this.form.submit()" id="rat1" name="rate" value="1" type="radio" class="star"<?php if ($media==1) echo "checked='checked'"; ?>/>
+
+						<label class="star" for="rat1"></label>
+					</p>
+				</form>
+
+```
+
+Mediante un input y una función al tocar una estrella de la valoración se insertará la escogida, si volviesemos a valorar se actualizaría con la nueva.
+
+### Implementación
+
+Conseguido.
+
+## REQUISITO 5: Los usuarios sin registrar tendrán acceso al contenido pero no podrán comentar ni valorar.
+
+Igual que en el acceso restringuido queremos evitar que puedan valorar y comentar publicaciones. Pero no por ello queremos que no puedan acceder al contenido, es decir, podrán visualizar todos los datos como son la descripción de la publicación, los comentarios, la valoración... pero no podrán interactuar.
+
+### Funcionamiento
+
+Para incluirlo se ha empleado PHP.
+
+### Ejemplo de código
+
+```
+
+      <div align="center">
+					<div class="form-floating">
+						<h3>Para comentar necesita una cuenta</h3>
+						<div class="form-group">
+							<div class="col-12">
+								<br>
+								<a style="color: white; text-decoration:none;" href="login.php" class="btn btn-lg btn-success"><i class="fas fa-sign-in-alt"></i>  Iniciar Sesión</a>
+
+								<a style="color: white; text-decoration:none;" href="registro.php" class="btn btn-lg btn-danger"><i class="fas fa-user-plus"></i> Registrarme</a>  
+							</div>
+						</div>
+					</div>
+				</div>
+
+```
+
+A diferencia de como evitamos acceder a las páginas de un usuario registrado, en este caso lo tenemos al contrario. Si existiera la sesión nos dejaría en este caso comentar, en caso contrario nos aparecerá el mensaje indicado dándo la opción de registrarse o iniciar sesión.
+
+### Implementación
+
+Conseguido.
+
+## REQUISITO 6: Solo los administradores pueden añadir los temas a tratar (foto, descripción, categoría, etc).
+
+Este requisito se ha conseguido pero no tiene sentido que solo puedan los administradores, por tanto se ha actualizado a **que los usuarios registrados también puedan publicar (solamente publicaciones).**
+
+### Funcionamiento
+
+Para incluirlo se ha empleado PHP.
+
+### Ejemplo de código
+
+Se emplearía consultas dependiendo de los datos a insertar.
+
+### Implementación
+
+Conseguido.
+
+## REQUISITO 7: Añadir filtros para poder ordenar por categoría.
+
+Queremos que los usuarios puedan filtrar las publicaciones a sus intereses y por tanto al acceder a una categoría solo muestre publicaciones pertenecientes a la misma.
+
+### Funcionamiento
+
+Para incluirlo se ha empleado PHP.
+
+### Implementación
+
+Conseguido.
+
+## REQUISITO 8: Cada usuario tendrá su perfil para modificar sus datos (nombre, apellidos, correo...).
+
+Queremos que el usuario pueda modificar sus datos y por tanto necesita un perfil.
+
+### Funcionamiento
+
+Para incluirlo se ha empleado PHP.
+
+### Implementación
+
+Conseguido.
+
+## REQUISITO 9: En la noticia aparecerá la foto, descripción, comentarios y valoración.
+
+Queremos que al acceder a una publicación aparezcan los datos correctos de cada una.
+
+### Funcionamiento
+
+Para incluirlo se ha empleado PHP.
+
+### Implementación
+
+Conseguido.
+
+## REQUISITO 10: Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios.
+
+Necesitamos que un usuario administrador tenga acceso a todo el contenido de la página (publicaciones, usuarios, categorías...) y pueda insertar, modificar o eliminar cualquiera de ellas.
+
+### Funcionamiento
+
+Para incluirlo se ha empleado PHP.
+
+### Implementación
+
+Conseguido.
+
+## REQUISITO 11: Para acceder al contenido tendrán que clickear en una tarjeta y les mostrará la foto, descripción, valoración y comentarios.
+
+Para acceder al contenido de una publicación será necesario darle al botón ver detalles.
+
+### Funcionamiento
+
+Para incluirlo se ha empleado PHP.
+
+### Implementación
+
+Conseguido.
 
 # PRUEBAS
-
-Breve descripción de cómo se han realizado las pruebas. 
 
 ## Metodología de las pruebas
 
@@ -581,11 +825,11 @@ Breve descripción de cómo se han realizado las pruebas.
 >
 > Constantemente se ha buscado que la página funcione lo mas eficaz posible siendo modificada tanto en aspecto como en funcionamiento para ser optimizada.
 >
-> Para comprobar el funcionamiento del CRUD se ha aplicado restricciones tanto en HTML como en el JS para no permitir entrada de datos incorrectos en la BD.
+> Para comprobar el funcionamiento del CRUD se ha aplicado restricciones tanto en HTML como en el JS para no permitir saltar campos y la entrada de datos incorrectos en la BD.
 >
-> Se ha añadido diferentes mensajes de advertencia, confirmación y demás para saber en todo momento la acción que hemos realizado.
+> Se ha añadido mensajes de advertencia a la hora de eliminar datos, mensajes de confirmación para la introducción de datos y demás para saber en todo momento la acción que hemos realizado y si se ha completado.
 >
-> Mediente la herramienta para de desarrolladores se ha visualizado la página en diferentes dispositivos para comprobar el funcionamiento del diseño responsive.
+> Mediente la herramienta para de desarrolladores de Google Chrome se ha visualizado la página en diferentes dispositivos para comprobar el funcionamiento del diseño responsive.
 >
 
 # DESPLIEGUE
