@@ -719,19 +719,18 @@ Para incluirlo se ha empleado PHP.
 
 ```
 
-      <div align="center">
-					<div class="form-floating">
-						<h3>Para comentar necesita una cuenta</h3>
-						<div class="form-group">
-							<div class="col-12">
-								<br>
-								<a style="color: white; text-decoration:none;" href="login.php" class="btn btn-lg btn-success"><i class="fas fa-sign-in-alt"></i>  Iniciar Sesión</a>
-
-								<a style="color: white; text-decoration:none;" href="registro.php" class="btn btn-lg btn-danger"><i class="fas fa-user-plus"></i> Registrarme</a>  
-							</div>
-						</div>
-					</div>
-				</div>
+<div align="center">
+	<div class="form-floating">
+		h3>Para comentar necesita una cuenta</h3>
+		<div class="form-group">
+			<div class="col-12">
+			<br>
+				<a style="color: white; text-decoration:none;" href="login.php" class="btn btn-lg btn-success"><i class="fas fa-sign-in-alt"></i>  Iniciar Sesión</a>
+				<a style="color: white; text-decoration:none;" href="registro.php" class="btn btn-lg btn-danger"><i class="fas fa-user-plus"></i> Registrarme</a>  
+			</div>
+		</div>
+	</div>
+</div>
 
 ```
 
@@ -795,7 +794,7 @@ Conseguido.
 
 ## REQUISITO 10: Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios.
 
-Necesitamos que un usuario administrador tenga acceso a todo el contenido de la página (publicaciones, usuarios, categorías...) y pueda insertar, modificar o eliminar cualquiera de ellas.
+Necesitamos que un usuario administrador tenga acceso a todo el contenido de la página (publicaciones, usuarios, categorías...) y pueda insertar, modificar o eliminar cualquiera de ellas. Para ello tendrán diferentes páginas con tablas que muestren los datos y tendrán botones para insertar, editar y eliminar.
 
 ### Funcionamiento
 
