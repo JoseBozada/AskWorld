@@ -679,25 +679,25 @@ Para incluirlo se ha empleado PHP y HTML.
 
 ```
 
-      <form name="formularioValorar" method="POST">
-					<p class="clasificacion text-center">
-						<input onclick="this.form.submit()" id="rat5"  name="rate" value="5" type="radio" class="star"<?php if ($media==5) echo "checked='checked'"; ?>/>
+<form name="formularioValorar" method="POST">
+	<p class="clasificacion text-center">
+		<input onclick="this.form.submit()" id="rat5"  name="rate" value="5" type="radio" class="star"<?php if ($media==5) echo "checked='checked'"; ?>/>
 
-						<label class="star" for="rat5"></label>
-						<input onclick="this.form.submit()" id="rat4"  name="rate" value="4" type="radio" class="star"<?php if ($media==4) echo "checked='checked'"; ?>/>
+		<label class="star" for="rat5"></label>
+		<input onclick="this.form.submit()" id="rat4"  name="rate" value="4" type="radio" class="star"<?php if ($media==4) echo "checked='checked'"; ?>/>
 						
-						<label class="star" for="rat4"></label> 
-						<input onclick="this.form.submit()" id="rat3"  name="rate" value="3" type="radio" class="star"<?php if ($media==3) echo "checked='checked'"; ?>/>
+		<label class="star" for="rat4"></label> 
+		<input onclick="this.form.submit()" id="rat3"  name="rate" value="3" type="radio" class="star"<?php if ($media==3) echo "checked='checked'"; ?>/>
 
-						<label class="star" for="rat3"></label>
-						<input onclick="this.form.submit()" id="rat2"  name="rate" value="2" type="radio" class="star"<?php if ($media==2) echo "checked='checked'"; ?>/>
+		<label class="star" for="rat3"></label>
+		input onclick="this.form.submit()" id="rat2"  name="rate" value="2" type="radio" class="star"<?php if ($media==2) echo "checked='checked'"; ?>/>
 
-						<label class="star" for="rat2"></label> 
-						<input onclick="this.form.submit()" id="rat1" name="rate" value="1" type="radio" class="star"<?php if ($media==1) echo "checked='checked'"; ?>/>
+		<label class="star" for="rat2"></label> 
+		<input onclick="this.form.submit()" id="rat1" name="rate" value="1" type="radio" class="star"<?php if ($media==1) echo "checked='checked'"; ?>/>
 
-						<label class="star" for="rat1"></label>
-					</p>
-				</form>
+		<label class="star" for="rat1"></label>
+	</p>
+</form>
 
 ```
 
@@ -1074,7 +1074,9 @@ Descripción de los lenguajes y frameworks utilizados para el desarrollo del pro
 - Iconos 2: https://icons.getbootstrap.com/
 - Guía Bootstrap: https://getbootstrap.com/docs/5.1/getting-started/introduction/
 - Tablas avanzadas: https://datatables.net/
+- Tablas avanzadas (tutorial): https://youtu.be/o9NB7pH2i8U 
 - Mantener imagen del usuario: https://es.stackoverflow.com/questions/125941/almacenar-nombre-y-ruta-de-imagen-para-actualizar-php
 - No permitir repetir datos: https://www.youtube.com/watch?v=cbec05bEfwI
 - Sistema de valoración: https://programandoamimanera.com/sistema-de-valoracion-de-opinion-de-usuarios-para-webs-con-php/
 - Cifrar contraseña: https://www.w3schools.com/php/func_string_sha1.asp
+- Validación Bootstrap: https://www.youtube.com/watch?v=U5CIeNEc5gY
