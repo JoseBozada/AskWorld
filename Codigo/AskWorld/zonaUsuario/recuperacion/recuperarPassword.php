@@ -76,7 +76,7 @@
 if(isset($_POST['submit'])){
 	
 	//IP
-	$HOST = $_SERVER[‘REMOTE_ADDR’];
+	$HOST = $_SERVER('SERVER_ADDR');
 
 	//Recogemos el correo introducido en el formulario
 	$email = $_POST['email'];
