@@ -1,3 +1,16 @@
+<?php 
+
+	//Incluimos los ficheros para mandar correos
+	include '../../zonaAdmin/librerias/PHPMailer/src/Exception.php';
+	include '../../zonaAdmin/librerias/PHPMailer/src/PHPMailer.php';
+	include '../../zonaAdmin/librerias/PHPMailer/src/SMTP.php';
+
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\SMTP;
+	use PHPMailer\PHPMailer\Exception;	 
+
+?>
+
 <?php include "../includes/header.php" ?>
 
 <!-- Breadcrumb -->
