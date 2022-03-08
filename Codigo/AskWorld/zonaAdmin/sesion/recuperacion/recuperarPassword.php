@@ -89,7 +89,7 @@ if(isset($_POST['submit'])){
 
 	//Email y contraseña del correo que manda el mensaje
 	$mail->Username ='AskWorld2022@gmail.com';
-	$mail->Password = 'AskWorld@213';
+	$mail->Password = 'Ask901201@World111';
 
 	//Agregar destinatario
 	$mail->AddAddress($_POST['email']);
