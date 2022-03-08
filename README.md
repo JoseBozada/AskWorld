@@ -270,7 +270,7 @@ La Tierra simboliza la globalidad de las personas que pueden usar la página, es
 ## Base de datos
 ### Diseño Entidad Relación de la BBDD
 
-![Diseño Entidad Relación de la BBDD](https://user-images.githubusercontent.com/55547053/155618977-bd530084-8630-4855-b768-b06c3068ce86.png)
+![Diseño Entidad Relación de la BBDD](https://user-images.githubusercontent.com/55547053/157253583-f5cc8078-8012-486e-9256-f2b15ac6d312.png)
 
 ### Modelo relacional BBDD
 
@@ -524,7 +524,7 @@ Breve explicación de lo que tenemos contenido en cada directorio. Por ejemplo:
 > 
 
 Explicación directorios zonaAdmin
->`./` -> Contiene los ficheros Index.php y login.php. Al entrar cargará directamente el archivo login.php ya que debemos iniciar sesión para poder acceder al index.php
+>`zonaAdmin` -> Contiene los ficheros Index.php y login.php. Al entrar cargará directamente el archivo login.php ya que debemos iniciar sesión para poder acceder al index.php
 >  
 > `administrar` -> Contiene los archivos php que utilizaremos para crear, editar y eliminar las categorías, usuarios, valoraciones, publicaciones y comentarios de la página.
 >
@@ -574,9 +574,7 @@ En base al apartado [Prototipo web y boceto de la estructura](#prototipo-web-y-b
 
 # IMPLEMENTACIÓN
 
-Descripción detallada de cada requisito, incluyendo su funcionamiento, validaciones si fuesen necesarias, y cualqier información relevante.
-
-**Por ejemplo:**
+Descripción detallada de cada requisito, incluyendo su funcionamiento, validaciones si fuesen necesarias, y cualquier información relevante.
 
 ## REQUISITO 1: Diseño responsive
 
@@ -758,7 +756,7 @@ Conseguido.
 
 ## REQUISITO 7: Añadir filtros para poder ordenar por categoría.
 
-Queremos que los usuarios puedan filtrar las publicaciones a sus intereses y por tanto al acceder a una categoría solo muestre publicaciones pertenecientes a la misma.
+Queremos que los usuarios puedan filtrar las publicaciones a sus intereses y por tanto al acceder a una categoría solo mostrará publicaciones pertenecientes a la misma.
 
 ### Funcionamiento
 
@@ -824,7 +822,7 @@ Conseguido.
 >
 > Constantemente se ha buscado que la página funcione lo mas eficaz posible siendo modificada tanto en aspecto como en funcionamiento para ser optimizada.
 >
-> Para comprobar el funcionamiento del CRUD se ha aplicado restricciones tanto en HTML como en el JS para no permitir saltar campos y la entrada de datos incorrectos en la BD.
+> Para comprobar el funcionamiento del CRUD se ha aplicado restricciones tanto en HTML como en el JS para no permitir saltar campos y evitar la entrada de datos incorrectos en la BD.
 >
 > Se ha añadido mensajes de advertencia a la hora de eliminar datos, mensajes de confirmación para la introducción de datos y demás para saber en todo momento la acción que hemos realizado y si se ha completado.
 >
