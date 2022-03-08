@@ -81,7 +81,7 @@ error_reporting(E_ALL);
 if(isset($_POST['submit'])){
 	
 	//IP
-	$Direccion = $_SERVER('SERVER_ADDR');
+	$Direccion = $_SERVER['SERVER_ADDR'];
 
 	//Recogemos el correo introducido en el formulario
 	$email = $_POST['email'];
