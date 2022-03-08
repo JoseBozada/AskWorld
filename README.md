@@ -136,6 +136,9 @@ Se han utilizado distintos lenguajes de programación, como pueden ser PHP y Jav
 # REQUISITOS
 
 Queremos crear una página que mantenga la esencia de un foro que nos permita publicar, comentar y realizar acciones en ella de manera sencilla para la mayoría de los usuarios.
+
+También queremos permitir que el Usuario pueda filtrar sus publicaciones, valoraciones o comentarios que ha realizado para encontrarlos rápidamente y poder realizar modificaciones o eliminaciones.
+
 ## Requisitos funcionales
 
 - Diseño responsive
