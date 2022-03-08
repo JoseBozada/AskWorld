@@ -147,7 +147,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Jose20','f0482c1b407fb3109ee3dca919175bad47eeea60','Jose','Bozada','Montanés','josebozadamontanes@gmail.com','../../img/usuarios/Broly LSSJ 2.jpg','1998-03-04','PadreLerchundi',654024147,'Melilla','Melilla','45316056F','5a065813082c8ed960b84c9165ead3','Admin'),(2,'Test11','f0482c1b407fb3109ee3dca919175bad47eeea60','test','test','test','test@gmail.com','img/usuarios/test.png','1993-01-01','Calle General Barceló 41, Melilla',123456789,'Ceuta','Ceuta','12345678A','5a065813082232d960b84c9165ead3','Usuario'),(3,'Borrar22','f0482c1b407fb3109ee3dca919175bad47eeea60','Borrar','Borrar','Borrar','Borrar@gmail.com','img/usuarios/avatar.png','1990-03-11','Sin direccion',213456789,'Madrid','Madrid','21345678E','5a0sdsdg3082232d960b84c9165ead3','Usuario');
+INSERT INTO `usuarios` VALUES (1,'Jose20','f0482c1b407fb3109ee3dca919175bad47eeea60','Jose','Bozada','Montanés','josebozadamontanes@gmail.com','../../img/usuarios/Broly LSSJ 2.jpg','1998-03-04','PadreLerchundi',123456789,'Melilla','Melilla','113456781F','5a065813082c8ed960b84c9165ead3','Admin'),(2,'Test11','f0482c1b407fb3109ee3dca919175bad47eeea60','test','test','test','test@gmail.com','img/usuarios/test.png','1993-01-01','Calle General Barceló 41, Melilla',123356789,'Ceuta','Ceuta','12345678A','5a065813082232d960b84c9165ead3','Usuario'),(3,'Borrar22','f0482c1b407fb3109ee3dca919175bad47eeea60','Borrar','Borrar','Borrar','Borrar@gmail.com','img/usuarios/avatar.png','1990-03-11','Sin direccion',213456789,'Madrid','Madrid','21345678E','5a0sdsdg3082232d960b84c9165ead3','Usuario');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
