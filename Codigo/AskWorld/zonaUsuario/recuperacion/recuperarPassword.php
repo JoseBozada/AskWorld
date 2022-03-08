@@ -76,15 +76,7 @@
 if(isset($_POST['submit'])){
 	
 	//IP
-	function getRealIP() {
-	    if (!empty($_SERVER[‘HTTP_CLIENT_IP’]))
-		return $_SERVER[‘HTTP_CLIENT_IP’];
-	    if (!empty($_SERVER[‘HTTP_X_FORWARDED_FOR’]))
-		return $_SERVER[‘HTTP_X_FORWARDED_FOR’];
-	    return $_SERVER[‘REMOTE_ADDR’];
-	}
-	
-	$HOST = getRealIP();
+	$HOST = $_SERVER[‘HTTP_CLIENT_IP’];
 
 	//Recogemos el correo introducido en el formulario
 	$email = $_POST['email'];
