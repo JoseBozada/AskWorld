@@ -10,7 +10,7 @@ document.querySelector('#img').addEventListener('blur', validarImagen);
 
 function validarNombre() {
   const nombre = document.querySelector('#nombrePublicacion');
-  const expresion = /^[a-zA-Z á é í ó ú 0-9']{4,20}$/;
+  const expresion = /^[a-z A-Z 0-9 á é í ó ú Á É Í Ó Ú ÿ\u00f1\u00d1 . _ () ,']{4,20}$/;
   if (expresion.test(nombre.value)) {
     nombre.classList.remove('is-invalid');
     nombre.classList.add('is-valid');
@@ -24,7 +24,7 @@ function validarNombre() {
 
 function validarDescripcion() {
   const descripcion = document.querySelector('#descripcionPublicacion');
-  const expresion = /^[a-z A-Z 0-9 á é í ó ú Á É Í Ó Ú Ñ . _ () ,']{4,500}$/;
+  const expresion = /^[a-z A-Z 0-9 á é í ó ú Á É Í Ó Ú ÿ\u00f1\u00d1 . _ () ,']{4,500}$/;
   if (expresion.test(descripcion.value)) {
     descripcion.classList.remove('is-invalid');
     descripcion.classList.add('is-valid');

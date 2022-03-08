@@ -24,7 +24,7 @@ document.querySelector('#img').addEventListener('blur', validarImagen);
 /********************************** Funciones para validar campos **************************************/
 function validarUsuario() {
   const usuario = document.querySelector('#usuario');
-  const expresion = /^[a-zA-Z0-9]{6,20}$/;
+  const expresion = /^[a-zA-Z0-9ÿ\u00f1\u00d1]{6,20}$/;
 
   if (expresion.test(usuario.value)) {
     usuario.classList.remove('is-invalid');
@@ -39,7 +39,7 @@ function validarUsuario() {
 
 function validarNombre() {
   const nombre = document.querySelector('#nombre');
-  const expresion = /^[a-zA-Z á é í ó ú ']{3,20}$/;
+  const expresion = /^[a-zA-Z á é í ó ú ÿ\u00f1\u00d1']{3,20}$/;
   if (expresion.test(nombre.value)) {
     nombre.classList.remove('is-invalid');
     nombre.classList.add('is-valid');
@@ -67,7 +67,7 @@ function validarPassword() {
 
 function validarApellido() {
   const apellido = document.querySelector('#apellido');
-  const expresion = /^[a-zA-Z á é í ó ú ']{4,20}$/;
+  const expresion = /^[a-zA-Z á é í ó ú ÿ\u00f1\u00d1']{4,20}$/;
   if (expresion.test(apellido.value)) {
     apellido.classList.remove('is-invalid');
     apellido.classList.add('is-valid');
@@ -81,7 +81,7 @@ function validarApellido() {
 
 function validarDireccion() {
   const direccion = document.querySelector('#direccion');
-  const expresion = /^[a-zA-Z á é í ó ú ' 0-9 ,]{12,80}$/;
+  const expresion = /^[a-zA-Z á é í ó ú ' 0-9 ÿ\u00f1\u00d1 . ,]{6,80}$/;
 
   if (expresion.test(direccion.value)) {
     direccion.classList.remove('is-invalid');
@@ -97,7 +97,7 @@ function validarDireccion() {
 
 function validarApellido2() {
   const apellido2 = document.querySelector('#apellido2');
-  const expresion = /^[a-zA-Z á é í ó ú ']{4,20}$/;
+  const expresion = /^[a-zA-Z á é í ó ú ÿ\u00f1\u00d1']{4,20}$/;
   if (expresion.test(apellido2.value)) {
     apellido2.classList.remove('is-invalid');
     apellido2.classList.add('is-valid');

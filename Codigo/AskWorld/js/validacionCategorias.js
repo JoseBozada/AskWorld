@@ -5,7 +5,7 @@ document.querySelector('#nombreCategoria').addEventListener('keyup', validarNomb
 /********************************** Funciones para validar campos **************************************/
 function validarNombre() {
   const nombre = document.querySelector('#nombreCategoria');
-  const expresion = /^[a-zA-Z á é í ó ú 0-9]{4,20}$/;
+  const expresion = /^[a-zA-Z á é í ó ú 0-9 ÿ\u00f1\u00d1]{4,20}$/;
   if (expresion.test(nombre.value)) {
     nombre.classList.remove('is-invalid');
     nombre.classList.add('is-valid');

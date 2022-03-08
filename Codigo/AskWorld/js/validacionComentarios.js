@@ -6,7 +6,7 @@ document.querySelector('#comentario').addEventListener('keyup', validarComentari
 
 function validarComentario() {
   const comentario = document.querySelector('#comentario');
-  const expresion = /^[a-z A-Z 0-9 á é í ó ú Á É Í Ó Ú . _ () ,']{4,500}$/;
+  const expresion = /^[a-z A-Z 0-9 á é í ó ú Á É Í Ó Ú . _ () , ÿ\u00f1\u00d1']{4,500}$/;
   if (expresion.test(comentario.value)) {
     comentario.classList.remove('is-invalid');
     comentario.classList.add('is-valid');

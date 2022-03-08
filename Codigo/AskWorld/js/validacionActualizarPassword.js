@@ -1,9 +1,6 @@
 /********************************** Seleccionamos los campos a los que le asignaremos funciones para validarlos **************************************/
-
 document.querySelector('#password').addEventListener('keyup', validarPassword);
-
 /********************************** Funciones para validar campos **************************************/
-
 function validarPassword() {
   const password = document.querySelector('#password');
   const expresion = /^(?=.{5,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/;
@@ -17,11 +14,9 @@ function validarPassword() {
     return false;
   }
 }
-
 /********************************** Impedimos que se mande el formulario si no hemos validado los campos del formulario **************************************/
 (function () {
   const forms = document.querySelectorAll('.needs-validation');
-
   for (let form of forms) {
     form.addEventListener(
       'submit',
