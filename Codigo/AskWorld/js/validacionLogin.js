@@ -6,7 +6,7 @@ document.querySelector('#password').addEventListener('keyup', validarPassword);
 /********************************** Funciones para validar campos **************************************/
 function validarUsuario() {
   const usuario = document.querySelector('#usuario');
-  const expresion = /^[a-zA-Z0-9ÿ\u00f1\u00d1]{6,20}$/;
+  const expresion = /^[a-zA-Z0-9]{6,20}$/;
 
   if (expresion.test(usuario.value)) {
     usuario.classList.remove('is-invalid');
