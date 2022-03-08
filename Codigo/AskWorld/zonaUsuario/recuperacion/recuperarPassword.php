@@ -105,7 +105,7 @@ if(isset($_POST['submit'])){
 	//Agregar destinatario
 	$mail->AddAddress($_POST['email']);
 	$mail->Subject = "Recuperar contraseña"; //Asunto
-	$mail->Body = "Hola, $usuario. Haz click aquí para resetear tu contraseña http://localhost/askworld/zonaUsuario/recuperacion/actualizarPassword.php?token=$token";
+	$mail->Body = "Hola, $usuario. Haz click aquí para resetear tu contraseña "http://$HOST/Codigo/AskWorld/zonaUsuario/recuperacion/actualizarPassword.php?token=$token";
 	$sender_email = "FROM: AskWorld2022@gmail.com";
 
 	//Avisar si fue enviado o no y dirigir al login
