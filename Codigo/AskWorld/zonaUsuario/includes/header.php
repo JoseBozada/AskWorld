@@ -9,16 +9,7 @@
 	include "../../zonaAdmin/includes/DAO/DAO_Categorias.php";
 	include "../../zonaAdmin/includes/DAO/DAO_Usuarios.php";
 	include "../../zonaAdmin/includes/DAO/DAO_Valoraciones.php";
-	include "../../zonaAdmin/includes/DAO/DAO_Comentarios.php";
-
-	//Incluimos los ficheros para mandar correos
-	include '../../zonaAdmin/librerias/PHPMailer/src/Exception.php';
-	include '../../zonaAdmin/librerias/PHPMailer/src/PHPMailer.php';
-	include '../../zonaAdmin/librerias/PHPMailer/src/SMTP.php';
-
-	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\SMTP;
-	use PHPMailer\PHPMailer\Exception;	    
+	include "../../zonaAdmin/includes/DAO/DAO_Comentarios.php";  
 ?>
 
 <!DOCTYPE html>
