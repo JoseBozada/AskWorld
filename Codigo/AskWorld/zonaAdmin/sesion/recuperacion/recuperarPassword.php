@@ -64,6 +64,9 @@
 <?php
 if(isset($_POST['submit'])){
 	
+	//IP del servidor
+	$Direccion = $_SERVER['SERVER_ADDR'];
+	
 	//Recogemos el correo introducido en el formulario
 	$email = $_POST['email'];
 
@@ -94,7 +97,7 @@ if(isset($_POST['submit'])){
 	//Agregar destinatario
 	$mail->AddAddress($_POST['email']);
 	$mail->Subject = "Recuperar contraseña"; //Asunto
-	$mail->Body = "Hola, $usuario. Haz click aquí para resetear tu contraseña http://localhost/askworld/zonaAdmin/sesion/recuperacion/actualizarPassword.php?token=$token";
+	$mail->Body = "Hola, $usuario. Haz click aquí para resetear tu contraseña http://".$Direccion."/Codigo/AskWorld/zonaAdmin/sesion/recuperacion/actualizarPassword.php?token=$token";
 	$sender_email = "FROM: AskWorld2022@gmail.com";
 
 	//Avisar si fue enviado o no y dirigir al login
