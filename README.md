@@ -51,51 +51,42 @@
     	- [Zona Administrador](#zona-administrador) 
     	- [Página Web y Zona Usuario](#página-web-y-zona-usuario)
 - [IMPLEMENTACIÓN](#implementación)
-  - [REQUISITO 1: Diseño responsive](#requisito-1-diseño-responsive)
+  - [REQUISITO 1: Diseño responsive](#requisito-1-diseño-responsive---conseguido)
     - [Funcionamiento](#funcionamiento)
     - [Ejemplo de código](#ejemplo-de-código)
-    - [Implementación](#implementación)
-  - [REQUISITO 2: Control de errores en formularios](#requisito-2-control-de-errores-en-formularios)
+  - [REQUISITO 2: Control de errores en formularios](#requisito-2-control-de-errores-en-formularios---conseguido)
     - [Funcionamiento](#funcionamiento)
     - [Ejemplo de código](#ejemplo-de-código)
-    - [Implementación](#implementación)
-  - [REQUISITO 3: Acceso restringido a usuarios no registrados](#requisito-3-acceso-restringido-a-usuarios-no-registrados)
+  - [REQUISITO 3: Acceso restringido a usuarios no registrados](#requisito-3-acceso-restringido-a-usuarios-no-registrados---conseguido)
     - [Funcionamiento](#funcionamiento)
     - [Ejemplo de código](#ejemplo-de-código)
-    - [Implementación](#implementación)
-  - [REQUISITO 4: Que solo los usuarios registrados puedan comentar y valorar positivamente o negativamente sobre el tema](#requisito-4-que-solo-los-usuarios-registrados-puedan-comentar-y-valorar-positivamente-o-negativamente-sobre-el-tema)
+  - [REQUISITO 4: Que solo los usuarios registrados puedan comentar y valorar positivamente o negativamente sobre el tema](#requisito-4-que-solo-los-usuarios-registrados-puedan-comentar-y-valorar-positivamente-o-negativamente-sobre-el-tema---conseguido)
     - [Funcionamiento](#funcionamiento)
     - [Ejemplo de código](#ejemplo-de-código)
-    - [Implementación](#implementación)
-  - [REQUISITO 5: Los usuarios sin registrar tendrán acceso al contenido pero no podrán comentar ni valorar](#requisito-5-los-usuarios-sin-registrar-tendrán-acceso-al-contenido-pero-no-podrán-comentar-ni-valorar)
+  - [REQUISITO 5: Los usuarios sin registrar tendrán acceso al contenido pero no podrán comentar ni valorar](#requisito-5-los-usuarios-sin-registrar-tendrán-acceso-al-contenido-pero-no-podrán-comentar-ni-valorar---conseguido)
     - [Funcionamiento](#funcionamiento)
     - [Ejemplo de código](#ejemplo-de-código)
-    - [Implementación](#implementación)
-  - [REQUISITO 6: Solo los administradores pueden añadir los temas a tratar (foto, descripción, categoría, etc)](#requisito-6-solo-los-administradores-pueden-añadir-los-temas-a-tratar-foto-descripción-categoría-etc)
+  - [REQUISITO 6: Solo los administradores pueden añadir los temas a tratar (foto, descripción, categoría, etc)](#requisito-6-solo-los-administradores-pueden-añadir-los-temas-a-tratar-foto-descripción-categoría-etc---conseguido)
     - [Funcionamiento](#funcionamiento)
     - [Ejemplo de código](#ejemplo-de-código)
-    - [Implementación](#implementación)
-  - [REQUISITO 7: Añadir filtros para poder ordenar por categoría](#requisito-7-añadir-filtros-para-poder-ordenar-por-categoría)
+  - [REQUISITO 7: Añadir filtros para poder ordenar por categoría](#requisito-7-añadir-filtros-para-poder-ordenar-por-categoría---conseguido)
     - [Funcionamiento](#funcionamiento)
     - [Ejemplo de código](#ejemplo-de-código)
-    - [Implementación](#implementación)
-  - [REQUISITO 8: Cada usuario tendrá su perfil para modificar sus datos (nombre, apellidos, correo...)](#requisito-1-diseño-responsive)
+  - [REQUISITO 8: Cada usuario tendrá su perfil para modificar sus datos (nombre, apellidos, correo, etc)](#requisito-8-cada-usuario-tendrá-su-perfil-para-modificar-sus-datos-nombre-apellidos-correo-etc---conseguido-parcialmente)
     - [Funcionamiento](#funcionamiento)
     - [Ejemplo de código](#ejemplo-de-código)
-    - [Implementación](#implementación)
-   - [REQUISITO 9: En la noticia aparecerá la foto, descripción, comentarios y valoración](#requisito-9-en-la-noticia-aparecerá-la-foto-descripción-comentarios-y-valoración)
+   - [REQUISITO 9: En la noticia aparecerá la foto, descripción, comentarios y valoración](#requisito-9-en-la-noticia-aparecerá-la-foto-descripción-comentarios-y-valoración---conseguido)
       - [Funcionamiento](#funcionamiento)
       - [Ejemplo de código](#ejemplo-de-código)
-      - [Implementación](#implementación)
-  - [REQUISITO 10: Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios](#requisito-10-los-administradores-tendrán-un-panel-que-les-permita-modificar-borrar-o-añadir-contenido-a-la-página-y-del-mismo-modo-con-los-usuarios)
+  - [REQUISITO 10: Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios](#requisito-10-los-administradores-tendrán-un-panel-que-les-permita-modificar-borrar-o-añadir-contenido-a-la-página-y-del-mismo-modo-con-los-usuarios---conseguido)
       - [Funcionamiento](#funcionamiento)
       - [Ejemplo de código](#ejemplo-de-código)
-      - [Implementación](#implementación)
-  - [REQUISITO 11: Para acceder al contenido tendrán que clickear en una tarjeta y les mostrará la foto, descripción, valoración y comentarios](#requisito-11-para-acceder-al-contenido-tendrán-que-clickear-en-una-tarjeta-y-les-mostrará-la-foto-descripción-valoración-y-comentarios)
+  - [REQUISITO 11: Para acceder al contenido tendrán que clickear en una tarjeta y les mostrará la foto, descripción, valoración y comentarios](#requisito-11-para-acceder-al-contenido-tendrán-que-clickear-en-una-tarjeta-y-les-mostrará-la-foto-descripción-valoración-y-comentarios---conseguido)
     - [Funcionamiento](#funcionamiento)
-    - [Ejemplo de código](#ejemplo-de-código)
-    - [Implementación](#implementación)
-  - [PRUEBAS](#pruebas)
+    - [Ejemplo de código](#ejemplo-de-código) 	 
+  - [Requisitos no contemplados](#requisitos-no-contemplados)
+    - [REQUISITO 12: Los usuarios registrados pueden crear publicaciones - Conseguido](#requisito-12-los-usuarios-registrados-pueden-crear-publicaciones---conseguido)
+- [PRUEBAS](#pruebas)
      - [Metodología de las pruebas](#metodología-de-las-pruebas)
 - [DESPLIEGUE](#despliegue)
 - [HERRAMIENTAS](#herramientas)
@@ -609,7 +600,7 @@ Esta estructura es la misma para todas las páginas.
 
 Descripción detallada de cada requisito, incluyendo su funcionamiento, validaciones si fuesen necesarias, y cualquier información relevante.
 
-## REQUISITO 1: Diseño responsive
+## REQUISITO 1: Diseño responsive - Conseguido
 
 Cada vez hay mas usuarios de Internet que utilizan dispositivos móviles para navegar. Si nos fijamos en la analítica de nuestra web, nos damos cuenta que cada vez hay un gran numero de visitas que provienen de dispositivos móviles, por lo que las resoluciones a las cuales vemos nuestro desarrollo son diferentes.
 
@@ -631,11 +622,7 @@ Para la página de publicaciones se ha empleado el siguiente código:
 
 Para entender el funcionamiento de esta línea de código debemos tener en mente que tenemos 12 columnas que podemos ocupar en la página, indicando que queremos 3 nos permite coger hasta 4 más para colocar por ejemplo botones, tarjetas... y con md (existen mas tamaños) indicamos que si un dispositivo tiene una determinada pantalla (un móvil) queremos que se adapte a su dispositivo (logrando así el diseño responsive).
 
-### Implementación
-
-Conseguida.
-
-## REQUISITO 2: Control de errores en formularios
+## REQUISITO 2: Control de errores en formularios - Conseguido
 
 Necesitamos evitar que se pueda introducir cualquier tipo de dato así como datos erróneos en los formularios (por ejemplo escribir números en el nombre) y mediante iconos y mensajes de error ayudar al usuario en los mismos.
 
@@ -663,11 +650,7 @@ function validarNombre() {
 
 ```
 
-### Implementación
-
-Conseguido.
-
-## REQUISITO 3: Acceso restringido a usuarios no registrados
+## REQUISITO 3: Acceso restringido a usuarios no registrados - Conseguido
 
 No queremos que los usuarios no registrados tengan acceso a funciones de un usuario registrado como por ejemplo acceder a sus publicaciones.
 
@@ -694,11 +677,7 @@ Para incluirlo se ha utilizado PHP.
 
 Lo que hace este código es que si detecta que la sesión no se ha creado y por tanto no encuentra el campo Usuario nos echará de la página llevándonos al Login.
 
-### Implementación
-
-Conseguido.
-
-## REQUISITO 4: Que solo los usuarios registrados puedan comentar y valorar positivamente o negativamente sobre el tema.
+## REQUISITO 4: Que solo los usuarios registrados puedan comentar y valorar positivamente o negativamente sobre el tema - Conseguido
 
 Solo podrán hacerlo los registrados ya que de esta manera incentivamos a que los usuarios se registren.
 
@@ -734,11 +713,7 @@ Para incluirlo se ha empleado PHP y HTML.
 
 Mediante un input y una función al tocar una estrella de la valoración se insertará la escogida, si volviesemos a valorar se actualizaría con la nueva.
 
-### Implementación
-
-Conseguido.
-
-## REQUISITO 5: Los usuarios sin registrar tendrán acceso al contenido pero no podrán comentar ni valorar.
+## REQUISITO 5: Los usuarios sin registrar tendrán acceso al contenido pero no podrán comentar ni valorar - Conseguido
 
 Igual que en el acceso restringuido queremos evitar que puedan valorar y comentar publicaciones. Pero no por ello queremos que no puedan acceder al contenido, es decir, podrán visualizar todos los datos como son la descripción de la publicación, los comentarios, la valoración... pero no podrán interactuar.
 
@@ -767,13 +742,9 @@ Para incluirlo se ha empleado PHP.
 
 A diferencia de como evitamos acceder a las páginas de un usuario registrado, en este caso lo tenemos al contrario. Si existiera la sesión nos dejaría en este caso comentar, en caso contrario nos aparecerá el mensaje indicado dándo la opción de registrarse o iniciar sesión.
 
-### Implementación
+## REQUISITO 6: Solo los administradores pueden añadir los temas a tratar (foto, descripción, categoría, etc) - Conseguido
 
-Conseguido.
-
-## REQUISITO 6: Solo los administradores pueden añadir los temas a tratar (foto, descripción, categoría, etc).
-
-Este requisito se ha conseguido pero no tiene sentido que solo puedan los administradores, por tanto se ha actualizado a **que los usuarios registrados también puedan publicar (solamente publicaciones).**
+Queremos que los usuarios administradores sean los únicos en añadir publicaciones y categorías en la página.
 
 ### Funcionamiento
 
@@ -783,11 +754,7 @@ Para incluirlo se ha empleado PHP.
 
 Se emplearía consultas dependiendo de los datos a insertar.
 
-### Implementación
-
-Conseguido.
-
-## REQUISITO 7: Añadir filtros para poder ordenar por categoría.
+## REQUISITO 7: Añadir filtros para poder ordenar por categoría - Conseguido
 
 Queremos que los usuarios puedan filtrar las publicaciones a sus intereses y por tanto al acceder a una categoría solo mostrará publicaciones pertenecientes a la misma.
 
@@ -795,11 +762,7 @@ Queremos que los usuarios puedan filtrar las publicaciones a sus intereses y por
 
 Para incluirlo se ha empleado PHP.
 
-### Implementación
-
-Conseguido.
-
-## REQUISITO 8: Cada usuario tendrá su perfil para modificar sus datos (nombre, apellidos, correo...).
+## REQUISITO 8: Cada usuario tendrá su perfil para modificar sus datos (nombre, apellidos, correo, etc) - Conseguido Parcialmente
 
 Queremos que el usuario pueda modificar sus datos y por tanto necesita un perfil.
 
@@ -807,11 +770,7 @@ Queremos que el usuario pueda modificar sus datos y por tanto necesita un perfil
 
 Para incluirlo se ha empleado PHP.
 
-### Implementación
-
-Conseguido.
-
-## REQUISITO 9: En la noticia aparecerá la foto, descripción, comentarios y valoración.
+## REQUISITO 9: En la noticia aparecerá la foto, descripción, comentarios y valoración - Conseguido
 
 Queremos que al acceder a una publicación aparezcan los datos correctos de cada una.
 
@@ -819,11 +778,7 @@ Queremos que al acceder a una publicación aparezcan los datos correctos de cada
 
 Para incluirlo se ha empleado PHP.
 
-### Implementación
-
-Conseguido.
-
-## REQUISITO 10: Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios.
+## REQUISITO 10: Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios - Conseguido
 
 Necesitamos que un usuario administrador tenga acceso a todo el contenido de la página (publicaciones, usuarios, categorías...) y pueda insertar, modificar o eliminar cualquiera de ellas. Para ello tendrán diferentes páginas con tablas que muestren los datos y tendrán botones para insertar, editar y eliminar.
 
@@ -831,11 +786,7 @@ Necesitamos que un usuario administrador tenga acceso a todo el contenido de la 
 
 Para incluirlo se ha empleado PHP.
 
-### Implementación
-
-Conseguido.
-
-## REQUISITO 11: Para acceder al contenido tendrán que clickear en una tarjeta y les mostrará la foto, descripción, valoración y comentarios.
+## REQUISITO 11: Para acceder al contenido tendrán que clickear en una tarjeta y les mostrará la foto, descripción, valoración y comentarios - Conseguido
 
 Para acceder al contenido de una publicación será necesario darle al botón ver detalles.
 
@@ -843,9 +794,15 @@ Para acceder al contenido de una publicación será necesario darle al botón ve
 
 Para incluirlo se ha empleado PHP.
 
-### Implementación
+# Requisitos no contemplados
 
-Conseguido.
+## REQUISITO 12: Los usuarios registrados pueden crear publicaciones - Conseguido
+
+Queremos darle un privilegio más a los usuarios que se registran en nuestra web, por tanto, los usuarios registrados podrán crear sus propias publicaciones y se les permitirá editarlas, borrarlas y demñas.
+
+### Funcionamiento
+
+Para incluirlo se ha empleado PHP.
 
 # PRUEBAS
 
