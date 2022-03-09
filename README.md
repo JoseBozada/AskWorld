@@ -772,6 +772,8 @@ Para incluirlo se ha empleado PHP.
 
 Queremos que el usuario pueda modificar sus datos y por tanto necesita un perfil.
 
+Se ha conseguido parcialmente debido a un error a la hora de guardar la contraseña, si el usuario no introducía la anterior o una nueva, la contraseña original se volvía a cifrar haciendo así que no pudiera ser modificada y por tanto ha tenido que pasar a ser un dato de solo lectura en página de mi cuenta.
+
 ### Funcionamiento
 
 Para incluirlo se ha empleado PHP.
