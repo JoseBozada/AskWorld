@@ -172,15 +172,15 @@ También queremos permitir que el Usuario pueda filtrar sus publicaciones, valor
 Existen dos secciones de la página:
 - Zona Administrador: Solo podrán acceder los usuarios con rol Administrador, tienen control de todo el contenido de la página (publicaciones, comentarios, valoraciones y usuarios), pueden crear sus propias publicaciones, comentarios, valoraciones e insertar usuarios así como borrar los datos de todos los usuarios.
 
-- Mapa web:
+- Mapa Web Zona Administrador:
 
-![149623156-7be0fab2-0ab2-4de7-85e4-bf0932a029a0](https://user-images.githubusercontent.com/55547053/156462259-93005acf-516e-403c-90ef-d502807a9093.jpg)
+![156462259-93005acf-516e-403c-90ef-d502807a9093](https://user-images.githubusercontent.com/55547053/157489731-67e00258-f79b-4dbd-82f5-a47d3feb3762.jpg)
 
-- Página web y Zona Usuario: Se permite a los usuarios no registrados acceder a los detalles de las publicaciones, pero si no inician sesión no podrán comentar, valorar y tampoco tendrán acceso a sus publicaciones, comentarios, valoraciones ni acceder a su cuenta.
+- Página Web y Zona Usuario: Se permite a los usuarios no registrados acceder a los detalles de las publicaciones, pero si no inician sesión no podrán comentar, valorar y tampoco tendrán acceso a sus publicaciones, comentarios, valoraciones ni acceder a su cuenta.
 
-- Mapa web:
+- Mapa Web Página Web y Zona Usuario:
 
-![149623159-1e86d25d-8fee-47d5-ad4e-21542da4957f](https://user-images.githubusercontent.com/55547053/156463193-55e54cf0-87c8-42d3-b8d5-8bb8d38c6d4f.jpg)
+![Mapa Web Usuario](https://user-images.githubusercontent.com/55547053/157490285-ffb9c68c-d7c0-4758-8a77-067881347ba4.jpg)
 
 ## Prototipo web y boceto de la estructura
 
@@ -275,6 +275,8 @@ La Tierra simboliza la globalidad de las personas que pueden usar la página, es
 
 ![Diseño Entidad Relación de la BBDD](https://user-images.githubusercontent.com/55547053/157253583-f5cc8078-8012-486e-9256-f2b15ac6d312.png)
 
+**Nota:** No añado los campos de las tablas para simplificar el modelo Entidad-Relación.
+
 ### Modelo relacional BBDD
 
 ![Modelo Relacional BBDD](https://user-images.githubusercontent.com/55547053/155227960-844b9623-c924-4b0e-812b-7073c4da834f.png)
@@ -283,6 +285,7 @@ La Tierra simboliza la globalidad de las personas que pueden usar la página, es
 
 #### Database
 
+```
 CREATE DATABASE  IF NOT EXISTS `askworld` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 USE `askworld`;
 
@@ -296,9 +299,11 @@ USE `askworld`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+```
 
 #### Categoría
 
+```
 --
 -- Table structure for table `categoria`
 --
@@ -313,9 +318,11 @@ CREATE TABLE `categoria` (
   UNIQUE KEY `NombreCategoria_UNIQUE` (`NombreCategoria`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+```
 
 #### Comentarios
 
+```
 --
 -- Table structure for table `comentarios`
 --
@@ -337,9 +344,11 @@ CREATE TABLE `comentarios` (
   CONSTRAINT `fk_idUsuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+```
 
 #### Publicaciones
 
+```
 --
 -- Table structure for table `publicaciones`
 --
@@ -362,9 +371,11 @@ CREATE TABLE `publicaciones` (
   CONSTRAINT `fk_Usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+```
 
 #### Usuarios
 
+```
 --
 -- Table structure for table `usuarios`
 --
@@ -398,9 +409,11 @@ CREATE TABLE `usuarios` (
   KEY `fk_Publicacion` (`idUsuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+```
 
 #### Valoración
 
+```
 --
 -- Table structure for table `valoracion`
 --
@@ -429,6 +442,7 @@ CREATE TABLE `valoracion` (
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+```
 
 ### Consultas 
 
@@ -889,7 +903,7 @@ Conseguido.
 
 # HERRAMIENTAS
 
-Descripción de todas las herramientas que se han usado para el desarrollo del proyecto. Por ejemplo:
+Descripción de todas las herramientas que se han usado para el desarrollo del proyecto.
 
 > Para la realización del proyecto se han empleado las siguientes herramientas:
 > ## Visual Studio Code
