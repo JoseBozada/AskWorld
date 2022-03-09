@@ -450,24 +450,24 @@ Las consultas a continuación se utilizan para todas las tablas del proyecto (Ca
 
 #### Seleccionar:
 
-Si queremos mostrar todos los datos de los usuarios que tenemos registrados usaremos: **SELECT * FROM `usuarios`;**
+Si queremos mostrar todos los datos de los usuarios que tenemos registrados usaremos: `SELECT * FROM 'usuarios';`
 
-Si necesitamos solo unos datos o mostrar datos de un usuario en concreto utilizamos una condición: **SELECT * FROM usuarios WHERE (`Email` = '$email');**
+Si necesitamos solo unos datos o mostrar datos de un usuario en concreto utilizamos una condición: `SELECT * FROM usuarios WHERE ('Email' = '$email');`
 
 #### Insertar:
-Se utiliza INSERT INTO para insertar datos a la BD.
+Se utiliza `INSERT INTO` para insertar datos a la BD.
 
-**Ejemplo:** INSERT INTO categoria (`NombreCategoria`) VALUES ('$nombreCategoria');
+**Ejemplo:** `INSERT INTO categoria ('NombreCategoria') VALUES ('$nombreCategoria');`
 
 #### Modificar:
-Para modificar datos se utiliza UPDATE **tabla** SET **datos** y también mediante su ID.
+Para modificar datos se utiliza `UPDATE **tabla** SET **datos**` y también mediante su ID.
 
-**Ejemplo:** UPDATE publicaciones SET `idCategoria` = '$idCategoria', `NombrePublicacion` = '$nombrePublicacion', `DescripcionPublicacion` = '$descripcionPublicacion', `FechaPublicacion` = '$fechaPublicacion', `ImagenPublicacion` = '$imagenPublicacion' WHERE (`idPublicacion` = '$idPublicacion');
+**Ejemplo:** `UPDATE publicaciones SET 'idCategoria' = '$idCategoria', 'NombrePublicacion' = '$nombrePublicacion', 'DescripcionPublicacion' = '$descripcionPublicacion', 'FechaPublicacion' = '$fechaPublicacion', 'ImagenPublicacion' = '$imagenPublicacion' WHERE ('idPublicacion' = '$idPublicacion');`
 
 #### Eliminar:
-Para eliminar datos de la BD se utiliza DELETE FROM junto al ID que queremos eliminar.
+Para eliminar datos de la BD se utiliza `DELETE FROM` junto al ID que queremos eliminar.
 
-**Ejemplo:** DELETE FROM valoracion WHERE (`idValoracion` = '$idValoracion');
+**Ejemplo:** `DELETE FROM valoracion WHERE ('idValoracion' = '$idValoracion');`
 
 ## Validación de formularios
 
