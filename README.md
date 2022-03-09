@@ -836,9 +836,9 @@ Conseguido.
 
 ## Variables de entorno
 
-> USERDB="debianDB"
+> USERDB="root"
 > 
-> PASSDB="debianDB"
+> PASSDB="root"
 > 
 > HOST=$(hostname -I)
 > 
