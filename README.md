@@ -71,19 +71,14 @@
     - [Ejemplo de código](#ejemplo-de-código)
   - [REQUISITO 7: Añadir filtros para poder ordenar por categoría](#requisito-7-añadir-filtros-para-poder-ordenar-por-categoría---conseguido)
     - [Funcionamiento](#funcionamiento)
-    - [Ejemplo de código](#ejemplo-de-código)
   - [REQUISITO 8: Cada usuario tendrá su perfil para modificar sus datos (nombre, apellidos, correo, etc)](#requisito-8-cada-usuario-tendrá-su-perfil-para-modificar-sus-datos-nombre-apellidos-correo-etc---conseguido-parcialmente)
     - [Funcionamiento](#funcionamiento)
-    - [Ejemplo de código](#ejemplo-de-código)
    - [REQUISITO 9: En la noticia aparecerá la foto, descripción, comentarios y valoración](#requisito-9-en-la-noticia-aparecerá-la-foto-descripción-comentarios-y-valoración---conseguido)
       - [Funcionamiento](#funcionamiento)
-      - [Ejemplo de código](#ejemplo-de-código)
   - [REQUISITO 10: Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios](#requisito-10-los-administradores-tendrán-un-panel-que-les-permita-modificar-borrar-o-añadir-contenido-a-la-página-y-del-mismo-modo-con-los-usuarios---conseguido)
       - [Funcionamiento](#funcionamiento)
-      - [Ejemplo de código](#ejemplo-de-código)
   - [REQUISITO 11: Para acceder al contenido tendrán que clickear en una tarjeta y les mostrará la foto, descripción, valoración y comentarios](#requisito-11-para-acceder-al-contenido-tendrán-que-clickear-en-una-tarjeta-y-les-mostrará-la-foto-descripción-valoración-y-comentarios---conseguido)
-    - [Funcionamiento](#funcionamiento)
-    - [Ejemplo de código](#ejemplo-de-código) 	 
+    - [Funcionamiento](#funcionamiento)	 
   - [Requisitos no contemplados](#requisitos-no-contemplados)
     - [REQUISITO 12: Los usuarios registrados pueden crear publicaciones](#requisito-12-los-usuarios-registrados-pueden-crear-publicaciones---conseguido)
 - [PRUEBAS](#pruebas)
@@ -908,17 +903,6 @@ Se prueba insertar, modificar y eliminar diferentes datos y se confirma que func
 Se prueba el botón ver detalles para acceder a una publicación y se confirma que accede correctamente a la publicación.
 
 ```
-
-> Para hacer pruebas he usado los programas MAMP y MySQL Workbench para trabajar en Windows.
->
-> Constantemente se ha buscado que la página funcione lo mas eficaz posible siendo modificada tanto en aspecto como en funcionamiento para ser optimizada.
->
-> Para comprobar el funcionamiento del CRUD se ha aplicado restricciones tanto en HTML como en el JS para no permitir saltar campos y evitar la entrada de datos incorrectos en la BD.
->
-> Se ha añadido mensajes de advertencia a la hora de eliminar datos, mensajes de confirmación para la introducción de datos y demás para saber en todo momento la acción que hemos realizado y si se ha completado.
->
-> Mediente la herramienta para de desarrolladores de Google Chrome se ha visualizado la página en diferentes dispositivos para comprobar el funcionamiento del diseño responsive.
->
 
 # DESPLIEGUE
 
