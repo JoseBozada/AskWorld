@@ -85,9 +85,20 @@
     - [Funcionamiento](#funcionamiento)
     - [Ejemplo de código](#ejemplo-de-código) 	 
   - [Requisitos no contemplados](#requisitos-no-contemplados)
-    - [REQUISITO 12: Los usuarios registrados pueden crear publicaciones - Conseguido](#requisito-12-los-usuarios-registrados-pueden-crear-publicaciones---conseguido)
+    - [REQUISITO 12: Los usuarios registrados pueden crear publicaciones](#requisito-12-los-usuarios-registrados-pueden-crear-publicaciones---conseguido)
 - [PRUEBAS](#pruebas)
      - [Metodología de las pruebas](#metodología-de-las-pruebas)
+       - [REQUISITO 1: Diseño Responsive](#requisito-1-diseño-responsive)
+       - [REQUISITO 2: Control de errores en formularios](#requisito-2-control-de-errores-en-formularios)
+       - [REQUISITO 3: Acceso restringido a usuarios no registrados](#requisito-3-acceso-restringido-a-usuarios-no-registrados)
+       - [REQUISITO 4: Que solo los usuarios registrados puedan comentar y valorar positivamente o negativamente sobre el tema](#requisito-4-que-solo-los-usuarios-registrados-puedan-comentar-y-valorar-positivamente-o-negativamente-sobre-el-tema)
+       - [REQUISITO 5: Los usuarios sin registrar tendrán acceso al contenido pero no podrán comentar ni valorar](#requisito-5-los-usuarios-sin-registrar-tendrán-acceso-al-contenido-pero-no-podrán-comentar-ni-valorar)
+       - [REQUISITO 6: Solo los administradores pueden añadir los temas a tratar (foto, descripción, categoría, etc)](#requisito-6-solo-los-administradores-pueden-añadir-los-temas-a-tratar-foto-descripción-categoría-etc)
+       - [REQUISITO 7: Añadir filtros para poder ordenar por categoría](#requisito-7-añadir-filtros-para-poder-ordenar-por-categoría)
+       - [REQUISITO 8: Cada usuario tendrá su perfil para modificar sus datos (nombre, apellidos, correo, etc)](#requisito-8-cada-usuario-tendrá-su-perfil-para-modificar-sus-datos-nombre-apellidos-correo-etc)
+       - [REQUISITO 9: En la noticia aparecerá la foto, descripción, comentarios y valoración](#requisito-9-en-la-noticia-aparecerá-la-foto-descripción-comentarios-y-valoración)
+       - [REQUISITO 10: Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios](#requisito-10-los-administradores-tendrán-un-panel-que-les-permita-modificar-borrar-o-añadir-contenido-a-la-página-y-del-mismo-modo-con-los-usuarios)
+       - [REQUISITO 11: Para acceder al contenido tendrán que clickear en una tarjeta y les mostrará la foto, descripción, valoración y comentarios](#requisito-11-para-acceder-al-contenido-tendrán-que-clickear-en-una-tarjeta-y-les-mostrará-la-foto-descripción-valoración-y-comentarios)
 - [DESPLIEGUE](#despliegue)
 - [HERRAMIENTAS](#herramientas)
 - [LENGUAJES](#lenguajes)
@@ -798,7 +809,7 @@ Para incluirlo se ha empleado PHP.
 
 ## REQUISITO 12: Los usuarios registrados pueden crear publicaciones - Conseguido
 
-Queremos darle un privilegio más a los usuarios que se registran en nuestra web, por tanto, los usuarios registrados podrán crear sus propias publicaciones y se les permitirá editarlas, borrarlas y demñas.
+Queremos darle un privilegio más a los usuarios que se registran en nuestra web, por tanto, los usuarios registrados podrán crear sus propias publicaciones y se les permitirá editarlas, borrarlas y demás.
 
 ### Funcionamiento
 
@@ -807,6 +818,96 @@ Para incluirlo se ha empleado PHP.
 # PRUEBAS
 
 ## Metodología de las pruebas
+
+Se realiza de manera manual para comprobar que se cumplen los requisitos especificados, por tanto, no se realizan pruebas unitarias, se realizan pruebas de integración trabajando sobre el código directamente.
+
+### REQUISITO 1: Diseño Responsive
+
+```
+
+Se emplea la herramienta para desarrolladores de Google y se confirma que la página se adapta al dispositivo.
+
+```
+
+### REQUISITO 2: Control de errores en formularios
+
+```
+
+
+
+```
+
+### REQUISITO 3: Acceso restringido a usuarios no registrados
+
+```
+
+
+
+```
+
+### REQUISITO 4: Que solo los usuarios registrados puedan comentar y valorar positivamente o negativamente sobre el tema
+
+```
+
+
+
+```
+
+### REQUISITO 5: Los usuarios sin registrar tendrán acceso al contenido pero no podrán comentar ni valorar
+
+```
+
+
+
+```
+
+### REQUISITO 6: Solo los administradores pueden añadir los temas a tratar (foto, descripción, categoría, etc)
+
+```
+
+
+
+```
+
+### REQUISITO 7: Añadir filtros para poder ordenar por categoría
+
+```
+
+
+
+```
+
+### REQUISITO 8: Cada usuario tendrá su perfil para modificar sus datos (nombre, apellidos, correo, etc)
+
+```
+
+
+
+```
+
+### REQUISITO 9: En la noticia aparecerá la foto, descripción, comentarios y valoración
+
+```
+
+
+
+```
+
+### REQUISITO 10: Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios
+
+```
+
+
+
+```
+
+### REQUISITO 11: Para acceder al contenido tendrán que clickear en una tarjeta y les mostrará la foto, descripción, valoración y comentarios
+
+```
+
+
+
+```
 
 > Para hacer pruebas he usado los programas MAMP y MySQL Workbench para trabajar en Windows.
 >
