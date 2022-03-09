@@ -833,7 +833,7 @@ Se emplea la herramienta para desarrolladores de Google y se confirma que la pá
 
 ```
 
-
+Se emplea diferentes pruebas de datos (ej: números en el nombre) y se confirma que se impide la entrega del formulario si 1 campo o varios son incorrectos.
 
 ```
 
@@ -841,7 +841,7 @@ Se emplea la herramienta para desarrolladores de Google y se confirma que la pá
 
 ```
 
-
+Se intenta acceder desde la URL a páginas restringidas sin iniciar sesión y se confirma que impide el acceso.
 
 ```
 
@@ -849,7 +849,7 @@ Se emplea la herramienta para desarrolladores de Google y se confirma que la pá
 
 ```
 
-
+Se confirma al iniciar sesión que el botón de valoración y el textarea para comentar aparecen y funcionan correctamente.
 
 ```
 
@@ -857,7 +857,7 @@ Se emplea la herramienta para desarrolladores de Google y se confirma que la pá
 
 ```
 
-
+Se confirma al acceder sin iniciar sesión que aparece todos los datos de la publicación pero no aparece el botón de valoración ni el textarea para comentar.
 
 ```
 
@@ -865,7 +865,7 @@ Se emplea la herramienta para desarrolladores de Google y se confirma que la pá
 
 ```
 
-
+Se prueban diferentes inserciones (categorías, publicaciones, usuarios...) y se confirma que funciona.
 
 ```
 
@@ -873,7 +873,7 @@ Se emplea la herramienta para desarrolladores de Google y se confirma que la pá
 
 ```
 
-
+Se confirma que al acceder a una categoría se filtran las publicaciones.
 
 ```
 
@@ -881,7 +881,7 @@ Se emplea la herramienta para desarrolladores de Google y se confirma que la pá
 
 ```
 
-
+Se prueban diferentes cambios de datos y se confirma que se aplican correctamente.
 
 ```
 
@@ -889,7 +889,7 @@ Se emplea la herramienta para desarrolladores de Google y se confirma que la pá
 
 ```
 
-
+Se prueba acceder a diferentes publicaciones y se confirma que aparecen los campos correctamente.
 
 ```
 
@@ -897,7 +897,7 @@ Se emplea la herramienta para desarrolladores de Google y se confirma que la pá
 
 ```
 
-
+Se prueba insertar, modificar y eliminar diferentes datos y se confirma que funcionan correctamente.
 
 ```
 
@@ -905,7 +905,7 @@ Se emplea la herramienta para desarrolladores de Google y se confirma que la pá
 
 ```
 
-
+Se prueba el botón ver detalles para acceder a una publicación y se confirma que accede correctamente a la publicación.
 
 ```
 
