@@ -48,6 +48,8 @@
     - [Contenido directorios](#contenido-directorios)
   - [Diseño de la interface](#diseño-de-la-interface)
     - [Estructura gráfica de la interface](#estructura-gráfica-de-la-interface)
+    	- [Zona Administrador](#zona-administrador) 
+    	- [Página Web y Zona Usuario](#página-web-y-zona-usuario)
 - [IMPLEMENTACIÓN](#implementación)
   - [REQUISITO 1: Diseño responsive](#requisito-1-diseño-responsive)
     - [Funcionamiento](#funcionamiento)
@@ -587,7 +589,21 @@ En base al apartado [Prototipo web y boceto de la estructura](#prototipo-web-y-b
 
 ### Estructura gráfica de la interface
 
-![Estructura gráfica](https://user-images.githubusercontent.com/55547053/156380646-edefb282-fcc6-492e-a84d-9f84b930ca50.png)
+#### Zona Administrador
+
+Esta estructura es la misma para todas las páginas.
+
+![148785564-9a0f246a-0cdf-4ac9-918e-e6359da98cbc](https://user-images.githubusercontent.com/55547053/157492195-e118261c-dad6-481e-870e-af4b2888f17b.jpg)
+
+#### Página Web y Zona Usuario
+
+Esta estructura es únicamente para la página index.
+
+![149360500-6b31a531-927e-4428-9c0b-42431481f382](https://user-images.githubusercontent.com/55547053/157492877-7c3c843e-2a13-4ab4-8791-909c231698d6.jpg)
+
+Esta estructura es la misma para todas las páginas.
+
+![149156064-105cf728-d9ad-4d8e-87ce-1ffa6949110d](https://user-images.githubusercontent.com/55547053/157493170-15971bd1-0b8a-46d1-9733-278e97717b04.jpg)
 
 # IMPLEMENTACIÓN
 
