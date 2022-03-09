@@ -28,7 +28,7 @@
     <form id="formularioRegistro" method="post" enctype="multipart/form-data" class="needs-validation">
         <div class="row">
             <!-- Usuario -->
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> Usuario</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
@@ -43,7 +43,7 @@
             <!-- Termina Usuario -->
 
             <!-- Nombre -->
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> Nombre</h5></div>
                 <div class="input-group input-wrapper">
                     <span class="input-group-text" id="basic-addon1">
@@ -62,7 +62,7 @@
 
         <!-- Contraseña -->
         <div class="row">
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> Contraseña</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
@@ -77,7 +77,7 @@
             <!-- Termina Contraseña -->
 
             <!-- Apellido -->
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> Apellido</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
@@ -96,7 +96,7 @@
 
         <!-- Dirección -->
         <div class="row">
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> Dirección</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
@@ -112,7 +112,7 @@
             <!-- Termina Dirección -->
 
             <!-- Apellido 2 -->
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> Apellido 2</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
@@ -131,7 +131,7 @@
 
         <!-- Correo -->
         <div class="row">
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> Correo</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
@@ -146,7 +146,7 @@
             <!-- Termina Correo -->
 
             <!-- Fecha -->
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> Fecha de Nacimiento</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
@@ -164,7 +164,7 @@
 
         <!-- Provincia -->
         <div class="row">
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> Provincia</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
@@ -183,7 +183,7 @@
             <!-- Termina Provincia -->
 
             <!-- Población -->
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> Población</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
@@ -203,7 +203,7 @@
 
         <!-- Teléfono -->
         <div class="row">
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> Teléfono</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
@@ -218,7 +218,7 @@
             <!-- Termina Teléfono -->
 
             <!-- DNI -->
-            <div class="col">
+            <div class="col-md-6">
                 <div align="left"><h5> DNI</h5></div>
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">
@@ -236,7 +236,7 @@
         <br>
 
         <!-- Imagen -->
-        <div class="col">
+        <div class="col-md-12">
             <h5 align="left"></i> Imagen</h5>
             <div class="input-group">
                 <span class="input-group-text" id="basic-addon1">
