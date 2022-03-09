@@ -272,9 +272,9 @@ La Tierra simboliza la globalidad de las personas que pueden usar la página, es
 ## Base de datos
 ### Diseño Entidad Relación de la BBDD
 
-![Diseño Entidad Relación de la BBDD](https://user-images.githubusercontent.com/55547053/157253583-f5cc8078-8012-486e-9256-f2b15ac6d312.png)
+**Nota:** No he añadido los campos de las tablas para simplificar el modelo Entidad-Relación.
 
-**Nota:** No añado los campos de las tablas para simplificar el modelo Entidad-Relación.
+![Diseño Entidad Relación de la BBDD](https://user-images.githubusercontent.com/55547053/157253583-f5cc8078-8012-486e-9256-f2b15ac6d312.png)
 
 ### Modelo relacional BBDD
 
@@ -768,6 +768,80 @@ Queremos que los usuarios puedan filtrar las publicaciones a sus intereses y por
 
 Para incluirlo se ha empleado PHP.
 
+### Ejemplo de código
+
+```
+	if($_GET['categoria']==$row_publicaciones['idCategoria']){
+                                
+		//Consulta de publicaciones
+                $idPublicaciones = $row_publicaciones['idPublicacion'];
+
+                $get_publicaciones_id = mostrarPublicacionesPorID($conexion, $idPublicaciones);
+
+                $row_publicaciones_id = mysqli_fetch_assoc($get_publicaciones_id);
+                                            
+                $publicaciones_id = $row_publicaciones_id['idPublicacion'];
+
+                $publicaciones_nombre = $row_publicaciones_id['NombrePublicacion'];
+
+                $publicaciones_img = $row_publicaciones_id['ImagenPublicacion'];
+
+                $imagen = str_replace("../", "", $publicaciones_img);
+                                                                            
+                //Consulta de categorias
+                $idCategorias = $row_publicaciones_id['idCategoria'];
+
+                $get_categorias = mostrarCategoriasPorID($conexion, $idCategorias);
+
+                $row_categorias = mysqli_fetch_assoc($get_categorias);
+                                            
+                $categorias_id = $row_categorias['idCategoria'];
+                                            
+                $categorias_nombre = $row_categorias['NombreCategoria'];
+                                        
+                echo "
+                                        
+                	<div class='col-md-4 col-sm-6 center-responsive'>
+                                    
+                        	<div class='product'>
+                                        
+                                        <p class='bg-warning text-center text-uppercase' style=' border: 2.0px solid black'>$categorias_nombre</p>
+                    
+                                        <img class='img-thumbnail' style='border: 2.5px solid black' src='$imagen'>
+                                            
+                                        <div>
+                                            
+                                            <div class='text'>
+                                                    
+                                                <h4 class='text-center'>
+                                                    
+                                                    <strong>$publicaciones_nombre</strong>
+                                                    
+                                                </h4>
+
+                                                <p>
+                                                    
+                                                    <a class='btn btn-success' href='detallesPublicacion.php?publicacion=$idPublicaciones'>
+                                                            
+                                                        Ver Detalles
+                                                                
+                                                    </a>
+
+                                                </p>
+
+                                            </div>
+                                            
+                                        </div>
+                                    
+                                    </div>
+                                        
+                                </div>
+                                
+                            ";
+                          }
+
+```
+
 ## REQUISITO 8: Cada usuario tendrá su perfil para modificar sus datos (nombre, apellidos, correo, etc) - Conseguido Parcialmente
 
 Queremos que el usuario pueda modificar sus datos y por tanto necesita un perfil.
@@ -778,6 +852,38 @@ Se ha conseguido parcialmente debido a un error a la hora de guardar la contrase
 
 Para incluirlo se ha empleado PHP.
 
+### Ejemplo de código
+
+```
+
+//Si el usuario elige una foto nueva se borrará la anterior, en caso contrario se mantendrá la original.
+	if ($_FILES["img"]["name"] != '') {
+		
+		if(is_uploaded_file($_FILES["img"]["tmp_name"])) {
+			
+			$ruta= "../../img/usuarios/".$_FILES["img"]["name"];
+			
+			move_uploaded_file($_FILES["img"]["tmp_name"], $ruta);
+			
+			echo "<script>alert('Actualizando la cuenta...')</script>";
+			
+			unlink($Imagen);
+			
+			$consulta = ActualizarUsuario($conexion, $usuario, $nombre, $apellido1, $apellido2, $email, $ruta, $fecha, $direccion, $telefono, $provincia, $poblacion, $idUsuario);
+			
+			echo "<script>alert('La cuenta se ha actualizado correctamente.')</script>";
+
+			echo "<script>window.open('perfil.php','_self')</script>";
+
+		} else {
+			
+			echo "<script>alert('No se puede actualizar tu cuenta.')</script>";
+			
+			echo "<script>window.open('perfil.php','_self')</script>";
+		}
+
+```
+
 ## REQUISITO 9: En la noticia aparecerá la foto, descripción, comentarios y valoración - Conseguido
 
 Queremos que al acceder a una publicación aparezcan los datos correctos de cada una.
@@ -785,6 +891,57 @@ Queremos que al acceder a una publicación aparezcan los datos correctos de cada
 ### Funcionamiento
 
 Para incluirlo se ha empleado PHP.
+
+### Ejemplo de código
+
+```
+
+<?php
+
+	//Recogemos el ID de la URL
+	$idURL = $_GET['publicacion'];
+
+	$get_publicacion = mostrarPublicacionesPorID($conexion, $idURL);
+
+	$row_publicacion = mysqli_fetch_assoc($get_publicacion);
+
+	$idPublicacion = $row_publicacion['idPublicacion'];
+
+	$nombrePublicacion = $row_publicacion['NombrePublicacion'];
+
+	$descripcionPublicacion = $row_publicacion['DescripcionPublicacion'];
+
+	$fechaPublicacion = $row_publicacion['FechaPublicacion'];
+
+	$imagenPublicacion = $row_publicacion['ImagenPublicacion'];
+
+	//Eliminamos la ruta antigua de la imagen
+	$imagen = str_replace("../", "", $imagenPublicacion);
+
+	//Consulta de usuarios: Necesitamos el nombre para mostrarlo.
+    	$id_Usuario =  $row_publicacion['idUsuario'];
+
+	$get_usuarios = mostrarUsuariosPorID($conexion, $id_Usuario);
+
+	$row_usuarios = mysqli_fetch_assoc($get_usuarios);
+
+	$nombreUsuario = $row_usuarios['Usuario'];
+
+	//Consulta de categorías: Necesitamos el nombre para mostrarlo.
+	$id_categoria =  $row_publicacion['idCategoria'];
+
+	$get_categorias = mostrarCategoriasPorID($conexion, $id_categoria);
+
+	$row_categorias = mysqli_fetch_assoc($get_categorias);
+
+	$nombreCategoria = $row_categorias['NombreCategoria'];
+
+	//Si la publicacion coincide con el ID mostrará el contenido, sino nos devolverá al index.
+	if($_GET['publicacion']=="$idPublicacion"){
+
+?>
+
+```
 
 ## REQUISITO 10: Los administradores tendrán un panel que les permita modificar, borrar o añadir contenido a la página y del mismo modo con los usuarios - Conseguido
 
@@ -794,6 +951,62 @@ Necesitamos que un usuario administrador tenga acceso a todo el contenido de la 
 
 Para incluirlo se ha empleado PHP.
 
+### Ejemplo de código
+
+```
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="table-responsive">
+			<table class="table table-hover table-striped table-bordered table-sm" id="TablaCategorias">
+				<thead>
+					<tr style="text-align: center; border: black 1px solid; background: orange">
+						<td>#</td>
+						<td>Nombre</td>
+						<td>Editar</td>
+						<td>Eliminar</td>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						//Contador
+						$i=0;
+
+    						$consulta = mostrarCategorias($conexion);
+    					
+						//Recorreremos la tabla de las categorias y mostraremos sus datos
+	                   			while($mostrar = mysqli_fetch_array($consulta)) {
+
+	                    				$id_categoria = $mostrar['idCategoria'];
+
+							//Aumentamos el contador
+							$i++;
+                			?>
+					<tr style="text-align: center;">
+						<td><strong><?php echo $i; ?></strong></td>
+						<td><strong><?php echo $mostrar['NombreCategoria'] ?></strong></td>
+						<td>
+							<a class="btn btn-warning btn-sm" href="editarCategoria.php?id=<?php echo $id_categoria; ?>">
+								<span class="fas fa-edit"></span>
+							</a>
+						</td>
+						<td> 
+							<a class="btn btn-danger btn-sm" onClick="return confirm('¿Estas seguro de que quieres eliminar esta categoría?');" href="eliminarCategoria.php?id=<?php echo $id_categoria; ?>">
+								<span class="fas fa-trash-alt"></span>
+							</a> 
+						</td>
+					</tr>
+					<?php
+                		}
+                	?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+```
+
 ## REQUISITO 11: Para acceder al contenido tendrán que clickear en una tarjeta y les mostrará la foto, descripción, valoración y comentarios - Conseguido
 
 Para acceder al contenido de una publicación será necesario darle al botón ver detalles.
@@ -801,6 +1014,52 @@ Para acceder al contenido de una publicación será necesario darle al botón ve
 ### Funcionamiento
 
 Para incluirlo se ha empleado PHP.
+
+### Ejemplo de código
+
+```
+
+echo "
+                                    
+                            <div class='col-md-4 col-sm-6 center-responsive'>
+                                
+                                <div>
+
+                                    <p class='bg-warning text-center text-uppercase' style=' border: 2.0px solid black'>$categorias_nombre</p>
+                        
+                                    <img class='img-thumbnail' style='border: 2.5px solid black' src='$imagen'>
+                                            
+                                    <div>
+                                            
+                                        <div>
+                                                    
+                                            <h4 class='text-center'>
+                                                    
+                                                $publicaciones_nombre
+                                                    
+                                            </h4>
+                                                    
+                                            <p>
+                                                    
+                                                <a class='btn btn-success' href='detallesPublicacion.php?publicacion=$idPublicaciones'>
+                                                        
+                                                    Ver Detalles
+                                                            
+                                                </a>
+                                                    
+                                            </p>
+                                                
+                                        </div>
+                                            
+                                    </div>
+                                    
+                                </div>
+                                        
+                            </div>
+                                  
+                            ";
+
+```
 
 # Requisitos no contemplados
 
